@@ -19,6 +19,7 @@ export interface ProposalOutput {
   /** Short human summary for WhatsApp caption + manager notification. */
   summary: string;
   unitName: string;
+  projectName?: string;
   totalPrice: number;
 }
 
@@ -48,5 +49,12 @@ export async function generateProposal(req: ProposalRequest): Promise<ProposalOu
         `DP ${plan.downPaymentPercent}% (${pkr(plan.downPaymentAmount)}), ` +
         `${plan.installmentMonths}m @ ~${pkr(plan.averageInstallment)}/mo`;
 
-  return { pdf, filename, summary, unitName: unit.name, totalPrice: unit.totalPrice ?? 0 };
+  return {
+    pdf,
+    filename,
+    summary,
+    unitName: unit.name,
+    projectName: unit.projectName,
+    totalPrice: unit.totalPrice ?? 0,
+  };
 }

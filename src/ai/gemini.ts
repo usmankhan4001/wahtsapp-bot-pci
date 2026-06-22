@@ -97,6 +97,7 @@ export interface AgentResult {
   reply: string;
   handoff?: ToolContext["handoff"];
   proposal?: ToolContext["proposal"];
+  media?: ToolContext["media"];
 }
 
 /**
@@ -159,5 +160,5 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
   session.greeted = true;
   sessions.save(session);
 
-  return { reply: finalText, handoff: ctx.handoff, proposal: ctx.proposal };
+  return { reply: finalText, handoff: ctx.handoff, proposal: ctx.proposal, media: ctx.media };
 }

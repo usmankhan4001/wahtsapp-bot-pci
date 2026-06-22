@@ -46,9 +46,13 @@ export const config = {
   gemini: {
     apiKey: cleanToken(process.env.GEMINI_API_KEY),
     model: cleanToken(process.env.GEMINI_MODEL) || "gemini-2.5-flash",
+    embedModel: cleanToken(process.env.GEMINI_EMBED_MODEL) || "text-embedding-004",
   },
 
   bitrixApiBase: cleanUrl(process.env.BITRIX_API_BASE),
+
+  // Public base URL for project media (Cloudflare R2 custom domain).
+  mediaBaseUrl: cleanUrl(process.env.MEDIA_BASE_URL, "https://media.premierchoiceint.online"),
 
   contacts: {
     salesManager: digitsOnly(process.env.SALES_MANAGER_WHATSAPP),

@@ -3,6 +3,8 @@
 import { bitrix } from "../bitrix/client.js";
 import type { Session } from "../session/store.js";
 import { sessions, type Language } from "../session/store.js";
+import { retrieve } from "../rag/retrieve.js";
+import { brochureUrl, floorPlanUrls, locationOf, projectsWithMedia } from "../media/registry.js";
 
 // Gemini Schema types are uppercase enums (STRING, OBJECT, ...).
 export const toolDeclarations = [
@@ -84,6 +86,46 @@ export const toolDeclarations = [
     },
   },
   {
+    name: "get_project_info",
+    description:
+      "Answer detailed questions about a project (amenities, specs, layout, location, payment terms, FAQs) using the company's official brochures. Use this for any factual/descriptive question that isn't live price/availability.",
+    parameters: {
+      type: "OBJECT",
+      properties: {
+        question: { type: "STRING", description: "The customer's question." },
+        project: { type: "STRING", description: "Project name to focus on (optional)." },
+      },
+      required: ["question"],
+    },
+  },
+  {
+    name: "send_brochure",
+    description: "Send the official PDF brochure for a project to the customer on WhatsApp.",
+    parameters: {
+      type: "OBJECT",
+      properties: { project: { type: "STRING" } },
+      required: ["project"],
+    },
+  },
+  {
+    name: "send_floor_plan",
+    description: "Send the floor/layout plan image(s) for a project to the customer.",
+    parameters: {
+      type: "OBJECT",
+      properties: { project: { type: "STRING" } },
+      required: ["project"],
+    },
+  },
+  {
+    name: "send_location",
+    description: "Share a project's location (map link) with the customer.",
+    parameters: {
+      type: "OBJECT",
+      properties: { project: { type: "STRING" } },
+      required: ["project"],
+    },
+  },
+  {
     name: "handoff_to_team",
     description:
       "Escalate this chat to a human team. Use for bulk/corporate (B2B), an individual ready to proceed or wanting a human agent (B2C), or complaints/after-sales (CARE).",
@@ -114,12 +156,22 @@ export interface ProposalSignal {
   balloons?: { month: number; amount: number }[];
 }
 
+/** A file/location the orchestrator should send after the turn. */
+export interface MediaItem {
+  kind: "document" | "image" | "text";
+  url?: string;
+  filename?: string;
+  caption?: string;
+}
+
 export interface ToolContext {
   session: Session;
   /** Set by handoff_to_team for the orchestrator to act on after the turn. */
   handoff?: HandoffSignal;
   /** Set by generate_proposal for the orchestrator to act on after the turn. */
   proposal?: ProposalSignal;
+  /** Queued media (brochures/floor plans/location) to send after the turn. */
+  media?: MediaItem[];
 }
 
 const enumNamesToId = async (
@@ -219,6 +271,54 @@ export async function executeTool(
         balloons: args.balloons as { month: number; amount: number }[] | undefined,
       };
       return { ok: true, message: "Proposal PDF is being prepared and will be sent now." };
+    }
+
+    case "get_project_info": {
+      const chunks = await retrieve(
+        String(args.question ?? ""),
+        args.project as string | undefined,
+      );
+      if (chunks.length === 0) {
+        return {
+          info: null,
+          note: "No brochure info indexed yet. Answer from general knowledge base or offer to connect the team.",
+        };
+      }
+      return {
+        sources: [...new Set(chunks.map((c) => c.project))],
+        info: chunks.map((c) => c.text).join("\n---\n"),
+      };
+    }
+
+    case "send_brochure": {
+      const project = String(args.project ?? "");
+      const url = brochureUrl(project);
+      if (!url) return { ok: false, message: `No brochure available yet for ${project}.` };
+      (ctx.media ??= []).push({
+        kind: "document",
+        url,
+        filename: `${project} Brochure.pdf`,
+        caption: `${project} — Brochure 📄`,
+      });
+      return { ok: true, message: "Brochure is being sent." };
+    }
+
+    case "send_floor_plan": {
+      const project = String(args.project ?? "");
+      const plans = floorPlanUrls(project);
+      if (plans.length === 0) return { ok: false, message: `No floor plans available yet for ${project}.` };
+      for (const p of plans) {
+        (ctx.media ??= []).push({ kind: "image", url: p.url, caption: `${project} — ${p.label}` });
+      }
+      return { ok: true, message: "Floor plan(s) being sent." };
+    }
+
+    case "send_location": {
+      const project = String(args.project ?? "");
+      const loc = locationOf(project);
+      if (!loc) return { ok: false, message: `No location saved yet for ${project}.` };
+      (ctx.media ??= []).push({ kind: "text", caption: `${project} location 📍\n${loc}` });
+      return { ok: true, message: "Location shared." };
     }
 
     case "handoff_to_team": {

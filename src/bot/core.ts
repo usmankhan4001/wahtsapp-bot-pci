@@ -5,8 +5,9 @@ import { logger } from "../logger.js";
 import type { MessagingAdapter, IncomingMessage } from "../messaging/adapter.js";
 import { sessions } from "../session/store.js";
 import { runAgentTurn } from "../ai/gemini.js";
-import type { HandoffSignal, ProposalSignal } from "../ai/tools.js";
+import type { HandoffSignal, ProposalSignal, MediaItem } from "../ai/tools.js";
 import { generateProposal } from "../proposal/index.js";
+import { brochureUrl } from "../media/registry.js";
 
 const TEAM_NUMBER: Record<HandoffSignal["team"], string> = {
   B2B: config.contacts.teamB2B,
@@ -72,6 +73,9 @@ export class BotCore {
     // Send the reply with human-like typing delay.
     await this.messaging.sendTextHumanized(msg.chatId, result.reply);
 
+    // Send any requested media (brochures / floor plans / location).
+    if (result.media?.length) await this.sendMedia(msg, result.media);
+
     // Post-reply actions (run in background — don't delay the user).
     if (firstContact) {
       this.notifyManagerLeadEngaged(msg).catch((e) =>
@@ -85,6 +89,25 @@ export class BotCore {
     }
     if (result.handoff) {
       await this.doHandoff(msg, result.handoff);
+    }
+  }
+
+  private async sendMedia(msg: IncomingMessage, items: MediaItem[]): Promise<void> {
+    for (const m of items) {
+      try {
+        if (m.kind === "text") {
+          if (m.caption) await this.messaging.sendText(msg.chatId, m.caption);
+        } else if (m.url) {
+          await this.messaging.sendByUrl(msg.chatId, {
+            kind: m.kind,
+            url: m.url,
+            filename: m.filename,
+            caption: m.caption,
+          });
+        }
+      } catch (e) {
+        logger.error("Media send failed", e);
+      }
     }
   }
 
@@ -107,6 +130,19 @@ export class BotCore {
         mimetype: "application/pdf",
         caption: "Here is your Premier Choice International payment proposal. 📄",
       });
+
+      // Auto-attach the project brochure alongside the proposal, if available.
+      const bUrl = brochureUrl(out.projectName ?? "");
+      if (bUrl) {
+        await this.messaging
+          .sendByUrl(msg.chatId, {
+            kind: "document",
+            url: bUrl,
+            filename: `${out.projectName ?? "Project"} Brochure.pdf`,
+            caption: "📄 Project brochure for your reference.",
+          })
+          .catch((e) => logger.error("Brochure attach failed", e));
+      }
 
       // Notify the sales manager that a proposal was sent.
       if (config.contacts.salesManager) {

@@ -7,13 +7,16 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "ingest": "tsx src/rag/ingest.ts"
   },
   "license": "ISC",
   "dependencies": {
+    "@types/pdf-parse": "^1.1.5",
     "@types/pdfkit": "^0.17.6",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "pdf-parse": "^2.4.5",
     "pdfkit": "^0.19.1",
     "puppeteer": "^25.1.0"
   },

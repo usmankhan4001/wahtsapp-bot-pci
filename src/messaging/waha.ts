@@ -179,6 +179,27 @@ export class WahaAdapter implements MessagingAdapter {
     }
   }
 
+  /** Send a document or image by public URL (WAHA fetches it). */
+  async sendByUrl(
+    chatId: string,
+    media: { kind: "document" | "image"; url: string; filename?: string; caption?: string },
+  ): Promise<void> {
+    const endpoint = media.kind === "image" ? "/api/sendImage" : "/api/sendFile";
+    const res = await fetch(`${config.waha.baseUrl}${endpoint}`, {
+      method: "POST",
+      headers: headers(),
+      body: JSON.stringify({
+        session: config.waha.session,
+        chatId: toChatId(chatId),
+        file: { url: media.url, filename: media.filename },
+        caption: media.caption,
+      }),
+    });
+    if (!res.ok) {
+      logger.error(`WAHA ${endpoint} failed`, res.status, (await res.text()).slice(0, 200));
+    }
+  }
+
   // ── Human-mimicking methods ────────────────────────────────────
 
   async startTyping(chatId: string): Promise<void> {

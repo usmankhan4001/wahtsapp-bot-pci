@@ -34,6 +34,11 @@ export interface MessagingAdapter {
   sendText(chatId: string, text: string): Promise<void>;
   /** Send a document (e.g. the proposal PDF) to a chat. */
   sendDocument(chatId: string, doc: OutgoingDocument): Promise<void>;
+  /** Send a document or image to a chat by public URL (brochures, floor plans). */
+  sendByUrl(
+    chatId: string,
+    media: { kind: "document" | "image"; url: string; filename?: string; caption?: string },
+  ): Promise<void>;
   /** Normalize a raw provider webhook body into IncomingMessage, or null if not a user text message we should handle. */
   parseWebhook(body: unknown): IncomingMessage | null;
 
