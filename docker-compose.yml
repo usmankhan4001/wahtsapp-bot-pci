@@ -15,6 +15,11 @@ services:
       WAHA_API_KEY: ${WAHA_API_KEY}
       WAHA_WEBHOOK_URL: http://bot:8090/webhook/waha?token=${WEBHOOK_TOKEN}
       WAHA_WEBHOOK_EVENTS: message
+      # Pin dashboard + swagger logins so they don't regenerate on each restart.
+      WAHA_DASHBOARD_USERNAME: ${WAHA_DASHBOARD_USERNAME:-admin}
+      WAHA_DASHBOARD_PASSWORD: ${WAHA_DASHBOARD_PASSWORD}
+      WHATSAPP_SWAGGER_USERNAME: ${WHATSAPP_SWAGGER_USERNAME:-admin}
+      WHATSAPP_SWAGGER_PASSWORD: ${WHATSAPP_SWAGGER_PASSWORD}
     volumes:
       - waha-sessions:/app/.sessions
 
