@@ -74,11 +74,11 @@ export const toolDeclarations = [
   {
     name: "generate_proposal",
     description:
-      "Generate and send the payment-proposal PDF to the customer for a specific unit. Call ONLY after you have the unit id and the customer's payment preference. For installment plans, include down payment %, on-possession %, and duration in months.",
+      "Generate and send the payment-proposal PDF to the customer for a specific unit. Call ONLY after you have the EXACT numeric unit ID. You MUST call search_units first to get the correct unitId. Do not guess or use the unit name.",
     parameters: {
       type: "OBJECT",
       properties: {
-        unitId: { type: "STRING", description: "Unit product id (from search_units)." },
+        unitId: { type: "STRING", description: "The EXACT numeric unit product ID (e.g. '6781') from search_units. Do NOT use the unit name (e.g. 'BPTF-001A')." },
         plan: { type: "STRING", enum: ["full", "installment"] },
         downPaymentPercent: { type: "NUMBER", description: "e.g. 50 (installment only; min 30)." },
         possessionPercent: { type: "NUMBER", description: "On-possession %, usually 10 or 20." },

@@ -93,8 +93,13 @@ export class BitrixClient {
 
   /** Full product detail. */
   async getProduct(productId: string): Promise<ProductDetail | null> {
-    const data = await post<{ product?: ProductDetail }>("/product", { productId });
-    return data.product ?? null;
+    try {
+      const data = await post<{ product?: ProductDetail }>("/product", { productId });
+      return data.product ?? null;
+    } catch (err) {
+      logger.error(`Bitrix getProduct failed for ID ${productId}:`, err);
+      return null;
+    }
   }
 
   /**
