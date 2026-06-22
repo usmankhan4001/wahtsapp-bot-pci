@@ -4,6 +4,58 @@ This stack has two services — **waha** (WhatsApp gateway) and **bot** (AI sale
 They run together in one Docker Compose project; WAHA delivers incoming messages to
 the bot over the internal network, and the bot replies + sends proposal PDFs.
 
+## RECOMMENDED: deploy WAHA and the bot as TWO separate Dokploy apps
+
+Running them separately means a **bot redeploy never restarts WAHA**, so you scan
+the QR once and the session stays alive. They talk over their public HTTPS domains.
+
+### A) WAHA app (standalone)
+1. Dokploy → Create → **Application** → Docker Image: `devlikeapro/waha:latest`.
+2. **Volume:** mount a volume at `/app/.sessions` (persists the WhatsApp login).
+3. **Environment:**
+   ```
+   WAHA_API_KEY=<your key>
+   WHATSAPP_DEFAULT_ENGINE=WEBJS
+   WAHA_DASHBOARD_USERNAME=admin
+   WAHA_DASHBOARD_PASSWORD=<pick>
+   WHATSAPP_SWAGGER_USERNAME=admin
+   WHATSAPP_SWAGGER_PASSWORD=<pick>
+   WHATSAPP_HOOK_URL=https://bot-pci.<yourdomain>/webhook/waha?token=<WEBHOOK_TOKEN>
+   WHATSAPP_HOOK_EVENTS=message
+   ```
+4. **Domain:** `waha-pci.<yourdomain>` → container port **3000** (HTTPS + Basic Auth).
+5. Deploy → open the domain → start the `default` session → **scan the QR once**.
+
+### B) Bot app (standalone, from this repo)
+1. Dokploy → Create → **Application** → Source: GitHub `usmankhan4001/wahtsapp-bot-pci`,
+   branch `main`, **Build type: Dockerfile**.
+2. **Volume:** mount a volume at `/app/data` (persists per-chat sessions).
+3. **Environment:**
+   ```
+   PORT=8090
+   WEBHOOK_TOKEN=<same token used in WAHA's WHATSAPP_HOOK_URL>
+   WAHA_BASE_URL=https://waha-pci.<yourdomain>
+   WAHA_API_KEY=<same as WAHA app>
+   GEMINI_API_KEY=<your key>
+   GEMINI_MODEL=gemini-2.5-flash
+   BITRIX_API_BASE=https://calcenchancev2.premierchoiceint.online
+   SALES_MANAGER_WHATSAPP=923097772379
+   TEAM_B2B_WHATSAPP=923114882634
+   TEAM_B2C_WHATSAPP=923097772379
+   ```
+4. **Domain:** `bot-pci.<yourdomain>` → container port **8090** (HTTPS). This is required
+   so WAHA's webhook can reach the bot.
+5. Deploy → check logs for the startup checklist + `WAHA session WORKING ✅`.
+
+### Test
+Message the bot number from another phone → language prompt → sales flow → PDF.
+
+---
+
+## ALTERNATIVE: single Compose stack
+The `docker-compose.yml` in this repo runs both together (internal networking, no bot
+domain needed). Simpler, but a redeploy restarts WAHA and may require re-scanning.
+
 ## Prerequisites
 - A Dokploy server (VPS) up and running.
 - A dedicated **2nd WhatsApp number** for the bot (a phone that can scan a QR once).
