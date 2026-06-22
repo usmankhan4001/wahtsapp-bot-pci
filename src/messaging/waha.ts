@@ -23,6 +23,61 @@ function headers(): Record<string, string> {
 }
 
 export class WahaAdapter implements MessagingAdapter {
+  /** Current status of the default session, or null if WAHA unreachable. */
+  async getSessionStatus(): Promise<string | null> {
+    try {
+      const res = await fetch(
+        `${config.waha.baseUrl}/api/sessions/${config.waha.session}`,
+        { headers: headers() },
+      );
+      if (!res.ok) return null;
+      const data = (await res.json()) as any;
+      return data?.status ?? null;
+    } catch {
+      return null;
+    }
+  }
+
+  /** Start the default session (idempotent; ignores "already started"). */
+  async startSession(): Promise<void> {
+    try {
+      await fetch(
+        `${config.waha.baseUrl}/api/sessions/${config.waha.session}/start`,
+        { method: "POST", headers: headers() },
+      );
+    } catch (err) {
+      logger.error("WAHA startSession failed", err);
+    }
+  }
+
+  /**
+   * Wait for WAHA to be reachable, then make sure the session is running.
+   * Retries because WAHA may boot slower than the bot. Logs clear guidance.
+   */
+  async ensureSession(retries = 12): Promise<void> {
+    for (let i = 0; i < retries; i++) {
+      const status = await this.getSessionStatus();
+      if (status === null) {
+        logger.warn(`WAHA not reachable yet (try ${i + 1}/${retries})…`);
+      } else if (status === "WORKING") {
+        logger.info("WAHA session WORKING — ready to chat. ✅");
+        return;
+      } else if (status === "STOPPED" || status === "FAILED") {
+        logger.info(`WAHA session ${status} — starting it…`);
+        await this.startSession();
+      } else if (status === "SCAN_QR_CODE") {
+        logger.warn(
+          "WAHA session needs a QR scan. Open the WAHA dashboard and scan with the bot number.",
+        );
+        return;
+      } else {
+        logger.info(`WAHA session status: ${status} (waiting)…`);
+      }
+      await new Promise((r) => setTimeout(r, 5000));
+    }
+    logger.warn("Gave up auto-starting the WAHA session; check the dashboard.");
+  }
+
   async sendText(chatId: string, text: string): Promise<void> {
     const res = await fetch(`${config.waha.baseUrl}/api/sendText`, {
       method: "POST",

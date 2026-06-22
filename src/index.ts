@@ -77,8 +77,24 @@ async function handleMessage(msg: IncomingMessage): Promise<void> {
   await bot.handle(msg);
 }
 
-app.listen(config.port, () => {
+function startupDiagnostics(): void {
+  const ok = (b: boolean) => (b ? "✅" : "❌ MISSING");
+  logger.info("── PCI WhatsApp Bot — startup checks ──");
+  logger.info(`  WAHA base URL ........ ${config.waha.baseUrl} ${ok(!!config.waha.baseUrl)}`);
+  logger.info(`  WAHA API key ......... ${ok(!!config.waha.apiKey)}`);
+  logger.info(`  Webhook token ........ ${ok(!!config.webhookToken)}`);
+  logger.info(`  Gemini API key ....... ${ok(!!config.gemini.apiKey)} (model: ${config.gemini.model})`);
+  logger.info(`  Bitrix API base ...... ${config.bitrixApiBase || "❌ MISSING"}`);
+  logger.info(`  Sales manager # ...... ${config.contacts.salesManager || "(unset)"}`);
+  if (!config.gemini.apiKey)
+    logger.warn("GEMINI_API_KEY is not set — the bot will receive messages but cannot generate replies. Set it in the env and redeploy.");
+  if (!config.webhookToken)
+    logger.warn("WEBHOOK_TOKEN is not set — webhook auth is effectively open.");
+}
+
+app.listen(config.port, async () => {
   logger.info(`PCI WhatsApp Bot listening on :${config.port}`);
-  logger.info(`WAHA base: ${config.waha.baseUrl} (session: ${config.waha.session})`);
-  logger.info(`Webhook:  POST /webhook/waha?token=<WEBHOOK_TOKEN>`);
+  startupDiagnostics();
+  // Auto-start the WhatsApp session so a redeploy doesn't require manual clicks.
+  await messaging.ensureSession();
 });
