@@ -1,50 +1,65 @@
-# PCI WhatsApp Bot
+# Premier Choice International WhatsApp Sales Assistant
 
-WhatsApp AI sales assistant for **Premier Choice International**. A lead messages the
-bot; it chats as a professional sales executive (Urdu / Roman Urdu / English), pulls
-**live unit availability** from the existing Bitrix24 calculator backend, builds a
-**payment proposal PDF**, and sends it on WhatsApp — then notifies the sales manager.
-It can also hand a chat off to the **B2B / B2C / Customer Care** teams.
+A robust, enterprise-grade AI sales assistant built to automate the real estate qualification and proposal generation process over WhatsApp. Designed for Premier Choice International, this system serves as an initial point of contact, seamlessly qualifying leads before handing them over to the appropriate human sales or support teams.
+
+## System Overview
+
+The application integrates deeply with existing infrastructure to provide a cohesive customer experience:
+- **Natural Language Understanding**: Powered by Google's Gemini models to handle unstructured customer input in English, Urdu, and Roman Urdu.
+- **Dynamic Inventory Verification**: Direct integration with the Bitrix24 backend to query live unit availability, ensuring customers receive accurate and up-to-date information.
+- **Automated Proposal Generation**: Capable of building and rendering comprehensive payment proposals in PDF format directly within the chat window.
+- **Retrieval-Augmented Generation (RAG)**: Integrates an administrative dashboard that ingests official PDF brochures, embedding them into a local vector index to accurately answer detailed project inquiries.
 
 ## Architecture
 
+The system is decoupled to allow maximum flexibility, isolating the core business logic from the messaging adapter.
+
 ```
-WhatsApp (2nd number) ── WAHA (standalone, :3001) ──webhook──▶ Bot service (:8090)
-                                                                  │
-                         Bitrix24 calculator API ◀───────────────┤
-                         Gemini (sales AI + extraction) ◀─────────┤
-                         Proposal engine (calc + PDF) ◀───────────┘
-```
-
-All WhatsApp I/O goes through `src/messaging/adapter.ts`, so WAHA can be swapped for
-the official **WABA Cloud API** later without touching the bot core.
-
-## Status — Phase 1 (scaffold)
-- [x] HTTP server + health check
-- [x] Messaging adapter interface + WAHA adapter (send text / send document / parse webhook)
-- [x] Webhook endpoint with token auth → **echo reply** (proves the number works)
-- [x] Standalone WAHA via `docker-compose.yml`
-- [ ] Phase 2: Bitrix availability tools
-- [ ] Phase 3: Gemini conversation + language preference + structured extraction
-- [ ] Phase 4: server-side payment calc + proposal PDF
-- [ ] Phase 5: sales-manager notifications + team handoff + per-chat pause
-
-## Run locally (Node)
-```bash
-cp .env.example .env   # fill in values
-npm install
-npm run dev
+WhatsApp API Gateway (WAHA) <--> Bot Core Service (Node.js)
+                                      |
+                                      +--> Bitrix24 (Inventory & Pricing)
+                                      +--> Gemini API (LLM & Embeddings)
+                                      +--> Document Processing (PDF Proposals & RAG)
+                                      +--> Cloudflare R2 (Static Assets)
 ```
 
-## Run with Docker (recommended — includes standalone WAHA)
-```bash
-cp .env.example .env   # set WEBHOOK_TOKEN, WAHA_API_KEY, etc.
-docker compose up -d --build
-# open http://localhost:3001  -> scan the QR with the PCI 2nd number
-```
-Once the session is authenticated, message the number from any phone — you should get
-the Phase 1 echo reply.
+By abstracting the WhatsApp I/O through a dedicated messaging adapter, the underlying WAHA gateway can be transparently swapped for the official WhatsApp Business (WABA) Cloud API in the future without modifying the core system.
 
-## Config
-See `.env.example`. Numbers/keys (sales manager, B2B/B2C/Care, Gemini) can be added
-any time without code changes.
+## Key Features
+
+- **Structured Qualification**: Systematically qualifies leads by budget, intended use, property type, and project preference.
+- **CRM Handoffs**: Compiles comprehensive lead profiles and transmits them to designated human sales executives or support teams.
+- **Admin Dashboard**: A secure web interface allowing non-technical staff to upload project brochures, which are automatically parsed, chunked, and vectorized for the AI's knowledge base.
+- **Resilient Session Management**: Includes debounced persistence, idle session garbage collection, and robust error handling to maintain conversation continuity.
+
+## Local Development Setup
+
+Ensure you have Node.js (version 22 recommended) and Docker installed on your system.
+
+1. Clone the repository and navigate to the project root.
+2. Duplicate `.env.example` to `.env` and populate the required environment variables.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Production Deployment
+
+The recommended deployment strategy utilizes Docker to ensure environmental consistency. A multi-stage Dockerfile is provided to minimize image size while securing necessary rendering dependencies.
+
+For detailed deployment instructions on Dokploy or similar platforms, please refer to the deployment documentation included in the repository (`DEPLOY-DOKPLOY.md`).
+
+## Configuration Reference
+
+The application behavior can be modified extensively via environment variables without requiring code changes. Key configurations include:
+- `WEBHOOK_TOKEN`: Security token for verifying inbound messaging webhooks.
+- `WAHA_API_KEY`: Authentication key for the WhatsApp gateway.
+- `GEMINI_API_KEY`: Authentication for the LLM provider.
+- `SALES_MANAGER_WHATSAPP`: Routing destination for generated proposals and manager notifications.
+- `ADMIN_PASSWORD`: Access credential for the RAG ingestion dashboard.
+
+Please review `.env.example` for the complete list of configurable variables.
