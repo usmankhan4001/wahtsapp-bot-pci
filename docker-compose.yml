@@ -6,8 +6,11 @@ services:
   waha:
     image: devlikeapro/waha:latest
     restart: unless-stopped
-    ports:
-      - "3001:3000" # expose for the one-time QR scan (protect via Dokploy domain/auth)
+    # No host port binding (avoids clashes with other stacks). Expose the WAHA
+    # dashboard for the one-time QR scan via a Dokploy Domain -> service waha,
+    # container port 3000 (enable Basic Auth on it).
+    expose:
+      - "3000"
     environment:
       WAHA_API_KEY: ${WAHA_API_KEY}
       WAHA_WEBHOOK_URL: http://bot:8090/webhook/waha?token=${WEBHOOK_TOKEN}
