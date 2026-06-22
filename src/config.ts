@@ -60,4 +60,6 @@ export const config = {
     teamB2C: digitsOnly(process.env.TEAM_B2C_WHATSAPP),
     teamCare: digitsOnly(process.env.TEAM_CARE_WHATSAPP),
   },
+
+  adminPassword: cleanToken(req("ADMIN_PASSWORD", "devpassword")),
 } as const;

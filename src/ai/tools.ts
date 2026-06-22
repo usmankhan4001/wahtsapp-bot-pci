@@ -25,6 +25,19 @@ export const toolDeclarations = [
     },
   },
   {
+    name: "update_lead_profile",
+    description: "Silently record or update the customer's qualification profile whenever they mention their budget, intent, property type, or preferred project. Call this whenever new information is revealed.",
+    parameters: {
+      type: "OBJECT",
+      properties: {
+        budget: { type: "STRING", description: "Customer's budget range, e.g., '5 Crore', '10-20 million'" },
+        intent: { type: "STRING", enum: ["investment", "personal"], description: "Whether they are buying for investment or personal use." },
+        propertyType: { type: "STRING", enum: ["residential", "commercial"], description: "Residential vs Commercial." },
+        projectPreference: { type: "STRING", description: "Name of the project they are interested in." }
+      }
+    }
+  },
+  {
     name: "list_projects",
     description:
       "List all Premier Choice International projects that have inventory. Use to know which projects exist before searching units.",
@@ -205,6 +218,18 @@ export async function executeTool(
       ctx.session.language = language;
       sessions.save(ctx.session);
       return { ok: true, language };
+    }
+
+    case "update_lead_profile": {
+      ctx.session.leadProfile = {
+        ...ctx.session.leadProfile,
+        ...(args.budget ? { budget: String(args.budget) } : {}),
+        ...(args.intent ? { intent: String(args.intent) as "investment" | "personal" } : {}),
+        ...(args.propertyType ? { propertyType: String(args.propertyType) as "residential" | "commercial" } : {}),
+        ...(args.projectPreference ? { projectPreference: String(args.projectPreference) } : {})
+      };
+      sessions.save(ctx.session);
+      return { ok: true, message: "Profile updated silently." };
     }
 
     case "list_projects": {

@@ -1,10 +1,18 @@
 // Per-chat conversation state. In-memory with lazy JSON persistence so the bot
 // survives restarts without a database. Swap for SQLite/Redis later if needed.
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFile } from "node:fs";
 import { dirname } from "node:path";
+import { logger } from "../logger.js";
 
 export type Language = "english" | "urdu" | "roman_urdu";
 export type ChatStatus = "active" | "paused" | "handed_off";
+
+export interface LeadProfile {
+  budget?: string;
+  intent?: "investment" | "personal";
+  propertyType?: "residential" | "commercial";
+  projectPreference?: string;
+}
 
 /** One turn of conversation in Gemini's content format. */
 export interface Turn {
@@ -20,6 +28,7 @@ export interface Session {
   status: ChatStatus;
   /** Set true once we've greeted + asked language, so we don't repeat it. */
   greeted: boolean;
+  leadProfile?: LeadProfile;
   history: Turn[];
   createdAt: number;
   updatedAt: number;
@@ -49,9 +58,12 @@ function sanitizeHistory(h: unknown): Turn[] {
 
 class SessionStore {
   private map = new Map<string, Session>();
+  private persistTimeout: NodeJS.Timeout | null = null;
 
   constructor() {
     this.load();
+    // GC every 15 minutes
+    setInterval(() => this.gc(), 15 * 60 * 1000);
   }
 
   get(chatId: string, name?: string): Session {
@@ -102,11 +114,32 @@ class SessionStore {
   }
 
   private persist(): void {
-    try {
-      mkdirSync(dirname(DATA_FILE), { recursive: true });
-      writeFileSync(DATA_FILE, JSON.stringify([...this.map.values()], null, 0));
-    } catch {
-      /* non-fatal */
+    if (this.persistTimeout) return;
+    this.persistTimeout = setTimeout(() => {
+      this.persistTimeout = null;
+      try {
+        mkdirSync(dirname(DATA_FILE), { recursive: true });
+        writeFile(DATA_FILE, JSON.stringify([...this.map.values()], null, 0), (err) => {
+          if (err) logger.error("Failed to persist sessions", err);
+        });
+      } catch (err) {
+        logger.error("Failed to trigger session persistence", err);
+      }
+    }, 2000); // 2-second debounce
+  }
+
+  private gc(): void {
+    const now = Date.now();
+    let deleted = 0;
+    for (const [id, s] of this.map.entries()) {
+      if (now - s.updatedAt > RESET_MS) {
+        this.map.delete(id);
+        deleted++;
+      }
+    }
+    if (deleted > 0) {
+      logger.info(`Session GC: cleaned up ${deleted} stale sessions`);
+      this.persist();
     }
   }
 }

@@ -6,6 +6,7 @@ import cors from "cors";
 import { config } from "./config.js";
 import { logger } from "./logger.js";
 import { WahaAdapter } from "./messaging/waha.js";
+import { adminRouter } from "./admin/routes.js";
 import type { IncomingMessage } from "./messaging/adapter.js";
 import { bitrix } from "./bitrix/client.js";
 import { BotCore } from "./bot/core.js";
@@ -13,6 +14,8 @@ import { BotCore } from "./bot/core.js";
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "5mb" }));
+
+app.use("/admin", adminRouter);
 
 const messaging = new WahaAdapter();
 const bot = new BotCore(messaging);

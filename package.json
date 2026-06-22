@@ -7,12 +7,15 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run"
   },
   "license": "ISC",
   "dependencies": {
+    "@google/genai": "^2.9.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "multer": "^2.2.0",
     "pdf-parse": "^2.4.5",
     "pdfkit": "^0.19.1",
     "puppeteer": "^25.1.0"
@@ -20,10 +23,12 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
+    "@types/multer": "^2.1.0",
     "@types/node": "^22.0.0",
     "@types/pdf-parse": "^1.1.5",
     "@types/pdfkit": "^0.17.6",
     "tsx": "^4.19.0",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.9"
   }
 }

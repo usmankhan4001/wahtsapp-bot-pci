@@ -5,6 +5,7 @@
 // base URL (config.mediaBaseUrl), e.g. "box-park-3/brochure.pdf" resolves to
 // https://media.premierchoiceint.online/box-park-3/brochure.pdf
 import { config } from "../config.js";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 
 export interface ProjectMedia {
   /** Canonical project name (should match the Bitrix project name when possible). */
@@ -21,43 +22,25 @@ export interface ProjectMedia {
   location?: string;
 }
 
-// ── EDIT THIS as files are uploaded to R2 ──────────────────────────
-// (Empty paths are fine — tools will say "not available yet" gracefully.)
-export const MEDIA: ProjectMedia[] = [
-  {
-    name: "Box Park-3",
-    slug: "box-park-3",
-    aliases: ["box park 3", "bp3", "box park three", "boxpark3"],
-    brochure: "box-park-3/brochure.pdf",
-    paymentPlan: "box-park-3/payment-plan.pdf",
-  },
-  {
-    name: "Buraq Heights",
-    slug: "buraq-heights",
-    aliases: ["buraq", "buraq height", "buraqheights"],
-    brochure: "buraq-heights/brochure.pdf",
-    floorPlans: [{ label: "Layouts", path: "buraq-heights/floor-plans.pdf" }],
-  },
-  {
-    name: "Grand Orchard",
-    slug: "grand-orchard",
-    aliases: ["orchard", "dha orchard", "grandorchard"],
-    brochure: "grand-orchard/brochure.pdf",
-    paymentPlan: "grand-orchard/payment-plan.pdf",
-    floorPlans: Array.from({ length: 23 }, (_, i) => ({
-      label: `Layout Page ${i + 1}`,
-      path: `grand-orchard/layouts/page-${(i + 1).toString().padStart(2, "0")}.pdf`
-    })),
-  },
-  {
-    name: "River Courtyard Tower-1",
-    slug: "river-courtyard-1",
-    aliases: ["river courtyard", "river courtyard 1", "rcy1", "rcy", "river courtyard tower 1"],
-    brochure: "river-courtyard-1/brochure.pdf",
-    floorPlans: [{ label: "Layouts", path: "river-courtyard-1/floor-plans.pdf" }],
-    paymentPlan: "river-courtyard-1/payment-plan.pdf",
-  },
-];
+const REGISTRY_FILE = "data/registry.json";
+
+export let MEDIA: ProjectMedia[] = [];
+
+export function loadRegistry() {
+  if (existsSync(REGISTRY_FILE)) {
+    try {
+      MEDIA = JSON.parse(readFileSync(REGISTRY_FILE, "utf-8"));
+    } catch (e) {
+      console.error("Failed to parse registry.json", e);
+    }
+  }
+}
+
+export function saveRegistry() {
+  writeFileSync(REGISTRY_FILE, JSON.stringify(MEDIA, null, 2));
+}
+
+loadRegistry();
 
 const abs = (p?: string): string | undefined =>
   p ? `${config.mediaBaseUrl}/${p.replace(/^\/+/, "")}` : undefined;

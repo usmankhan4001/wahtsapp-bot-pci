@@ -15,6 +15,17 @@ const TEAM_NUMBER: Record<HandoffSignal["team"], string> = {
   CARE: config.contacts.teamCare || config.contacts.salesManager,
 };
 
+function formatProfile(session: any): string {
+  const p = session.leadProfile;
+  if (!p || Object.keys(p).length === 0) return "";
+  let s = "\n\n📋 *Profile:*";
+  if (p.intent) s += `\n• Intent: ${p.intent}`;
+  if (p.propertyType) s += `\n• Type: ${p.propertyType}`;
+  if (p.budget) s += `\n• Budget: ${p.budget}`;
+  if (p.projectPreference) s += `\n• Project: ${p.projectPreference}`;
+  return s;
+}
+
 export class BotCore {
   // Recently handled message ids — WAHA sometimes delivers a webhook twice.
   private seen = new Set<string>();
@@ -175,9 +186,10 @@ export class BotCore {
 
       // Notify the sales manager that a proposal was sent.
       if (config.contacts.salesManager) {
+        const session = sessions.get(msg.chatId);
         this.messaging.sendText(
           config.contacts.salesManager,
-          `📄 *PCI Bot* — proposal sent.\nLead: ${msg.name ?? "Unknown"} (+${msg.from})\n${out.summary}`,
+          `📄 *PCI Bot* — proposal sent.\nLead: ${msg.name ?? "Unknown"} (+${msg.from})${formatProfile(session)}\n\n${out.summary}`,
         ).catch((e) => logger.error("Manager proposal notification failed", e));
       }
     } catch (err) {
@@ -198,7 +210,8 @@ export class BotCore {
     const target = TEAM_NUMBER[h.team];
     const summary =
       `🤝 *PCI Bot — ${h.team} handoff*\n` +
-      `Lead: ${msg.name ?? "Unknown"} (+${msg.from})\n` +
+      `Lead: ${msg.name ?? "Unknown"} (+${msg.from})` +
+      `${formatProfile(session)}\n\n` +
       `Reason: ${h.reason}`;
 
     if (target) {
