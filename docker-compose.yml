@@ -13,9 +13,10 @@ services:
       - "3000"
     environment:
       WAHA_API_KEY: ${WAHA_API_KEY}
-      # NOWEB engine handles WhatsApp's new LID addressing (WEBJS throws
-      # "No LID for user" on reply). Changing engine requires a fresh QR scan.
-      WHATSAPP_DEFAULT_ENGINE: ${WAHA_ENGINE:-NOWEB}
+      # WEBJS is the proven-good engine on this number (connects/receives fine);
+      # the "No LID for user" reply error was a chatId-mangling bug in the bot,
+      # now fixed (we pass @lid JIDs through unchanged). Override via WAHA_ENGINE.
+      WHATSAPP_DEFAULT_ENGINE: ${WAHA_ENGINE:-WEBJS}
       # WAHA reads these exact names for the global webhook (not WAHA_WEBHOOK_*).
       WHATSAPP_HOOK_URL: http://bot:8090/webhook/waha?token=${WEBHOOK_TOKEN}
       WHATSAPP_HOOK_EVENTS: message

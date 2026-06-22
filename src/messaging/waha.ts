@@ -10,9 +10,13 @@ import type {
 
 const digitsOnly = (s: string) => String(s || "").replace(/[^\d]/g, "");
 
-/** Convert a bare phone number to a WAHA chatId; pass through if already `@c.us`/`@g.us`. */
+/**
+ * Convert a bare phone number to a WAHA chatId. If it's already a JID of ANY
+ * kind (@c.us, @g.us, @lid, @s.whatsapp.net), pass it through UNCHANGED — never
+ * rewrite a @lid into @c.us (that caused "No LID for user" on reply).
+ */
 export function toChatId(numberOrChatId: string): string {
-  if (/@(c|g)\.us$/.test(numberOrChatId)) return numberOrChatId;
+  if (numberOrChatId.includes("@")) return numberOrChatId;
   return `${digitsOnly(numberOrChatId)}@c.us`;
 }
 
