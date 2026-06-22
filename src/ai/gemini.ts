@@ -112,9 +112,11 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
   const contents: Content[] = session.history
     .map((t) => ({
       role: t.role,
-      parts: (t.parts as Part[]).filter((p) => typeof p.text === "string" && p.text.length > 0),
+      parts: (Array.isArray(t.parts) ? (t.parts as Part[]) : []).filter(
+        (p) => p && typeof p.text === "string" && p.text.length > 0,
+      ),
     }))
-    .filter((c) => c.parts.length > 0);
+    .filter((c) => (c.role === "user" || c.role === "model") && c.parts.length > 0);
   contents.push({ role: "user", parts: [{ text: userText }] });
 
   const MAX_TOOL_ROUNDS = 6;
