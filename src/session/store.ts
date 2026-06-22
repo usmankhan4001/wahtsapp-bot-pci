@@ -28,6 +28,25 @@ export interface Session {
 const DATA_FILE = "data/sessions.json";
 const MAX_HISTORY = 40; // keep last N turns to bound token usage
 
+// After this much inactivity, treat the next message as a NEW conversation:
+// reset history/language/greeting so the bot greets fresh (per-chat "new bot").
+const RESET_MS =
+  (Number(String(process.env.CONVERSATION_RESET_MINUTES ?? "").trim()) || 60) * 60 * 1000;
+
+/** Keep only valid text turns — strips any functionCall/functionResponse parts
+ *  (defends against older poisoned sessions on disk). */
+function sanitizeHistory(h: unknown): Turn[] {
+  if (!Array.isArray(h)) return [];
+  return (h as Turn[])
+    .map((t) => ({
+      role: t?.role,
+      parts: (Array.isArray(t?.parts) ? t.parts : []).filter(
+        (p: any) => p && typeof p.text === "string" && p.text.length > 0,
+      ),
+    }))
+    .filter((t) => (t.role === "user" || t.role === "model") && t.parts.length > 0);
+}
+
 class SessionStore {
   private map = new Map<string, Session>();
 
@@ -37,6 +56,12 @@ class SessionStore {
 
   get(chatId: string, name?: string): Session {
     let s = this.map.get(chatId);
+
+    // New conversation after a long gap → reset to a fresh bot for this chat.
+    if (s && Date.now() - s.updatedAt > RESET_MS) {
+      s = undefined;
+    }
+
     if (!s) {
       s = {
         chatId,
@@ -49,7 +74,7 @@ class SessionStore {
       };
       this.map.set(chatId, s);
     }
-    if (name && !s.name) s.name = name;
+    if (name) s.name = name;
     return s;
   }
 
@@ -66,7 +91,10 @@ class SessionStore {
     try {
       if (existsSync(DATA_FILE)) {
         const raw = JSON.parse(readFileSync(DATA_FILE, "utf8")) as Session[];
-        for (const s of raw) this.map.set(s.chatId, s);
+        for (const s of raw) {
+          s.history = sanitizeHistory(s.history); // clean any old poisoned turns
+          this.map.set(s.chatId, s);
+        }
       }
     } catch {
       /* start fresh on corrupt file */

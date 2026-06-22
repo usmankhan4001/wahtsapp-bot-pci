@@ -106,11 +106,15 @@ export interface AgentResult {
 export async function runAgentTurn(session: Session, userText: string): Promise<AgentResult> {
   const ctx: ToolContext = { session };
 
-  // Build contents from stored history + the new user message.
-  const contents: Content[] = session.history.map((t) => ({
-    role: t.role,
-    parts: t.parts as Part[],
-  }));
+  // Build contents from stored history (TEXT-ONLY — we never persist tool turns,
+  // and we defensively strip any non-text parts so the request can never violate
+  // Gemini's "functionResponse must follow functionCall" rule) + the new message.
+  const contents: Content[] = session.history
+    .map((t) => ({
+      role: t.role,
+      parts: (t.parts as Part[]).filter((p) => typeof p.text === "string" && p.text.length > 0),
+    }))
+    .filter((c) => c.parts.length > 0);
   contents.push({ role: "user", parts: [{ text: userText }] });
 
   const MAX_TOOL_ROUNDS = 6;
@@ -145,11 +149,11 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
 
   if (!finalText) finalText = "Sorry, could you please rephrase that?";
 
-  // Persist the new turns (everything after the replayed history).
-  const newTurns: Turn[] = contents
-    .slice(session.history.length)
-    .map((c) => ({ role: c.role, parts: c.parts }));
-  session.history.push(...newTurns);
+  // Persist ONLY the user text and the final model text — never the intermediate
+  // functionCall/functionResponse turns. This makes saved history impossible to
+  // poison (the earlier cause of permanent "technical issue" errors).
+  session.history.push({ role: "user", parts: [{ text: userText }] });
+  session.history.push({ role: "model", parts: [{ text: finalText }] });
   session.greeted = true;
   sessions.save(session);
 
