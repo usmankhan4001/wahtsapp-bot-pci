@@ -1,0 +1,41 @@
+# PCI WhatsApp Bot — deployable as a Dokploy "Docker Compose" stack.
+# Set the environment variables in the Dokploy panel (they interpolate below).
+# WAHA and the bot share this stack's network, so WAHA reaches the bot
+# internally at http://bot:8090 — no public URL needed for the webhook.
+services:
+  waha:
+    image: devlikeapro/waha:latest
+    restart: unless-stopped
+    ports:
+      - "3001:3000" # expose for the one-time QR scan (protect via Dokploy domain/auth)
+    environment:
+      WAHA_API_KEY: ${WAHA_API_KEY}
+      WAHA_WEBHOOK_URL: http://bot:8090/webhook/waha?token=${WEBHOOK_TOKEN}
+      WAHA_WEBHOOK_EVENTS: message
+    volumes:
+      - waha-sessions:/app/.sessions
+
+  bot:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - waha
+    environment:
+      PORT: 8090
+      WEBHOOK_TOKEN: ${WEBHOOK_TOKEN}
+      WAHA_BASE_URL: http://waha:3000
+      WAHA_SESSION: ${WAHA_SESSION:-default}
+      WAHA_API_KEY: ${WAHA_API_KEY}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.0-flash}
+      BITRIX_API_BASE: ${BITRIX_API_BASE:-https://calcenchancev2.premierchoiceint.online}
+      SALES_MANAGER_WHATSAPP: ${SALES_MANAGER_WHATSAPP}
+      TEAM_B2B_WHATSAPP: ${TEAM_B2B_WHATSAPP}
+      TEAM_B2C_WHATSAPP: ${TEAM_B2C_WHATSAPP}
+      TEAM_CARE_WHATSAPP: ${TEAM_CARE_WHATSAPP}
+    volumes:
+      - bot-data:/app/data # persists per-chat sessions across redeploys
+
+volumes:
+  waha-sessions:
+  bot-data:
