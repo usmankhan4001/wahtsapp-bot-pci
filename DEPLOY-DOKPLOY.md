@@ -1,118 +1,139 @@
-# Deploying the PCI WhatsApp Bot on Dokploy
+# PCI WhatsApp Bot — Deployment Guide (Dokploy)
 
-This stack has two services — **waha** (WhatsApp gateway) and **bot** (AI sales agent).
-They run together in one Docker Compose project; WAHA delivers incoming messages to
-the bot over the internal network, and the bot replies + sends proposal PDFs.
+This is the complete, current guide. The system is **two separate Dokploy
+Applications** that talk over their public HTTPS domains:
 
-## RECOMMENDED: deploy WAHA and the bot as TWO separate Dokploy apps
+```
+WhatsApp number ── WAHA app (devlikeapro/waha) ──webhook──▶ Bot app (this repo)
+                       waha-pci-bot.premierchoiceint.online      ai-reply-bot.premierchoiceint.online
+                                                                   │
+                              Bitrix24 calculator API ◀───────────┤  (live units + prices)
+                              Gemini (chat + embeddings) ◀─────────┤  (sales AI + RAG)
+                              Cloudflare R2 media ◀────────────────┘  (brochures/floor plans)
+```
 
-Running them separately means a **bot redeploy never restarts WAHA**, so you scan
-the QR once and the session stays alive. They talk over their public HTTPS domains.
-
-### A) WAHA app (standalone)
-1. Dokploy → Create → **Application** → Docker Image: `devlikeapro/waha:latest`.
-2. **Volume:** mount a volume at `/app/.sessions` (persists the WhatsApp login).
-3. **Environment:**
-   ```
-   WAHA_API_KEY=<your key>
-   WHATSAPP_DEFAULT_ENGINE=WEBJS
-   WAHA_DASHBOARD_USERNAME=admin
-   WAHA_DASHBOARD_PASSWORD=<pick>
-   WHATSAPP_SWAGGER_USERNAME=admin
-   WHATSAPP_SWAGGER_PASSWORD=<pick>
-   WHATSAPP_HOOK_URL=https://bot-pci.<yourdomain>/webhook/waha?token=<WEBHOOK_TOKEN>
-   WHATSAPP_HOOK_EVENTS=message
-   ```
-4. **Domain:** `waha-pci.<yourdomain>` → container port **3000** (HTTPS + Basic Auth).
-5. Deploy → open the domain → start the `default` session → **scan the QR once**.
-
-### B) Bot app (standalone, from this repo)
-1. Dokploy → Create → **Application** → Source: GitHub `usmankhan4001/wahtsapp-bot-pci`,
-   branch `main`, **Build type: Dockerfile**.
-2. **Volume:** mount a volume at `/app/data` (persists per-chat sessions).
-3. **Environment:**
-   ```
-   PORT=8090
-   WEBHOOK_TOKEN=<same token used in WAHA's WHATSAPP_HOOK_URL>
-   WAHA_BASE_URL=https://waha-pci.<yourdomain>
-   WAHA_API_KEY=<same as WAHA app>
-   GEMINI_API_KEY=<your key>
-   GEMINI_MODEL=gemini-2.5-flash
-   BITRIX_API_BASE=https://calcenchancev2.premierchoiceint.online
-   SALES_MANAGER_WHATSAPP=923097772379
-   TEAM_B2B_WHATSAPP=923114882634
-   TEAM_B2C_WHATSAPP=923097772379
-   ```
-4. **Domain:** `bot-pci.<yourdomain>` → container port **8090** (HTTPS). This is required
-   so WAHA's webhook can reach the bot.
-5. Deploy → check logs for the startup checklist + `WAHA session WORKING ✅`.
-
-### Test
-Message the bot number from another phone → language prompt → sales flow → PDF.
+Why two apps: a **bot redeploy never restarts WAHA**, so the scanned WhatsApp
+session stays alive while you iterate.
 
 ---
 
-## ALTERNATIVE: single Compose stack
-The `docker-compose.yml` in this repo runs both together (internal networking, no bot
-domain needed). Simpler, but a redeploy restarts WAHA and may require re-scanning.
+## 0. Prerequisites
+- Dokploy server (VPS) with a wildcard domain on Cloudflare (`*.premierchoiceint.online`).
+- A dedicated **2nd WhatsApp number** (scan a QR once).
+- **Gemini API key**.
+- Repo on GitHub: `usmankhan4001/wahtsapp-bot-pci`.
 
-## Prerequisites
-- A Dokploy server (VPS) up and running.
-- A dedicated **2nd WhatsApp number** for the bot (a phone that can scan a QR once).
-- Your **Gemini API key**.
-- The bot code in a **Git repository** (GitHub/GitLab) that Dokploy can pull,
-  OR upload it as a "Docker Compose" raw stack.
+---
 
-## 1. Push the code to Git
-From `E:\Apps\PCI Whatsapp Bot\bot`:
+## 1. WAHA app (WhatsApp gateway)
+
+**Create → Application → Docker Image:** `devlikeapro/waha:latest`
+
+**Volume:** mount `/app/.sessions` (persists the WhatsApp login across redeploys).
+
+**Environment** — every value must be the literal string (NO `< >` placeholders,
+NO descriptive notes in parentheses, or WAHA refuses to boot):
+```
+WAHA_API_KEY=Pr3m!3r3Ch0!c3@4001USMAN2026
+WHATSAPP_DEFAULT_ENGINE=WEBJS
+WAHA_DASHBOARD_USERNAME=admin
+WAHA_DASHBOARD_PASSWORD=Pr3m!3r3Ch0!c3@4001
+WHATSAPP_SWAGGER_USERNAME=admin
+WHATSAPP_SWAGGER_PASSWORD=Pr3m!3r3Ch0!c3@4001
+WHATSAPP_HOOK_URL=https://ai-reply-bot.premierchoiceint.online/webhook/waha?token=pci_secure_webhook_token_2026
+WHATSAPP_HOOK_EVENTS=message
+```
+- Use the WAHA env names **`WHATSAPP_HOOK_URL` / `WHATSAPP_HOOK_EVENTS`** (not `WAHA_WEBHOOK_*`).
+- The `token=` in the hook URL **must equal** the bot's `WEBHOOK_TOKEN`.
+
+**Domain:** `waha-pci-bot.premierchoiceint.online` → **container port 3000**, HTTPS on.
+Do **not** publish a host port (avoids clashes). Enable Basic Auth on the domain.
+
+---
+
+## 2. Bot app (this repo)
+
+**Create → Application → GitHub:** `usmankhan4001/wahtsapp-bot-pci`, branch `main`,
+**Build Type = Dockerfile** (required — the Dockerfile installs Chromium for the
+pixel-match PDF; without it the bot still works via the pdfkit fallback).
+
+**Volume:** mount `/app/data` (persists chat sessions + the RAG vector index).
+
+**Environment:**
+```
+PORT=8090
+WEBHOOK_TOKEN=pci_secure_webhook_token_2026
+WAHA_BASE_URL=https://waha-pci-bot.premierchoiceint.online
+WAHA_API_KEY=Pr3m!3r3Ch0!c3@4001USMAN2026
+GEMINI_API_KEY=<your gemini key>
+GEMINI_MODEL=gemini-2.5-flash
+GEMINI_EMBED_MODEL=text-embedding-004
+BITRIX_API_BASE=https://calcenchancev2.premierchoiceint.online
+MEDIA_BASE_URL=https://media.premierchoiceint.online
+SALES_MANAGER_WHATSAPP=923097772379
+TEAM_B2B_WHATSAPP=923114882634
+TEAM_B2C_WHATSAPP=923097772379
+CONVERSATION_RESET_MINUTES=60
+```
+- Paste **only the value** — the bot now sanitizes stray notes/spaces, but keep it clean.
+- `GEMINI_MODEL` must be a current model (`gemini-2.5-flash`). `gemini-2.0-flash` is retired (404).
+
+**Domain:** `ai-reply-bot.premierchoiceint.online` → **container port 8090**, HTTPS on.
+Required so WAHA's webhook can reach the bot.
+
+---
+
+## 3. First-time WhatsApp login (once)
+1. Open `https://waha-pci-bot.premierchoiceint.online` (dashboard).
+2. Server dialog → API URL = that same URL, API Key = `WAHA_API_KEY` → Save.
+3. Start the session named exactly **`default`** (WAHA Core only allows `default`).
+4. **Scan the QR** with the 2nd WhatsApp number → status becomes **WORKING**.
+The bot auto-starts the `default` session on each boot, so you only scan once
+(unless you logout or change the engine).
+
+---
+
+## 4. Media + RAG (brochures) — when files are ready
+1. Upload brochures/floor-plans/images to R2 under per-project slugs, e.g.
+   `media.premierchoiceint.online/box-park-3/brochure.pdf`.
+2. Fill real paths in `src/media/registry.ts` (the `MEDIA` array).
+3. Put source PDFs in `media-source/<Project Name>/` and run **`npm run ingest`**
+   (locally or on the server) → writes `data/vectors.json` (the brochure index).
+4. Ensure `data/vectors.json` is present in the bot's `/app/data` volume
+   (commit it, or copy it into the volume), then redeploy.
+
+---
+
+## 5. Verify
 ```bash
-git init && git add . && git commit -m "PCI WhatsApp bot"
-git branch -M main
-git remote add origin <your-repo-url>
-git push -u origin main
+curl https://ai-reply-bot.premierchoiceint.online/version
+#   {"build":"2026-06-22-rag-media-1","model":"gemini-2.5-flash"}
+curl https://ai-reply-bot.premierchoiceint.online/health
+#   {"ok":true,...}
 ```
-(`.env`, `node_modules`, `dist`, `data` are git-ignored — secrets stay out of Git.)
+Check the bot logs for the startup checklist (all ✅) and `WAHA session WORKING ✅`.
+Then message the number from another phone.
 
-## 2. Create the app in Dokploy
-1. **Project → Create Service → Compose**.
-2. Source: your Git repo (branch `main`); Compose path: `docker-compose.yml`.
-3. **Environment** — add these variables (Dokploy injects them into the compose):
+---
 
-| Variable | Value |
-|---|---|
-| `WEBHOOK_TOKEN` | a long random string |
-| `WAHA_API_KEY` | a long random string |
-| `GEMINI_API_KEY` | your Gemini key |
-| `GEMINI_MODEL` | `gemini-2.0-flash` (or a 2.5 model) |
-| `BITRIX_API_BASE` | `https://calcenchancev2.premierchoiceint.online` |
-| `SALES_MANAGER_WHATSAPP` | `923097772379` |
-| `TEAM_B2B_WHATSAPP` | `923114882634` |
-| `TEAM_B2C_WHATSAPP` | `923097772379` |
-| `TEAM_CARE_WHATSAPP` | `923097772379` |
+## 6. Troubleshooting (seen in the wild)
+| Symptom | Cause | Fix |
+|---|---|---|
+| WAHA won't boot, "Invalid global webhook config" | `< >` or notes inside `WHATSAPP_HOOK_URL` | Use the literal URL only |
+| Bot `Exited 1`, `ERR_SOCKET_BAD_PORT` | bad `PORT` value | Use a number or remove it (defaults 8090) |
+| Domain 502 | container crashed OR domain→wrong port | Fix crash; set domain target port (3000 WAHA / 8090 bot) |
+| No `Inbound …` in bot logs | webhook not reaching bot | Check `WHATSAPP_HOOK_URL` host + token match |
+| Reply fails "No LID for user" | sender is a `@lid` JID | Already handled (we reply to the exact JID) |
+| Gemini 404 | retired model | `GEMINI_MODEL=gemini-2.5-flash` |
+| "technical issue" every msg | poisoned session history | Fixed (text-only history); clear `data/sessions.json` once |
+| Proposal apology | Puppeteer/Chromium missing | pdfkit fallback now always sends; for pixel-match use Dockerfile build |
+| Session 422 "only default" | non-`default` session name | Use the `default` session |
 
-4. **Deploy.** Dokploy builds the bot image (Dockerfile uses Debian + Chromium for Puppeteer).
+Clear a stuck session: in the bot container terminal `rm -f /app/data/sessions.json` then restart.
 
-## 3. Authenticate WhatsApp (one-time QR)
-The `waha` service exposes port `3001` for its dashboard.
-- In Dokploy, add a **Domain** to the `waha` service → container port `3000`
-  (e.g. `waha.yourdomain.com`), and enable **Basic Auth** so it isn't public.
-- Open that URL, start the `default` session, and **scan the QR with the 2nd number**.
-- WAHA persists the session in the `waha-sessions` volume — you only scan once.
+---
 
-## 4. Test live
-- Message the 2nd number from any phone.
-- Expected: the bot greets and asks language (English / Urdu / Roman Urdu),
-  qualifies you, pulls live units from Bitrix, and on request sends a proposal PDF.
-- The sales manager number receives a "new lead engaged" and a "proposal sent" ping.
-
-## Notes & troubleshooting
-- **Webhook**: WAHA posts to `http://bot:8090/webhook/waha?token=$WEBHOOK_TOKEN`
-  internally — no public URL needed for the bot. Keep `WEBHOOK_TOKEN` matching.
-- **Logs**: check the `bot` service logs in Dokploy for `Inbound from …` lines.
-- **Puppeteer**: the image installs system Chromium at `/usr/bin/chromium`; the bot
-  uses it via `PUPPETEER_EXECUTABLE_PATH` (set in the Dockerfile).
-- **Switching to WABA later**: replace the WAHA adapter with a WABA Cloud API adapter;
-  the bot core, AI, Bitrix, and PDF stay unchanged. The number must then leave WAHA.
-- **Gating**: the bot auto-engages every inbound chat (intended for a dedicated number).
-  Handed-off chats go silent; a lead can send `stop` to opt out.
-```
+## 7. Future: WABA migration
+When moving to the official number on WhatsApp Business Cloud API, only the
+messaging adapter changes (the bot core, AI, RAG, Bitrix, PDF stay the same).
+A number can't run WAHA and WABA at once; WABA adds the 24h window + templates.
