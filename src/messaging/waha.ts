@@ -68,9 +68,10 @@ export class WahaAdapter implements MessagingAdapter {
     const isGroup = chatId.endsWith("@g.us");
     const fromMe = Boolean(p.fromMe);
 
-    // Only handle inbound, non-group, text messages in Phase 1.
+    // Only handle inbound, non-group messages with actual text.
     if (fromMe || isGroup) return null;
-    const text: string = p.body ?? "";
+    const text: string = (p.body ?? "").trim();
+    if (!text) return null; // ignore notifications / media-only / empty events
 
     return {
       chatId,
