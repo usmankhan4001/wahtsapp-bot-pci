@@ -7,8 +7,14 @@ function req(name: string, fallback?: string): string {
   return v;
 }
 
+/** Parse a port from env; fall back to `fallback` if missing/invalid (avoids NaN crash). */
+function parsePort(raw: string | undefined, fallback: number): number {
+  const p = Number(String(raw ?? "").trim());
+  return Number.isInteger(p) && p > 0 && p < 65536 ? p : fallback;
+}
+
 export const config = {
-  port: Number(process.env.PORT ?? 8090),
+  port: parsePort(process.env.PORT, 8090),
   webhookToken: process.env.WEBHOOK_TOKEN ?? "",
 
   waha: {
