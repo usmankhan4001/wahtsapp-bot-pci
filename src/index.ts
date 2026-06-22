@@ -17,8 +17,12 @@ app.use(express.json({ limit: "5mb" }));
 const messaging = new WahaAdapter();
 const bot = new BotCore(messaging);
 
+// Build marker — bump on each deploy so we can confirm what's actually running.
+const BUILD = "2026-06-22-stability-1";
+
 // ── Health check ───────────────────────────────────────────────
-app.get("/health", (_req, res) => res.json({ ok: true, service: "pci-whatsapp-bot" }));
+app.get("/health", (_req, res) => res.json({ ok: true, service: "pci-whatsapp-bot", build: BUILD }));
+app.get("/version", (_req, res) => res.json({ build: BUILD, model: config.gemini.model }));
 
 // ── Bitrix debug routes (Phase 2 — verify live availability) ───
 app.get("/debug/projects", async (_req, res) => {
@@ -93,7 +97,7 @@ function startupDiagnostics(): void {
 }
 
 app.listen(config.port, async () => {
-  logger.info(`PCI WhatsApp Bot listening on :${config.port}`);
+  logger.info(`PCI WhatsApp Bot listening on :${config.port} (build ${BUILD})`);
   startupDiagnostics();
   // Auto-start the WhatsApp session so a redeploy doesn't require manual clicks.
   await messaging.ensureSession();
