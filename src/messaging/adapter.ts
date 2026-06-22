@@ -36,4 +36,19 @@ export interface MessagingAdapter {
   sendDocument(chatId: string, doc: OutgoingDocument): Promise<void>;
   /** Normalize a raw provider webhook body into IncomingMessage, or null if not a user text message we should handle. */
   parseWebhook(body: unknown): IncomingMessage | null;
+
+  // ── Human-mimicking methods ──
+  /** Trigger the "typing…" indicator in the chat. */
+  startTyping(chatId: string): Promise<void>;
+  /** Stop the "typing…" indicator. */
+  stopTyping(chatId: string): Promise<void>;
+  /**
+   * Send a text message with human-like behavior:
+   * 1) Show "typing…" indicator
+   * 2) Wait a natural delay based on message length
+   * 3) Send the message
+   * If the text is long, it may be split into multiple shorter messages
+   * with brief pauses between them.
+   */
+  sendTextHumanized(chatId: string, text: string): Promise<void>;
 }

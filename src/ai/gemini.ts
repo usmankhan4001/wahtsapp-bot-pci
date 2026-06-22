@@ -1,4 +1,5 @@
 // Gemini REST client with a function-calling loop.
+// Includes retry logic with exponential backoff for resilience.
 // Docs: https://ai.google.dev/api/generate-content
 import { config } from "../config.js";
 import { logger } from "../logger.js";
@@ -19,24 +20,76 @@ interface Content {
 const ENDPOINT = (model: string) =>
   `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
-async function callGemini(contents: Content[], systemPrompt: string): Promise<Content> {
-  const res = await fetch(`${ENDPOINT(config.gemini.model)}?key=${config.gemini.apiKey}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      systemInstruction: { parts: [{ text: systemPrompt }] },
-      contents,
-      tools: [{ functionDeclarations: toolDeclarations }],
-      generationConfig: { temperature: 0.6, maxOutputTokens: 1024 },
-    }),
-  });
-  if (!res.ok) {
-    throw new Error(`Gemini ${res.status}: ${(await res.text()).slice(0, 400)}`);
+// ── Retry configuration ────────────────────────────────────────
+const MAX_RETRIES = 3;
+const BASE_DELAY_MS = 1000;
+const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
+
+async function sleep(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function callGeminiWithRetry(contents: Content[], systemPrompt: string): Promise<Content> {
+  let lastError: Error | null = null;
+
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+      const res = await fetch(`${ENDPOINT(config.gemini.model)}?key=${config.gemini.apiKey}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: systemPrompt }] },
+          contents,
+          tools: [{ functionDeclarations: toolDeclarations }],
+          generationConfig: { temperature: 0.6, maxOutputTokens: 1024 },
+        }),
+      });
+
+      // If retryable error, back off and retry.
+      if (RETRYABLE_STATUS.has(res.status)) {
+        const body = (await res.text()).slice(0, 200);
+        lastError = new Error(`Gemini ${res.status}: ${body}`);
+        logger.warn(`Gemini ${res.status} (attempt ${attempt + 1}/${MAX_RETRIES}) — retrying…`);
+        await sleep(BASE_DELAY_MS * Math.pow(2, attempt));
+        continue;
+      }
+
+      if (!res.ok) {
+        throw new Error(`Gemini ${res.status}: ${(await res.text()).slice(0, 400)}`);
+      }
+
+      const data = (await res.json()) as any;
+
+      // Handle blocked responses gracefully.
+      const finishReason = data?.candidates?.[0]?.finishReason;
+      if (finishReason === "SAFETY") {
+        logger.warn("Gemini response blocked by safety filter");
+        return { role: "model", parts: [{ text: "I'd be happy to help you with property inquiries. Could you please tell me what you're looking for?" }] };
+      }
+
+      const content = data?.candidates?.[0]?.content as Content | undefined;
+      if (!content) {
+        // Sometimes Gemini returns empty candidates — treat as retryable.
+        lastError = new Error("Gemini returned no content");
+        if (attempt < MAX_RETRIES - 1) {
+          logger.warn(`Gemini empty response (attempt ${attempt + 1}/${MAX_RETRIES}) — retrying…`);
+          await sleep(BASE_DELAY_MS * Math.pow(2, attempt));
+          continue;
+        }
+        throw lastError;
+      }
+
+      return content;
+    } catch (err) {
+      lastError = err instanceof Error ? err : new Error(String(err));
+      if (attempt < MAX_RETRIES - 1) {
+        logger.warn(`Gemini call failed (attempt ${attempt + 1}/${MAX_RETRIES}): ${lastError.message} — retrying…`);
+        await sleep(BASE_DELAY_MS * Math.pow(2, attempt));
+      }
+    }
   }
-  const data = (await res.json()) as any;
-  const content = data?.candidates?.[0]?.content as Content | undefined;
-  if (!content) throw new Error("Gemini returned no content");
-  return content;
+
+  throw lastError ?? new Error("Gemini call failed after all retries");
 }
 
 /** What the orchestrator gets back after a turn. */
@@ -65,7 +118,7 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
 
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
     const systemPrompt = buildSystemPrompt(session.language);
-    const modelContent = await callGemini(contents, systemPrompt);
+    const modelContent = await callGeminiWithRetry(contents, systemPrompt);
     contents.push(modelContent);
 
     const calls = modelContent.parts.filter((p) => p.functionCall);
@@ -83,7 +136,7 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
         result = await executeTool(fc.name, fc.args ?? {}, ctx);
       } catch (err) {
         logger.error(`Tool ${fc.name} failed`, err);
-        result = { error: "Tool execution failed." };
+        result = { error: "Tool execution failed. Please try a different approach." };
       }
       responseParts.push({ functionResponse: { name: fc.name, response: result } });
     }

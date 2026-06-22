@@ -1,4 +1,4 @@
-// WAHA implementation of MessagingAdapter.
+// WAHA implementation of MessagingAdapter — with human-mimicking behavior.
 // Docs: https://waha.devlike.pro/  (REST API: /api/sendText, /api/sendFile)
 import { config } from "../config.js";
 import { logger } from "../logger.js";
@@ -25,6 +25,66 @@ function headers(): Record<string, string> {
   if (config.waha.apiKey) h["X-Api-Key"] = config.waha.apiKey;
   return h;
 }
+
+// ── Human-like delay configuration ──────────────────────────────
+const TYPING_SPEED_MS_PER_CHAR = 35;   // ~35ms per character ≈ realistic typing
+const MIN_TYPING_DELAY_MS = 800;        // minimum delay even for short messages
+const MAX_TYPING_DELAY_MS = 4000;       // cap so users don't wait too long
+const PAUSE_BETWEEN_MESSAGES_MS = 1200; // pause between split messages
+const MAX_SINGLE_MESSAGE_LENGTH = 800;  // split messages longer than this
+
+/** Calculate a human-like typing delay based on message length. */
+function typingDelay(text: string): number {
+  const raw = text.length * TYPING_SPEED_MS_PER_CHAR;
+  return Math.max(MIN_TYPING_DELAY_MS, Math.min(MAX_TYPING_DELAY_MS, raw));
+}
+
+/**
+ * Split a long message into natural chunks at paragraph boundaries.
+ * Returns an array of message segments, each under MAX_SINGLE_MESSAGE_LENGTH.
+ */
+function splitMessage(text: string): string[] {
+  if (text.length <= MAX_SINGLE_MESSAGE_LENGTH) return [text];
+
+  const paragraphs = text.split(/\n\n+/);
+  const chunks: string[] = [];
+  let current = "";
+
+  for (const para of paragraphs) {
+    if (current && (current.length + para.length + 2) > MAX_SINGLE_MESSAGE_LENGTH) {
+      chunks.push(current.trim());
+      current = para;
+    } else {
+      current = current ? `${current}\n\n${para}` : para;
+    }
+  }
+  if (current.trim()) chunks.push(current.trim());
+
+  // If we still have chunks that are too long, split at sentence boundaries.
+  const result: string[] = [];
+  for (const chunk of chunks) {
+    if (chunk.length <= MAX_SINGLE_MESSAGE_LENGTH) {
+      result.push(chunk);
+    } else {
+      // Split at sentence endings (. ! ?) followed by a space
+      const sentences = chunk.split(/(?<=[.!?])\s+/);
+      let segment = "";
+      for (const sentence of sentences) {
+        if (segment && (segment.length + sentence.length + 1) > MAX_SINGLE_MESSAGE_LENGTH) {
+          result.push(segment.trim());
+          segment = sentence;
+        } else {
+          segment = segment ? `${segment} ${sentence}` : sentence;
+        }
+      }
+      if (segment.trim()) result.push(segment.trim());
+    }
+  }
+
+  return result.length > 0 ? result : [text];
+}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export class WahaAdapter implements MessagingAdapter {
   /** Current status of the default session, or null if WAHA unreachable. */
@@ -82,6 +142,8 @@ export class WahaAdapter implements MessagingAdapter {
     logger.warn("Gave up auto-starting the WAHA session; check the dashboard.");
   }
 
+  // ── Core send methods ──────────────────────────────────────────
+
   async sendText(chatId: string, text: string): Promise<void> {
     const res = await fetch(`${config.waha.baseUrl}/api/sendText`, {
       method: "POST",
@@ -116,6 +178,69 @@ export class WahaAdapter implements MessagingAdapter {
       logger.error("WAHA sendFile failed", res.status, (await res.text()).slice(0, 300));
     }
   }
+
+  // ── Human-mimicking methods ────────────────────────────────────
+
+  async startTyping(chatId: string): Promise<void> {
+    try {
+      await fetch(`${config.waha.baseUrl}/api/startTyping`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify({
+          session: config.waha.session,
+          chatId: toChatId(chatId),
+        }),
+      });
+    } catch {
+      // Non-fatal — if typing indicator fails, we still send the message.
+    }
+  }
+
+  async stopTyping(chatId: string): Promise<void> {
+    try {
+      await fetch(`${config.waha.baseUrl}/api/stopTyping`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify({
+          session: config.waha.session,
+          chatId: toChatId(chatId),
+        }),
+      });
+    } catch {
+      // Non-fatal.
+    }
+  }
+
+  /**
+   * Send a message with full human-like behavior:
+   *  1. Split long text into multiple messages
+   *  2. For each segment: show typing → wait → stop typing → send
+   */
+  async sendTextHumanized(chatId: string, text: string): Promise<void> {
+    const segments = splitMessage(text);
+
+    for (let i = 0; i < segments.length; i++) {
+      const segment = segments[i];
+
+      // Show "typing…" indicator
+      await this.startTyping(chatId);
+
+      // Wait a natural amount of time
+      const delay = typingDelay(segment);
+      await sleep(delay);
+
+      // Stop typing and send
+      await this.stopTyping(chatId);
+      await this.sendText(chatId, segment);
+
+      // If there are more segments, pause briefly between them
+      if (i < segments.length - 1) {
+        await sleep(PAUSE_BETWEEN_MESSAGES_MS);
+      }
+    }
+  }
+
+  // ── Webhook parsing ────────────────────────────────────────────
 
   // WAHA posts events as { event: "message", session, payload: {...} }.
   parseWebhook(body: unknown): IncomingMessage | null {
