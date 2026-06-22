@@ -4,7 +4,7 @@ import { bitrix } from "../bitrix/client.js";
 import type { Session } from "../session/store.js";
 import { sessions, type Language } from "../session/store.js";
 import { retrieve } from "../rag/retrieve.js";
-import { brochureUrl, floorPlanUrls, locationOf, projectsWithMedia } from "../media/registry.js";
+import { brochureUrl, paymentPlanUrl, floorPlanUrls, locationOf } from "../media/registry.js";
 
 // Gemini Schema types are uppercase enums (STRING, OBJECT, ...).
 export const toolDeclarations = [
@@ -300,7 +300,17 @@ export async function executeTool(
         filename: `${project} Brochure.pdf`,
         caption: `${project} — Brochure 📄`,
       });
-      return { ok: true, message: "Brochure is being sent." };
+      // Also send the payment plan if we have one.
+      const pp = paymentPlanUrl(project);
+      if (pp) {
+        ctx.media.push({
+          kind: "document",
+          url: pp,
+          filename: `${project} Payment Plan.pdf`,
+          caption: `${project} — Payment Plan 💳`,
+        });
+      }
+      return { ok: true, message: "Brochure (and payment plan) is being sent." };
     }
 
     case "send_floor_plan": {
@@ -308,7 +318,13 @@ export async function executeTool(
       const plans = floorPlanUrls(project);
       if (plans.length === 0) return { ok: false, message: `No floor plans available yet for ${project}.` };
       for (const p of plans) {
-        (ctx.media ??= []).push({ kind: "image", url: p.url, caption: `${project} — ${p.label}` });
+        const isPdf = /\.pdf(\?|$)/i.test(p.url);
+        (ctx.media ??= []).push({
+          kind: isPdf ? "document" : "image",
+          url: p.url,
+          filename: isPdf ? `${project} - ${p.label}.pdf` : undefined,
+          caption: `${project} — ${p.label}`,
+        });
       }
       return { ok: true, message: "Floor plan(s) being sent." };
     }

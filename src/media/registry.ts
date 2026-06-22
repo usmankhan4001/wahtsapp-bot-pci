@@ -11,8 +11,11 @@ export interface ProjectMedia {
   name: string;
   /** URL-safe folder slug under the media host. */
   slug: string;
+  /** Alternative names/abbreviations customers or the AI might use. */
+  aliases?: string[];
   brochure?: string; // relative path to the brochure PDF
-  floorPlans?: { label: string; path: string }[]; // layout/floor plan images
+  paymentPlan?: string; // relative path to the payment-plan PDF
+  floorPlans?: { label: string; path: string }[]; // layout/floor plan files
   images?: string[]; // unit/project images
   /** A Google Maps URL or a plain location string. */
   location?: string;
@@ -21,15 +24,36 @@ export interface ProjectMedia {
 // ── EDIT THIS as files are uploaded to R2 ──────────────────────────
 // (Empty paths are fine — tools will say "not available yet" gracefully.)
 export const MEDIA: ProjectMedia[] = [
-  // Example (fill real paths once uploaded):
-  // {
-  //   name: "Box Park-3",
-  //   slug: "box-park-3",
-  //   brochure: "box-park-3/brochure.pdf",
-  //   floorPlans: [{ label: "Ground Floor", path: "box-park-3/floor-plans/ground.jpg" }],
-  //   images: ["box-park-3/images/front.jpg"],
-  //   location: "https://maps.google.com/?q=DHA+Phase+...",
-  // },
+  {
+    name: "Box Park-3",
+    slug: "box-park-3",
+    aliases: ["box park 3", "bp3", "box park three", "boxpark3"],
+    brochure: "box-park-3/brochure.pdf",
+    paymentPlan: "box-park-3/payment-plan.pdf",
+  },
+  {
+    name: "Buraq Heights",
+    slug: "buraq-heights",
+    aliases: ["buraq", "buraq height", "buraqheights"],
+    brochure: "buraq-heights/brochure.pdf",
+    floorPlans: [{ label: "Layouts", path: "buraq-heights/floor-plans.pdf" }],
+  },
+  {
+    name: "Grand Orchard",
+    slug: "grand-orchard",
+    aliases: ["orchard", "dha orchard", "grandorchard"],
+    brochure: "grand-orchard/brochure.pdf",
+    paymentPlan: "grand-orchard/payment-plan.pdf",
+    // floor plans (Updated Layouts) pending — file too large; compress further before upload.
+  },
+  {
+    name: "River Courtyard Tower-1",
+    slug: "river-courtyard-1",
+    aliases: ["river courtyard", "river courtyard 1", "rcy1", "rcy", "river courtyard tower 1"],
+    brochure: "river-courtyard-1/brochure.pdf",
+    floorPlans: [{ label: "Layouts", path: "river-courtyard-1/floor-plans.pdf" }],
+    paymentPlan: "river-courtyard-1/payment-plan.pdf",
+  },
 ];
 
 const abs = (p?: string): string | undefined =>
@@ -41,15 +65,21 @@ const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
 export function findProjectMedia(nameOrSlug: string): ProjectMedia | undefined {
   const q = norm(nameOrSlug);
   if (!q) return undefined;
+  const keys = (m: ProjectMedia) => [m.slug, m.name, ...(m.aliases ?? [])].map(norm);
   return (
-    MEDIA.find((m) => norm(m.slug) === q || norm(m.name) === q) ??
-    MEDIA.find((m) => norm(m.name).includes(q) || q.includes(norm(m.slug)))
+    MEDIA.find((m) => keys(m).some((k) => k === q)) ??
+    MEDIA.find((m) => keys(m).some((k) => k.includes(q) || q.includes(k)))
   );
 }
 
 /** Absolute brochure URL for a project, if configured. */
 export function brochureUrl(name: string): string | undefined {
   return abs(findProjectMedia(name)?.brochure);
+}
+
+/** Absolute payment-plan PDF URL for a project, if configured. */
+export function paymentPlanUrl(name: string): string | undefined {
+  return abs(findProjectMedia(name)?.paymentPlan);
 }
 
 /** Absolute floor-plan URLs (with labels) for a project. */

@@ -18,7 +18,7 @@ const messaging = new WahaAdapter();
 const bot = new BotCore(messaging);
 
 // Build marker — bump on each deploy so we can confirm what's actually running.
-const BUILD = "2026-06-22-rag-media-1";
+const BUILD = "2026-06-23-media-live-1";
 
 // ── Health check ───────────────────────────────────────────────
 app.get("/health", (_req, res) => res.json({ ok: true, service: "pci-whatsapp-bot", build: BUILD }));

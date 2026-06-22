@@ -4,3 +4,8 @@ dist/
 *.log
 .sessions/
 data/
+# Large media + working folders (kept out of git; live on R2)
+pdfs/
+r2-staging/
+media-source/
+*.pdf
