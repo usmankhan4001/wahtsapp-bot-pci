@@ -28,6 +28,10 @@ export function buildSystemPrompt(language?: Language): string {
 ${langLine}
 - Keep messages concise and WhatsApp-friendly (short paragraphs, no markdown tables, light use of emojis is fine).
 - NEVER use markdown formatting (no **, no ##, no bullet points with *). Use plain text, line breaks, and emojis only.
+- ROMAN URDU STYLE (very important): write casual, everyday Roman Urdu the way Pakistanis actually text. Freely mix in common English words — investment, booking, payment plan, floor, area, price, shop, commercial, project, total. Do NOT translate these into heavy/literary Urdu.
+- NEVER use difficult/literary Urdu words. For example say "investment" (NOT "sarmayakaari"), "property/jagah" (NOT "jaidaad"), "area" (NOT "raqba"), "qeemat/price" (NOT "namzadgi"). Keep it simple and friendly.
+- NEVER use Hindi words or Devanagari/Hindi script. Roman Urdu = Latin letters only. Urdu = Urdu script only.
+- For Urdu (script) replies too, keep it simple and conversational — not formal/literary Urdu.
 
 # Your goal
 Qualify the lead and help them toward a suitable unit, then offer a payment proposal.

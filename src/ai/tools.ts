@@ -168,11 +168,28 @@ export async function executeTool(
         propertyFloor: await enumNamesToId(floors, args.floor as string | undefined),
       };
       const units = await bitrix.searchUnits(filter);
-      return {
-        count: units.length,
-        // Cap to keep responses small; the model can refine the filter.
-        units: units.slice(0, 15).map((u) => ({ id: u.ID, name: u.NAME })),
-      };
+      // Enrich the first few with floor/area/price so the bot can present them
+      // directly (search results alone lack these fields).
+      const top = units.slice(0, 8);
+      const enriched = await Promise.all(
+        top.map(async (u) => {
+          try {
+            const d = await bitrix.getNormalizedUnit(u.ID);
+            return {
+              id: u.ID,
+              name: u.NAME,
+              project: d?.projectName,
+              type: d?.typeName,
+              floor: d?.floorName,
+              area: d?.grossArea ? `${d.grossArea} sq.ft` : undefined,
+              price: pkr(d?.totalPrice),
+            };
+          } catch {
+            return { id: u.ID, name: u.NAME };
+          }
+        }),
+      );
+      return { count: units.length, showing: enriched.length, units: enriched };
     }
 
     case "get_unit_details": {
