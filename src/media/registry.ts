@@ -44,7 +44,10 @@ export const MEDIA: ProjectMedia[] = [
     aliases: ["orchard", "dha orchard", "grandorchard"],
     brochure: "grand-orchard/brochure.pdf",
     paymentPlan: "grand-orchard/payment-plan.pdf",
-    // floor plans (Updated Layouts) pending — file too large; compress further before upload.
+    floorPlans: Array.from({ length: 23 }, (_, i) => ({
+      label: `Layout Page ${i + 1}`,
+      path: `grand-orchard/layouts/page-${(i + 1).toString().padStart(2, "0")}.pdf`
+    })),
   },
   {
     name: "River Courtyard Tower-1",

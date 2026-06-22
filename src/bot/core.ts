@@ -16,79 +16,108 @@ const TEAM_NUMBER: Record<HandoffSignal["team"], string> = {
 };
 
 export class BotCore {
+  // Recently handled message ids — WAHA sometimes delivers a webhook twice.
+  private seen = new Set<string>();
+
+  // Per-chat mutex — prevents concurrent agent turns on the same session.
+  private locks = new Map<string, Promise<void>>();
+
   constructor(private messaging: MessagingAdapter) {}
 
   async handle(msg: IncomingMessage): Promise<void> {
-    const session = sessions.get(msg.chatId, msg.name);
-
-    // A chat handed to a human stays silent until manually resumed.
-    if (session.status !== "active") {
-      // Allow "resume" command to reactivate a handed-off or paused chat.
-      if (/^\s*(resume|start|hi|hello|assalam|salam)\s*$/i.test(msg.text)) {
-        session.status = "active";
-        session.greeted = false; // Re-greet the lead
-        session.history = [];   // Fresh start
-        sessions.save(session);
-        logger.info(`Chat ${msg.from} resumed from '${session.status}'.`);
-        // Fall through to handle normally
-      } else {
-        logger.info(`Chat ${msg.from} is '${session.status}' — bot staying silent.`);
+    // Drop duplicate webhook deliveries of the same message.
+    if (msg.messageId) {
+      if (this.seen.has(msg.messageId)) {
+        logger.info(`Duplicate message ${msg.messageId} ignored.`);
         return;
       }
+      this.seen.add(msg.messageId);
+      if (this.seen.size > 500) this.seen.delete(this.seen.values().next().value as string);
     }
 
-    // Lead opt-out.
-    if (/^\s*(stop|unsubscribe)\s*$/i.test(msg.text)) {
-      session.status = "paused";
-      sessions.save(session);
-      await this.messaging.sendTextHumanized(
-        msg.chatId,
-        "Okay, I won't message further. Reply anytime to resume. 🙏",
-      );
-      return;
-    }
-
-    // Show typing immediately so the user knows the bot is working.
-    await this.messaging.startTyping(msg.chatId);
-
-    // Notify sales manager the first time the bot engages a new lead.
-    const firstContact = !session.greeted;
-
-    let result;
+    // Per-chat serialisation — prevent concurrent turns on the same session.
+    const prev = this.locks.get(msg.chatId) ?? Promise.resolve();
+    let resolve!: () => void;
+    const promise = new Promise<void>(r => { resolve = r; });
+    this.locks.set(msg.chatId, promise);
     try {
-      result = await runAgentTurn(session, msg.text);
-    } catch (err) {
-      logger.error("Agent turn failed", err);
-      await this.messaging.stopTyping(msg.chatId);
-      await this.messaging.sendTextHumanized(
-        msg.chatId,
-        "Apologies — I'm having a brief technical issue. A team member will assist you shortly. 🙏",
-      );
-      return;
-    }
+      await prev; // wait for any in-flight turn to finish
 
-    // Stop the initial typing indicator (sendTextHumanized will create its own).
-    await this.messaging.stopTyping(msg.chatId);
+      const session = sessions.get(msg.chatId, msg.name);
 
-    // Send the reply with human-like typing delay.
-    await this.messaging.sendTextHumanized(msg.chatId, result.reply);
+      // A chat handed to a human stays silent until manually resumed.
+      if (session.status !== "active") {
+        // Allow "resume" command to reactivate a handed-off or paused chat.
+        if (/^\s*(resume|start|hi|hello|assalam|salam)\s*$/i.test(msg.text)) {
+          session.status = "active";
+          session.greeted = false; // Re-greet the lead
+          session.history = [];   // Fresh start
+          sessions.save(session);
+          logger.info(`Chat ${msg.from} resumed from '${session.status}'.`);
+          // Fall through to handle normally
+        } else {
+          logger.info(`Chat ${msg.from} is '${session.status}' — bot staying silent.`);
+          return;
+        }
+      }
 
-    // Send any requested media (brochures / floor plans / location).
-    if (result.media?.length) await this.sendMedia(msg, result.media);
+      // Lead opt-out.
+      if (/^\s*(stop|unsubscribe)\s*$/i.test(msg.text)) {
+        session.status = "paused";
+        sessions.save(session);
+        await this.messaging.sendTextHumanized(
+          msg.chatId,
+          "Okay, I won't message further. Reply anytime to resume. 🙏",
+        );
+        return;
+      }
 
-    // Post-reply actions (run in background — don't delay the user).
-    if (firstContact) {
-      this.notifyManagerLeadEngaged(msg).catch((e) =>
-        logger.error("Manager notification failed", e),
-      );
-    }
-    if (result.proposal) {
-      // Show typing while generating the PDF.
+      // Show typing immediately so the user knows the bot is working.
       await this.messaging.startTyping(msg.chatId);
-      await this.sendProposal(msg, result.proposal);
-    }
-    if (result.handoff) {
-      await this.doHandoff(msg, result.handoff);
+
+      // Notify sales manager the first time the bot engages a new lead.
+      const firstContact = !session.greeted;
+
+      let result;
+      try {
+        result = await runAgentTurn(session, msg.text);
+      } catch (err) {
+        logger.error("Agent turn failed", err);
+        await this.messaging.stopTyping(msg.chatId);
+        await this.messaging.sendTextHumanized(
+          msg.chatId,
+          "Apologies — I'm having a brief technical issue. A team member will assist you shortly. 🙏",
+        );
+        return;
+      }
+
+      // Stop the initial typing indicator (sendTextHumanized will create its own).
+      await this.messaging.stopTyping(msg.chatId);
+
+      // Send the reply with human-like typing delay.
+      await this.messaging.sendTextHumanized(msg.chatId, result.reply);
+
+      // Send any requested media (brochures / floor plans / location).
+      if (result.media?.length) await this.sendMedia(msg, result.media);
+
+      // Post-reply actions (run in background — don't delay the user).
+      if (firstContact) {
+        this.notifyManagerLeadEngaged(msg).catch((e) =>
+          logger.error("Manager notification failed", e),
+        );
+      }
+      if (result.proposal) {
+        // Show typing while generating the PDF.
+        await this.messaging.startTyping(msg.chatId);
+        await this.sendProposal(msg, result.proposal);
+      }
+      if (result.handoff) {
+        await this.doHandoff(msg, result.handoff);
+      }
+    } finally {
+      resolve();
+      // Clean up if nothing else is queued
+      if (this.locks.get(msg.chatId) === promise) this.locks.delete(msg.chatId);
     }
   }
 

@@ -26,6 +26,17 @@ function headers(): Record<string, string> {
   return h;
 }
 
+/** Wrapper around fetch with a 15-second timeout for all WAHA calls. */
+async function wahaFetch(url: string, init?: RequestInit): Promise<Response> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
+  try {
+    return await fetch(url, { ...init, signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 // ── Human-like delay configuration ──────────────────────────────
 const TYPING_SPEED_MS_PER_CHAR = 35;   // ~35ms per character ≈ realistic typing
 const MIN_TYPING_DELAY_MS = 800;        // minimum delay even for short messages
@@ -90,7 +101,7 @@ export class WahaAdapter implements MessagingAdapter {
   /** Current status of the default session, or null if WAHA unreachable. */
   async getSessionStatus(): Promise<string | null> {
     try {
-      const res = await fetch(
+      const res = await wahaFetch(
         `${config.waha.baseUrl}/api/sessions/${config.waha.session}`,
         { headers: headers() },
       );
@@ -105,7 +116,7 @@ export class WahaAdapter implements MessagingAdapter {
   /** Start the default session (idempotent; ignores "already started"). */
   async startSession(): Promise<void> {
     try {
-      await fetch(
+      await wahaFetch(
         `${config.waha.baseUrl}/api/sessions/${config.waha.session}/start`,
         { method: "POST", headers: headers() },
       );
@@ -145,7 +156,7 @@ export class WahaAdapter implements MessagingAdapter {
   // ── Core send methods ──────────────────────────────────────────
 
   async sendText(chatId: string, text: string): Promise<void> {
-    const res = await fetch(`${config.waha.baseUrl}/api/sendText`, {
+    const res = await wahaFetch(`${config.waha.baseUrl}/api/sendText`, {
       method: "POST",
       headers: headers(),
       body: JSON.stringify({
@@ -160,7 +171,7 @@ export class WahaAdapter implements MessagingAdapter {
   }
 
   async sendDocument(chatId: string, doc: OutgoingDocument): Promise<void> {
-    const res = await fetch(`${config.waha.baseUrl}/api/sendFile`, {
+    const res = await wahaFetch(`${config.waha.baseUrl}/api/sendFile`, {
       method: "POST",
       headers: headers(),
       body: JSON.stringify({
@@ -185,7 +196,7 @@ export class WahaAdapter implements MessagingAdapter {
     media: { kind: "document" | "image"; url: string; filename?: string; caption?: string },
   ): Promise<void> {
     const endpoint = media.kind === "image" ? "/api/sendImage" : "/api/sendFile";
-    const res = await fetch(`${config.waha.baseUrl}${endpoint}`, {
+    const res = await wahaFetch(`${config.waha.baseUrl}${endpoint}`, {
       method: "POST",
       headers: headers(),
       body: JSON.stringify({
@@ -204,7 +215,7 @@ export class WahaAdapter implements MessagingAdapter {
 
   async startTyping(chatId: string): Promise<void> {
     try {
-      await fetch(`${config.waha.baseUrl}/api/startTyping`, {
+      await wahaFetch(`${config.waha.baseUrl}/api/startTyping`, {
         method: "POST",
         headers: headers(),
         body: JSON.stringify({
@@ -219,7 +230,7 @@ export class WahaAdapter implements MessagingAdapter {
 
   async stopTyping(chatId: string): Promise<void> {
     try {
-      await fetch(`${config.waha.baseUrl}/api/stopTyping`, {
+      await wahaFetch(`${config.waha.baseUrl}/api/stopTyping`, {
         method: "POST",
         headers: headers(),
         body: JSON.stringify({

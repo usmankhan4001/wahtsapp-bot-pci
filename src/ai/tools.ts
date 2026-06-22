@@ -109,10 +109,13 @@ export const toolDeclarations = [
   },
   {
     name: "send_floor_plan",
-    description: "Send the floor/layout plan image(s) for a project to the customer.",
+    description: "Send the floor/layout plan image(s) for a project to the customer. If a project has many layouts (like Grand Orchard), the customer should specify which floor they want.",
     parameters: {
       type: "OBJECT",
-      properties: { project: { type: "STRING" } },
+      properties: {
+        project: { type: "STRING" },
+        floor: { type: "STRING", description: "Optional. The specific floor requested (e.g. '3rd Floor', 'Lower Ground', 'Page 5')." }
+      },
       required: ["project"],
     },
   },
@@ -315,9 +318,25 @@ export async function executeTool(
 
     case "send_floor_plan": {
       const project = String(args.project ?? "");
+      const floor = args.floor ? String(args.floor).toLowerCase() : undefined;
       const plans = floorPlanUrls(project);
       if (plans.length === 0) return { ok: false, message: `No floor plans available yet for ${project}.` };
-      for (const p of plans) {
+      
+      let toSend = plans;
+      if (plans.length > 5) {
+        if (!floor) {
+          return { ok: true, message: `There are ${plans.length} floor plans available for ${project}. Please ask the customer which specific floor they are interested in (e.g. Ground Floor, 1st Floor, etc.) so we don't spam them.` };
+        }
+        // Filter by fuzzy floor match
+        const matched = plans.filter(p => p.label.toLowerCase().includes(floor) || floor.includes(p.label.toLowerCase()));
+        if (matched.length > 0) {
+          toSend = matched;
+        } else {
+          return { ok: true, message: `Could not find a floor plan matching '${floor}'. Available plans: ${plans.map(p => p.label).join(", ")}.` };
+        }
+      }
+
+      for (const p of toSend) {
         const isPdf = /\.pdf(\?|$)/i.test(p.url);
         (ctx.media ??= []).push({
           kind: isPdf ? "document" : "image",

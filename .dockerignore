@@ -1,0 +1,9 @@
+node_modules
+dist
+*.pdf
+pdfs
+media-source
+r2-staging
+.git
+.env
+*.py

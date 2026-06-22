@@ -11,7 +11,9 @@ export interface VectorRecord {
   embedding: number[];
 }
 
-const STORE_FILE = "data/vectors.json";
+// Committed into the repo/image (NOT the data volume) so the index ships with
+// a deploy. Regenerate with `npm run ingest`.
+const STORE_FILE = "rag-index/vectors.json";
 
 function cosine(a: number[], b: number[]): number {
   let dot = 0,

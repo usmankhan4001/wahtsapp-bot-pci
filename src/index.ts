@@ -25,6 +25,13 @@ app.get("/health", (_req, res) => res.json({ ok: true, service: "pci-whatsapp-bo
 app.get("/version", (_req, res) => res.json({ build: BUILD, model: config.gemini.model }));
 
 // ── Bitrix debug routes (Phase 2 — verify live availability) ───
+app.use("/debug", (req, res, next) => {
+  if (config.webhookToken && req.query.token !== config.webhookToken) {
+    return res.status(401).json({ error: "unauthorized" });
+  }
+  next();
+});
+
 app.get("/debug/projects", async (_req, res) => {
   try {
     res.json(await bitrix.listProjects());
@@ -102,3 +109,10 @@ app.listen(config.port, async () => {
   // Auto-start the WhatsApp session so a redeploy doesn't require manual clicks.
   await messaging.ensureSession();
 });
+
+for (const sig of ["SIGTERM", "SIGINT"] as const) {
+  process.on(sig, () => {
+    logger.info(`Received ${sig}, shutting down…`);
+    process.exit(0);
+  });
+}

@@ -1,23 +1,24 @@
-# Debian slim base so Puppeteer's Chromium can run (Alpine lacks the libs).
-FROM node:22-bookworm-slim
+# ── Build stage ─────────────────────────────────────
+FROM node:22-slim AS build
 WORKDIR /app
-
-# Use the system Chromium instead of Puppeteer's bundled download.
-ENV PUPPETEER_SKIP_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    chromium \
-    fonts-liberation libnss3 libatk-bridge2.0-0 libgtk-3-0 libasound2 \
-    libxss1 libgbm1 ca-certificates \
-  && rm -rf /var/lib/apt/lists/*
-
-COPY package*.json ./
-RUN npm install
-
+COPY package.json package-lock.json ./
+RUN npm ci
 COPY tsconfig.json ./
-COPY src ./src
+COPY src/ src/
 RUN npm run build
 
+# ── Production stage ────────────────────────────────
+FROM node:22-slim
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    chromium fonts-liberation libatk-bridge2.0-0 libgtk-3-0 \
+    && rm -rf /var/lib/apt/lists/*
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+COPY --from=build /app/dist dist/
+COPY rag-index/ rag-index/
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
+  CMD node -e "fetch('http://localhost:${PORT:-8090}/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
 EXPOSE 8090
-CMD ["npm", "start"]
+CMD ["node", "dist/index.js"]

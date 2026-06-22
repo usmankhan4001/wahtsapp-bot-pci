@@ -33,6 +33,8 @@ async function callGeminiWithRetry(contents: Content[], systemPrompt: string): P
   let lastError: Error | null = null;
 
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 30_000);
     try {
       const res = await fetch(`${ENDPOINT(config.gemini.model)}?key=${config.gemini.apiKey}`, {
         method: "POST",
@@ -43,6 +45,7 @@ async function callGeminiWithRetry(contents: Content[], systemPrompt: string): P
           tools: [{ functionDeclarations: toolDeclarations }],
           generationConfig: { temperature: 0.6, maxOutputTokens: 1024 },
         }),
+        signal: controller.signal,
       });
 
       // If retryable error, back off and retry.
@@ -86,6 +89,8 @@ async function callGeminiWithRetry(contents: Content[], systemPrompt: string): P
         logger.warn(`Gemini call failed (attempt ${attempt + 1}/${MAX_RETRIES}): ${lastError.message} — retrying…`);
         await sleep(BASE_DELAY_MS * Math.pow(2, attempt));
       }
+    } finally {
+      clearTimeout(timeout);
     }
   }
 
@@ -128,9 +133,10 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
     const modelContent = await callGeminiWithRetry(contents, systemPrompt);
     contents.push(modelContent);
 
-    const calls = modelContent.parts.filter((p) => p.functionCall);
+    const parts = modelContent.parts || [];
+    const calls = parts.filter((p) => p.functionCall);
     if (calls.length === 0) {
-      finalText = modelContent.parts.map((p) => p.text ?? "").join("").trim();
+      finalText = parts.map((p) => p.text ?? "").join("").trim();
       break;
     }
 

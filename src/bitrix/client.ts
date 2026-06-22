@@ -16,21 +16,35 @@ import {
 const num = (s?: string) => Number(String(s ?? "").replace(/,/g, "")) || 0;
 
 async function post<T>(path: string, body: unknown): Promise<T> {
-  const res = await fetch(`${config.bitrixApiBase}${path}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`Bitrix ${path} -> ${res.status}`);
-  return (await res.json()) as T;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10_000);
+  try {
+    const res = await fetch(`${config.bitrixApiBase}${path}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+    if (!res.ok) throw new Error(`Bitrix ${path} -> ${res.status}`);
+    return (await res.json()) as T;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 async function get<T>(path: string): Promise<T> {
-  const res = await fetch(`${config.bitrixApiBase}${path}`, {
-    headers: { "Content-Type": "application/json" },
-  });
-  if (!res.ok) throw new Error(`Bitrix ${path} -> ${res.status}`);
-  return (await res.json()) as T;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10_000);
+  try {
+    const res = await fetch(`${config.bitrixApiBase}${path}`, {
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+    });
+    if (!res.ok) throw new Error(`Bitrix ${path} -> ${res.status}`);
+    return (await res.json()) as T;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 /** Simple in-memory cache for slow-changing enum lists (projects, types, floors). */

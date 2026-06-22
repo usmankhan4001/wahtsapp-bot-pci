@@ -34,13 +34,13 @@ session stays alive while you iterate.
 **Environment** — every value must be the literal string (NO `< >` placeholders,
 NO descriptive notes in parentheses, or WAHA refuses to boot):
 ```
-WAHA_API_KEY=Pr3m!3r3Ch0!c3@4001USMAN2026
+WAHA_API_KEY=<your-waha-api-key>
 WHATSAPP_DEFAULT_ENGINE=WEBJS
 WAHA_DASHBOARD_USERNAME=admin
-WAHA_DASHBOARD_PASSWORD=Pr3m!3r3Ch0!c3@4001
+WAHA_DASHBOARD_PASSWORD=<your-waha-dashboard-password>
 WHATSAPP_SWAGGER_USERNAME=admin
-WHATSAPP_SWAGGER_PASSWORD=Pr3m!3r3Ch0!c3@4001
-WHATSAPP_HOOK_URL=https://ai-reply-bot.premierchoiceint.online/webhook/waha?token=pci_secure_webhook_token_2026
+WHATSAPP_SWAGGER_PASSWORD=<your-swagger-password>
+WHATSAPP_HOOK_URL=https://ai-reply-bot.premierchoiceint.online/webhook/waha?token=<your-webhook-token>
 WHATSAPP_HOOK_EVENTS=message
 ```
 - Use the WAHA env names **`WHATSAPP_HOOK_URL` / `WHATSAPP_HOOK_EVENTS`** (not `WAHA_WEBHOOK_*`).
@@ -62,17 +62,17 @@ pixel-match PDF; without it the bot still works via the pdfkit fallback).
 **Environment:**
 ```
 PORT=8090
-WEBHOOK_TOKEN=pci_secure_webhook_token_2026
+WEBHOOK_TOKEN=<your-webhook-token>
 WAHA_BASE_URL=https://waha-pci-bot.premierchoiceint.online
-WAHA_API_KEY=Pr3m!3r3Ch0!c3@4001USMAN2026
-GEMINI_API_KEY=<your gemini key>
+WAHA_API_KEY=<your-waha-api-key>
+GEMINI_API_KEY=<your-gemini-api-key>
 GEMINI_MODEL=gemini-2.5-flash
 GEMINI_EMBED_MODEL=text-embedding-004
 BITRIX_API_BASE=https://calcenchancev2.premierchoiceint.online
 MEDIA_BASE_URL=https://media.premierchoiceint.online
-SALES_MANAGER_WHATSAPP=923097772379
-TEAM_B2B_WHATSAPP=923114882634
-TEAM_B2C_WHATSAPP=923097772379
+SALES_MANAGER_WHATSAPP=<sales-manager-whatsapp-number>
+TEAM_B2B_WHATSAPP=<team-b2b-whatsapp-number>
+TEAM_B2C_WHATSAPP=<team-b2c-whatsapp-number>
 CONVERSATION_RESET_MINUTES=60
 ```
 - Paste **only the value** — the bot now sanitizes stray notes/spaces, but keep it clean.

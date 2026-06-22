@@ -7,13 +7,10 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts",
-    "ingest": "tsx src/rag/ingest.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "license": "ISC",
   "dependencies": {
-    "@types/pdf-parse": "^1.1.5",
-    "@types/pdfkit": "^0.17.6",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "pdf-parse": "^2.4.5",
@@ -24,6 +21,8 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/node": "^22.0.0",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/pdfkit": "^0.17.6",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
   }
