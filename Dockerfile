@@ -24,8 +24,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 COPY --from=build /app/dist dist/
-COPY data/ data/
-COPY rag-index/ rag-index/
+COPY data/registry.json seed-registry.json
+COPY rag-index/vectors.json seed-vectors.json
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
   CMD node -e "fetch('http://localhost:${PORT:-8090}/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
 EXPOSE 8090

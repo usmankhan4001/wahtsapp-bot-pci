@@ -27,6 +27,16 @@ const REGISTRY_FILE = "data/registry.json";
 export let MEDIA: ProjectMedia[] = [];
 
 export function loadRegistry() {
+  const SEED_FILE = "seed-registry.json";
+  if (!existsSync(REGISTRY_FILE) && existsSync(SEED_FILE)) {
+    try {
+      require("node:fs").mkdirSync("data", { recursive: true });
+      require("node:fs").copyFileSync(SEED_FILE, REGISTRY_FILE);
+    } catch (e) {
+      console.error("Failed to seed registry.json", e);
+    }
+  }
+
   if (existsSync(REGISTRY_FILE)) {
     try {
       MEDIA = JSON.parse(readFileSync(REGISTRY_FILE, "utf-8"));
