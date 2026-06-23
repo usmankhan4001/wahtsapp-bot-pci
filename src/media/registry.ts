@@ -28,7 +28,18 @@ export let MEDIA: ProjectMedia[] = [];
 
 export function loadRegistry() {
   const SEED_FILE = "seed-registry.json";
-  if (!existsSync(REGISTRY_FILE) && existsSync(SEED_FILE)) {
+  
+  let needsSeed = !existsSync(REGISTRY_FILE);
+  if (existsSync(REGISTRY_FILE)) {
+    try {
+      const content = readFileSync(REGISTRY_FILE, "utf-8").trim();
+      if (content === "[]" || content === "{}" || content === "") {
+        needsSeed = true;
+      }
+    } catch (e) {}
+  }
+
+  if (needsSeed && existsSync(SEED_FILE)) {
     try {
       require("node:fs").mkdirSync("data", { recursive: true });
       require("node:fs").copyFileSync(SEED_FILE, REGISTRY_FILE);

@@ -64,7 +64,17 @@ export class VectorStore {
   load(): void {
     try {
       const SEED_FILE = "seed-vectors.json";
-      if (!existsSync(STORE_FILE) && existsSync(SEED_FILE)) {
+      let needsSeed = !existsSync(STORE_FILE);
+      if (existsSync(STORE_FILE)) {
+        try {
+          const content = readFileSync(STORE_FILE, "utf-8").trim();
+          if (content === "[]" || content === "{}" || content === "") {
+            needsSeed = true;
+          }
+        } catch (e) {}
+      }
+
+      if (needsSeed && existsSync(SEED_FILE)) {
         require("node:fs").mkdirSync(dirname(STORE_FILE), { recursive: true });
         require("node:fs").copyFileSync(SEED_FILE, STORE_FILE);
       }

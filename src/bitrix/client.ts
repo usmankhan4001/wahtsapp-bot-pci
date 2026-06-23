@@ -157,6 +157,16 @@ export class BitrixClient {
     if (/^\d+$/.test(nameOrId)) return nameOrId;
     const projects = await this.listProjects();
     const q = nameOrId.trim().toLowerCase();
+    
+    // 1. Try to find an alias match via the media registry
+    const { findProjectMedia } = await import("../media/registry.js");
+    const media = findProjectMedia(q);
+    if (media) {
+      const hit = projects.find((p) => p.value.toLowerCase() === media.name.toLowerCase());
+      if (hit) return String(hit.id);
+    }
+
+    // 2. Fall back to standard fuzzy match against Bitrix names
     const hit =
       projects.find((p) => p.value.toLowerCase() === q) ??
       projects.find((p) => p.value.toLowerCase().includes(q));
