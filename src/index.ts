@@ -10,6 +10,7 @@ import { adminRouter } from "./admin/routes.js";
 import type { IncomingMessage } from "./messaging/adapter.js";
 import { bitrix } from "./bitrix/client.js";
 import { BotCore } from "./bot/core.js";
+import { scanR2Bucket, startMediaRefresh } from "./media/registry.js";
 
 const app = express();
 app.use(cors());
@@ -100,11 +101,18 @@ function startupDiagnostics(): void {
   logger.info(`  Gemini API key ....... ${ok(!!config.gemini.apiKey)} (model: ${config.gemini.model})`);
   logger.info(`  Bitrix API base ...... ${config.bitrixApiBase || "❌ MISSING"}`);
   logger.info(`  Sales manager # ...... ${config.contacts.salesManager || "(unset)"}`);
+  logger.info(`  Cache stats .......... ${JSON.stringify(bitrix.cacheStats)}`);
   if (!config.gemini.apiKey)
     logger.warn("GEMINI_API_KEY is not set — the bot will receive messages but cannot generate replies. Set it in the env and redeploy.");
   if (!config.webhookToken)
     logger.warn("WEBHOOK_TOKEN is not set — webhook auth is effectively open.");
 }
+
+await bitrix.warmCache();
+bitrix.startCacheRefresh();
+
+await scanR2Bucket();
+startMediaRefresh();
 
 app.listen(config.port, async () => {
   logger.info(`PCI WhatsApp Bot listening on :${config.port} (build ${BUILD})`);

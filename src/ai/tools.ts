@@ -5,6 +5,7 @@ import type { Session } from "../session/store.js";
 import { sessions, type Language } from "../session/store.js";
 import { retrieve } from "../rag/retrieve.js";
 import { brochureUrl, paymentPlanUrl, floorPlanUrls, locationOf } from "../media/registry.js";
+import { logger } from "../logger.js";
 
 // Gemini Schema types are uppercase enums (STRING, OBJECT, ...).
 export const toolDeclarations = [
@@ -243,32 +244,23 @@ export async function executeTool(
         bitrix.listFloors(),
       ]);
       const filter = {
-        project: await bitrix.resolveProjectId(String(args.project ?? "")) ?? undefined,
-        propertyType: await enumNamesToId(types, args.type as string | undefined),
-        propertyFloor: await enumNamesToId(floors, args.floor as string | undefined),
+        projectId: await bitrix.resolveProjectId(String(args.project ?? "")) ?? undefined,
+        type: args.type as string | undefined,
+        floor: args.floor as string | undefined,
       };
-      const units = await bitrix.searchUnits(filter);
-      // Enrich the first few with floor/area/price so the bot can present them
-      // directly (search results alone lack these fields).
+      const units = await bitrix.searchCached(filter);
+      
       const top = units.slice(0, 8);
-      const enriched = await Promise.all(
-        top.map(async (u) => {
-          try {
-            const d = await bitrix.getNormalizedUnit(u.ID);
-            return {
-              id: u.ID,
-              name: u.NAME,
-              project: d?.projectName,
-              type: d?.typeName,
-              floor: d?.floorName,
-              area: d?.grossArea ? `${d.grossArea} sq.ft` : undefined,
-              price: pkr(d?.totalPrice),
-            };
-          } catch {
-            return { id: u.ID, name: u.NAME };
-          }
-        }),
-      );
+      const enriched = top.map((d) => ({
+        id: d.id,
+        name: d.name,
+        project: d.projectName,
+        type: d.typeName,
+        floor: d.floorName,
+        area: d.grossArea ? `${d.grossArea} sq.ft` : undefined,
+        price: pkr(d.totalPrice),
+      }));
+      
       return { count: units.length, showing: enriched.length, units: enriched };
     }
 
@@ -320,8 +312,13 @@ export async function executeTool(
 
     case "send_brochure": {
       const project = String(args.project ?? "");
+      logger.info(`send_brochure called for project: ${project}`);
       const url = brochureUrl(project);
-      if (!url) return { ok: false, message: `No brochure available yet for ${project}.` };
+      if (!url) {
+        logger.warn(`send_brochure: No brochure URL found for project ${project}`);
+        return { ok: false, message: `No brochure available yet for ${project}.` };
+      }
+      logger.info(`send_brochure: Found brochure URL: ${url}`);
       (ctx.media ??= []).push({
         kind: "document",
         url,
@@ -331,12 +328,15 @@ export async function executeTool(
       // Also send the payment plan if we have one.
       const pp = paymentPlanUrl(project);
       if (pp) {
+        logger.info(`send_brochure: Found payment plan URL: ${pp}`);
         ctx.media.push({
           kind: "document",
           url: pp,
           filename: `${project} Payment Plan.pdf`,
           caption: `${project} — Payment Plan 💳`,
         });
+      } else {
+        logger.info(`send_brochure: No payment plan URL found for project ${project}`);
       }
       return { ok: true, message: "Brochure (and payment plan) is being sent." };
     }

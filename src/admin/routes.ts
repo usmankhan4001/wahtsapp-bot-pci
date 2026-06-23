@@ -2,7 +2,7 @@ import { Router } from "express";
 import { config } from "../config.js";
 import multer from "multer";
 import { ingestPdf } from "./ingest.js";
-import { MEDIA, saveRegistry } from "../media/registry.js";
+import { MEDIA } from "../media/registry.js";
 import { logger } from "../logger.js";
 
 export const adminRouter = Router();
@@ -124,7 +124,6 @@ adminRouter.post("/api/upload", upload.single("file"), async (req, res) => {
         project.floorPlans ??= [];
         project.floorPlans.push({ label: floorLabel || "Layout", path: destPath });
       }
-      saveRegistry();
     }
 
     res.send(`Successfully processed and ingested ${file.originalname}.`);

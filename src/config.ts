@@ -49,6 +49,13 @@ export const config = {
     embedModel: cleanToken(process.env.GEMINI_EMBED_MODEL) || "gemini-embedding-001",
   },
 
+  r2: {
+    accountId: cleanToken(process.env.R2_ACCOUNT_ID),
+    accessKeyId: cleanToken(process.env.R2_ACCESS_KEY_ID),
+    secretAccessKey: cleanToken(process.env.R2_SECRET_ACCESS_KEY),
+    bucketName: cleanToken(process.env.R2_BUCKET_NAME),
+  },
+
   bitrixApiBase: cleanUrl(req("BITRIX_API_BASE")),
 
   // Public base URL for project media (Cloudflare R2 custom domain).

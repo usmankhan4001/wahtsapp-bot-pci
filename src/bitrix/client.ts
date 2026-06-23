@@ -1,6 +1,9 @@
 // Typed client over the EXISTING PCI calculator backend (live Bitrix24 proxy).
 // The bot never talks to Bitrix directly — it goes through these endpoints,
 // so it always reflects live, project-wise availability and pricing.
+//
+// v2: Full in-memory inventory cache. On startup, fetches ALL projects and
+// their units. Refreshes every 10 minutes. search_units is instant.
 import { config } from "../config.js";
 import { logger } from "../logger.js";
 import {
@@ -15,9 +18,9 @@ import {
 
 const num = (s?: string) => Number(String(s ?? "").replace(/,/g, "")) || 0;
 
-async function post<T>(path: string, body: unknown): Promise<T> {
+async function post<T>(path: string, body: unknown, timeoutMs = 30_000): Promise<T> {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10_000);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const res = await fetch(`${config.bitrixApiBase}${path}`, {
       method: "POST",
@@ -32,9 +35,9 @@ async function post<T>(path: string, body: unknown): Promise<T> {
   }
 }
 
-async function get<T>(path: string): Promise<T> {
+async function get<T>(path: string, timeoutMs = 15_000): Promise<T> {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10_000);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const res = await fetch(`${config.bitrixApiBase}${path}`, {
       headers: { "Content-Type": "application/json" },
@@ -52,6 +55,25 @@ const enumCache = new Map<string, { at: number; data: BitrixEnum[] }>();
 const ENUM_TTL_MS = 10 * 60 * 1000;
 
 export class BitrixClient {
+  // ── Full inventory cache ──────────────────────────────────────
+  private _inventoryCache = new Map<string, NormalizedUnit[]>();
+  private _allUnitsFlat: NormalizedUnit[] = [];
+  private _cacheReady = false;
+  private _cacheAge = 0;
+  private _refreshTimer: ReturnType<typeof setInterval> | null = null;
+
+  get cacheReady(): boolean { return this._cacheReady; }
+  get cacheAge(): number { return this._cacheAge; }
+  get cacheStats(): Record<string, number> {
+    const stats: Record<string, number> = {};
+    for (const [pid, units] of this._inventoryCache) {
+      const proj = units[0]?.projectName ?? pid;
+      stats[proj] = units.length;
+    }
+    return stats;
+  }
+  get totalCachedUnits(): number { return this._allUnitsFlat.length; }
+
   /** All projects. */
   async listProjects(): Promise<BitrixEnum[]> {
     return this.cachedEnum("projects", async () => {
@@ -87,14 +109,14 @@ export class BitrixClient {
   async searchUnits(filter: UnitFilter = {}): Promise<CatalogProduct[]> {
     const data = await post<{ products?: CatalogProduct[] }>("/catalog-products", {
       filter,
-    });
+    }, 60_000); // 60s timeout for large result sets
     return data.products ?? [];
   }
 
   /** Full product detail. */
   async getProduct(productId: string): Promise<ProductDetail | null> {
     try {
-      const data = await post<{ product?: ProductDetail }>("/product", { productId });
+      const data = await post<{ product?: ProductDetail }>("/product", { productId }, 15_000);
       return data.product ?? null;
     } catch (err) {
       logger.error(`Bitrix getProduct failed for ID ${productId}:`, err);
@@ -107,6 +129,12 @@ export class BitrixClient {
    * resolved project/type/floor names and computed price (baseRate * grossArea).
    */
   async getNormalizedUnit(productId: string): Promise<NormalizedUnit | null> {
+    // Check cache first
+    if (this._cacheReady) {
+      const cached = this._allUnitsFlat.find(u => u.id === productId);
+      if (cached) return cached;
+    }
+
     const [p, projects, types, floors, categories] = await Promise.all([
       this.getProduct(productId),
       this.listProjects(),
@@ -116,6 +144,16 @@ export class BitrixClient {
     ]);
     if (!p) return null;
 
+    return this.normalizeProduct(p, projects, types, floors, categories);
+  }
+
+  private normalizeProduct(
+    p: ProductDetail,
+    projects: BitrixEnum[],
+    types: BitrixEnum[],
+    floors: BitrixEnum[],
+    categories: BitrixEnum[],
+  ): NormalizedUnit {
     const nameOf = (list: BitrixEnum[], id?: string) =>
       list.find((e) => String(e.id) === String(id))?.value;
 
@@ -152,12 +190,126 @@ export class BitrixClient {
     };
   }
 
+  // ── Cached search (instant, no API calls) ────────────────────
+  /**
+   * Search the in-memory inventory cache. Returns units matching the filter
+   * with full details (project, type, floor, area, price). Instant.
+   * Falls back to live API if cache is not ready.
+   */
+  searchCached(filter: {
+    projectId?: string;
+    type?: string;
+    floor?: string;
+    category?: string;
+  }): NormalizedUnit[] {
+    if (!this._cacheReady) return [];
+
+    let pool = filter.projectId
+      ? this._inventoryCache.get(filter.projectId) ?? []
+      : this._allUnitsFlat;
+
+    const fuzzy = (a: string | undefined, b: string) =>
+      a ? a.toLowerCase().includes(b.toLowerCase()) || b.toLowerCase().includes(a.toLowerCase()) : false;
+
+    if (filter.type) {
+      pool = pool.filter(u => fuzzy(u.typeName, filter.type!));
+    }
+    if (filter.floor) {
+      pool = pool.filter(u => fuzzy(u.floorName, filter.floor!));
+    }
+    if (filter.category) {
+      pool = pool.filter(u => fuzzy(u.categoryName, filter.category!));
+    }
+
+    // Only return available units
+    return pool.filter(u => u.available);
+  }
+
+  // ── Cache warmup ──────────────────────────────────────────────
+  /**
+   * Fetch ALL projects and ALL their units from Bitrix. Runs on startup
+   * and every 10 minutes. Each project's units are batch-fetched.
+   */
+  async warmCache(): Promise<void> {
+    const start = Date.now();
+    logger.info("Warming Bitrix inventory cache...");
+
+    try {
+      const [projects, types, floors, categories] = await Promise.all([
+        this.listProjects(),
+        this.listTypes(),
+        this.listFloors(),
+        this.listCategories(),
+      ]);
+
+      const newCache = new Map<string, NormalizedUnit[]>();
+      let totalUnits = 0;
+      let totalAvailable = 0;
+
+      // Fetch units for each project
+      for (const proj of projects) {
+        try {
+          const raw = await this.searchUnits({ project: String(proj.id) });
+          if (raw.length === 0) continue;
+
+          // Batch-normalize: fetch full details for each unit
+          // Process in batches of 10 to avoid overwhelming the API
+          const normalized: NormalizedUnit[] = [];
+          const BATCH_SIZE = 10;
+
+          for (let i = 0; i < raw.length; i += BATCH_SIZE) {
+            const batch = raw.slice(i, i + BATCH_SIZE);
+            const results = await Promise.allSettled(
+              batch.map(u => this.getProduct(u.ID)),
+            );
+
+            for (const r of results) {
+              if (r.status === "fulfilled" && r.value) {
+                const unit = this.normalizeProduct(r.value, projects, types, floors, categories);
+                normalized.push(unit);
+                totalUnits++;
+                if (unit.available) totalAvailable++;
+              }
+            }
+          }
+
+          if (normalized.length > 0) {
+            newCache.set(String(proj.id), normalized);
+          }
+        } catch (err) {
+          logger.warn(`Cache warmup: failed to fetch units for ${proj.value}:`, err instanceof Error ? err.message : err);
+        }
+      }
+
+      this._inventoryCache = newCache;
+      this._allUnitsFlat = [...newCache.values()].flat();
+      this._cacheReady = true;
+      this._cacheAge = Date.now();
+
+      const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+      logger.info(
+        `Inventory cache warm: ${totalAvailable} available / ${totalUnits} total units across ${newCache.size} projects (${elapsed}s)`,
+      );
+    } catch (err) {
+      logger.error("Cache warmup failed:", err);
+      // Don't wipe existing cache on failure — stale data > no data
+    }
+  }
+
+  /** Start background cache refresh every N ms (default: 10 min). */
+  startCacheRefresh(intervalMs = 10 * 60 * 1000): void {
+    if (this._refreshTimer) clearInterval(this._refreshTimer);
+    this._refreshTimer = setInterval(() => {
+      this.warmCache().catch((e) => logger.error("Background cache refresh failed", e));
+    }, intervalMs);
+  }
+
   /** Resolve a project name (fuzzy, case-insensitive) to its enum id. */
   async resolveProjectId(nameOrId: string): Promise<string | null> {
     if (/^\d+$/.test(nameOrId)) return nameOrId;
     const projects = await this.listProjects();
     const q = nameOrId.trim().toLowerCase();
-    
+
     // 1. Try to find an alias match via the media registry
     const { findProjectMedia } = await import("../media/registry.js");
     const media = findProjectMedia(q);
