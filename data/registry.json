@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Box Park-3",
+    "slug": "box-park-3",
+    "aliases": ["box park 3", "bp3", "box park three", "boxpark3"],
+    "brochure": "box-park-3/brochure.pdf",
+    "paymentPlan": "box-park-3/payment-plan.pdf"
+  },
+  {
+    "name": "Buraq Heights",
+    "slug": "buraq-heights",
+    "aliases": ["buraq", "buraq height", "buraqheights"],
+    "brochure": "buraq-heights/brochure.pdf",
+    "floorPlans": [{ "label": "Layouts", "path": "buraq-heights/floor-plans.pdf" }]
+  },
+  {
+    "name": "Grand Orchard",
+    "slug": "grand-orchard",
+    "aliases": ["orchard", "dha orchard", "grandorchard"],
+    "brochure": "grand-orchard/brochure.pdf",
+    "paymentPlan": "grand-orchard/payment-plan.pdf",
+    "floorPlans": [
+      { "label": "Layout Page 1", "path": "grand-orchard/layouts/page-01.pdf" },
+      { "label": "Layout Page 2", "path": "grand-orchard/layouts/page-02.pdf" },
+      { "label": "Layout Page 3", "path": "grand-orchard/layouts/page-03.pdf" },
+      { "label": "Layout Page 4", "path": "grand-orchard/layouts/page-04.pdf" },
+      { "label": "Layout Page 5", "path": "grand-orchard/layouts/page-05.pdf" },
+      { "label": "Layout Page 6", "path": "grand-orchard/layouts/page-06.pdf" },
+      { "label": "Layout Page 7", "path": "grand-orchard/layouts/page-07.pdf" },
+      { "label": "Layout Page 8", "path": "grand-orchard/layouts/page-08.pdf" },
+      { "label": "Layout Page 9", "path": "grand-orchard/layouts/page-09.pdf" },
+      { "label": "Layout Page 10", "path": "grand-orchard/layouts/page-10.pdf" },
+      { "label": "Layout Page 11", "path": "grand-orchard/layouts/page-11.pdf" },
+      { "label": "Layout Page 12", "path": "grand-orchard/layouts/page-12.pdf" },
+      { "label": "Layout Page 13", "path": "grand-orchard/layouts/page-13.pdf" },
+      { "label": "Layout Page 14", "path": "grand-orchard/layouts/page-14.pdf" },
+      { "label": "Layout Page 15", "path": "grand-orchard/layouts/page-15.pdf" },
+      { "label": "Layout Page 16", "path": "grand-orchard/layouts/page-16.pdf" },
+      { "label": "Layout Page 17", "path": "grand-orchard/layouts/page-17.pdf" },
+      { "label": "Layout Page 18", "path": "grand-orchard/layouts/page-18.pdf" },
+      { "label": "Layout Page 19", "path": "grand-orchard/layouts/page-19.pdf" },
+      { "label": "Layout Page 20", "path": "grand-orchard/layouts/page-20.pdf" },
+      { "label": "Layout Page 21", "path": "grand-orchard/layouts/page-21.pdf" },
+      { "label": "Layout Page 22", "path": "grand-orchard/layouts/page-22.pdf" },
+      { "label": "Layout Page 23", "path": "grand-orchard/layouts/page-23.pdf" }
+    ]
+  },
+  {
+    "name": "River Courtyard Tower-1",
+    "slug": "river-courtyard-1",
+    "aliases": ["river courtyard", "river courtyard 1", "rcy1", "rcy", "river courtyard tower 1"],
+    "brochure": "river-courtyard-1/brochure.pdf",
+    "floorPlans": [{ "label": "Layouts", "path": "river-courtyard-1/floor-plans.pdf" }],
+    "paymentPlan": "river-courtyard-1/payment-plan.pdf"
+  }
+]

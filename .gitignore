@@ -3,7 +3,8 @@ dist/
 .env
 *.log
 .sessions/
-data/
+data/*
+!data/registry.json
 # Large media + working folders (kept out of git; live on R2)
 pdfs/
 r2-staging/
