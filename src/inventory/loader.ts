@@ -1,7 +1,10 @@
-import * as fs from "fs";
-import * as path from "path";
-import * as cheerio from "cheerio";
 import { logger } from "../logger.js";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export interface UnitData {
   unitNumber: string;
@@ -13,76 +16,27 @@ export interface UnitData {
 }
 
 let inventoryCache: UnitData[] = [];
-let lastModified = 0;
 
-const INVENTORY_PATH = path.resolve("E:/Apps/PCI Whatsapp Bot/Inventory/export (5).xls");
-
-function parsePrice(p: string | undefined): number {
-  if (!p) return 0;
-  const cleaned = p.replace(/[^\d.-]/g, "");
-  return parseFloat(cleaned) || 0;
-}
-
+// To avoid TS compilation issues with large JSON files, we read the JSON synchronously on boot.
 export async function fetchInventory(): Promise<UnitData[]> {
   try {
-    const stats = fs.statSync(INVENTORY_PATH);
-    if (stats.mtimeMs === lastModified && inventoryCache.length > 0) {
+    if (inventoryCache.length > 0) {
       return inventoryCache;
     }
 
-    logger.info("Loading inventory from local XLS (HTML) file...");
-    const html = fs.readFileSync(INVENTORY_PATH, "utf-8");
-    const $ = cheerio.load(html);
+    const dataPath = path.join(process.cwd(), "src/inventory/data.json");
+    if (!fs.existsSync(dataPath)) {
+      logger.warn("No data.json found. Please run 'npm run compile-inventory'");
+      return [];
+    }
 
-    const headers: string[] = [];
-    $("th").each((_, el) => {
-      headers.push($(el).text().trim());
-    });
-
-    // Map headers to indexes
-    const getIdx = (name: string) => headers.findIndex((h) => h.toLowerCase().includes(name.toLowerCase()));
-    
-    const idxProduct = getIdx("Product");
-    const idxProject = getIdx("Project");
-    const idxType = getIdx("Unit Type");
-    const idxFloor = getIdx("Floor");
-    const idxStatus = getIdx("Status");
-    const idxGrossArea = getIdx("Gross Area");
-    const idxPrice = getIdx("Price");
-
-    const units: UnitData[] = [];
-
-    $("tr").each((_, tr) => {
-      const tds = $(tr).find("td");
-      if (tds.length === 0) return; // Header row or empty
-
-      const productText = $(tds[idxProduct]).text().trim();
-      // Skip section headers like "Dubai Inventory" or empty products
-      if (!productText || productText === "Dubai Inventory") return;
-
-      const project = $(tds[idxProject]).text().trim();
-      const status = $(tds[idxStatus]).text().trim();
-      
-      // We only care about available units for sales
-      if (status.toLowerCase() !== "available") return;
-
-      units.push({
-        unitNumber: productText,
-        project: project,
-        propertyType: $(tds[idxType]).text().trim(),
-        floor: $(tds[idxFloor]).text().trim(),
-        area: $(tds[idxGrossArea]).text().trim(),
-        price: parsePrice($(tds[idxPrice]).text()),
-      });
-    });
-
-    inventoryCache = units;
-    lastModified = stats.mtimeMs;
-    logger.info(`Loaded ${units.length} available units from local inventory.`);
+    const raw = fs.readFileSync(dataPath, "utf-8");
+    inventoryCache = JSON.parse(raw);
+    logger.info(`Loaded ${inventoryCache.length} available units from static JSON database.`);
     return inventoryCache;
   } catch (err) {
-    logger.error("Failed to load local inventory", err);
-    return inventoryCache; // return stale cache if available
+    logger.error("Failed to load static inventory JSON", err);
+    return [];
   }
 }
 

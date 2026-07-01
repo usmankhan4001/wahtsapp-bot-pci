@@ -1,0 +1,7618 @@
+[
+  {
+    "unitNumber": "G-1",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "305",
+    "price": 35227500.00000001
+  },
+  {
+    "unitNumber": "G-2",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "274",
+    "price": 31647000.000000004
+  },
+  {
+    "unitNumber": "G-3",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "274",
+    "price": 31647000.000000004
+  },
+  {
+    "unitNumber": "G-4",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "274",
+    "price": 31647000.000000004
+  },
+  {
+    "unitNumber": "G-17",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "274",
+    "price": 31647000.000000004
+  },
+  {
+    "unitNumber": "G-18",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "274",
+    "price": 31647000.000000004
+  },
+  {
+    "unitNumber": "G-26",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "301",
+    "price": 34765500.00000001
+  },
+  {
+    "unitNumber": "G-28",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "274",
+    "price": 31647000.000000004
+  },
+  {
+    "unitNumber": "G-46",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "223",
+    "price": 25756500.000000004
+  },
+  {
+    "unitNumber": "G-47",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "214",
+    "price": 24717000.000000004
+  },
+  {
+    "unitNumber": "G-107",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "216",
+    "price": 24948000.000000004
+  },
+  {
+    "unitNumber": "G-108",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "216",
+    "price": 24948000.000000004
+  },
+  {
+    "unitNumber": "G-109",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "225",
+    "price": 25987500.000000004
+  },
+  {
+    "unitNumber": "1F-2",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-3",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-4",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "277",
+    "price": 26661250.000000004
+  },
+  {
+    "unitNumber": "1F-5",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-6",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "217",
+    "price": 20886250.000000004
+  },
+  {
+    "unitNumber": "1F-7",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "285",
+    "price": 27431250.000000004
+  },
+  {
+    "unitNumber": "1F-8",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "290",
+    "price": 27912500.000000004
+  },
+  {
+    "unitNumber": "1F-9",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-10",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "295",
+    "price": 28393750.000000004
+  },
+  {
+    "unitNumber": "1F-11",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-22",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-23",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "248",
+    "price": 23870000.000000004
+  },
+  {
+    "unitNumber": "1F-24",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "277",
+    "price": 26661250.000000004
+  },
+  {
+    "unitNumber": "1F-25",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-26",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-27",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-28",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-29",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-30",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-31",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "340",
+    "price": 32725000.000000004
+  },
+  {
+    "unitNumber": "1F-35",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-36",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-37",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "270",
+    "price": 25987500.000000004
+  },
+  {
+    "unitNumber": "1F-38",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "221",
+    "price": 21271250.000000004
+  },
+  {
+    "unitNumber": "1F-39",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-40",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "276",
+    "price": 26565000.000000004
+  },
+  {
+    "unitNumber": "1F-41",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-42",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-44",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "269",
+    "price": 25891250.000000004
+  },
+  {
+    "unitNumber": "1F-45",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "221",
+    "price": 21271250.000000004
+  },
+  {
+    "unitNumber": "1F-46",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "220",
+    "price": 21175000.000000004
+  },
+  {
+    "unitNumber": "1F-47",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "221",
+    "price": 21271250.000000004
+  },
+  {
+    "unitNumber": "1F-48",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "221",
+    "price": 21271250.000000004
+  },
+  {
+    "unitNumber": "1F-49",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "221",
+    "price": 21271250.000000004
+  },
+  {
+    "unitNumber": "1F-50",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "221",
+    "price": 21271250.000000004
+  },
+  {
+    "unitNumber": "1F-51",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "221",
+    "price": 21271250.000000004
+  },
+  {
+    "unitNumber": "1F-55",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-56",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-57",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "277",
+    "price": 26661250.000000004
+  },
+  {
+    "unitNumber": "1F-58",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-59",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-60",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-62",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "277",
+    "price": 26661250.000000004
+  },
+  {
+    "unitNumber": "1F-63",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-64",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-65",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-66",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-67",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-68",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-69",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-70",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-71",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-72",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-73",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-74",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-75",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-76",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-77",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-78",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-79",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-80",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-85",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-86",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "276",
+    "price": 26565000.000000004
+  },
+  {
+    "unitNumber": "1F-87",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-88",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-89",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-90",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-91",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-92",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-93",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-94",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-95",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-96",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-97",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-98",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-99",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-100",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-101",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-102",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-103",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-104",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-108",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-109",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "241",
+    "price": 23196250.000000004
+  },
+  {
+    "unitNumber": "1F-110",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "276",
+    "price": 26565000.000000004
+  },
+  {
+    "unitNumber": "1F-111",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-112",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "301",
+    "price": 28971250.000000004
+  },
+  {
+    "unitNumber": "1F-116",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "224",
+    "price": 21560000.000000004
+  },
+  {
+    "unitNumber": "1F-117",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "224",
+    "price": 21560000.000000004
+  },
+  {
+    "unitNumber": "1F-118",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "224",
+    "price": 21560000.000000004
+  },
+  {
+    "unitNumber": "1F-121",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "224",
+    "price": 21560000.000000004
+  },
+  {
+    "unitNumber": "1F-122",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "224",
+    "price": 21560000.000000004
+  },
+  {
+    "unitNumber": "1F-123",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "First",
+    "area": "271",
+    "price": 26083750.000000004
+  },
+  {
+    "unitNumber": "2F-2",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-3",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-4",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "277",
+    "price": 23614250
+  },
+  {
+    "unitNumber": "2F-5",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-6",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "216",
+    "price": 18414000
+  },
+  {
+    "unitNumber": "2F-7",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "272",
+    "price": 23188000
+  },
+  {
+    "unitNumber": "2F-8",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "294",
+    "price": 25063500
+  },
+  {
+    "unitNumber": "2F-9",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "310",
+    "price": 26427500
+  },
+  {
+    "unitNumber": "2F-10",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-11",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-12",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "295",
+    "price": 25148750
+  },
+  {
+    "unitNumber": "2F-14",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "292",
+    "price": 24893000
+  },
+  {
+    "unitNumber": "2F-15",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "292",
+    "price": 24893000
+  },
+  {
+    "unitNumber": "2F-16",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "292",
+    "price": 24893000
+  },
+  {
+    "unitNumber": "2F-17",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-18",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-19",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-20",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-21",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-22",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "274",
+    "price": 23358500
+  },
+  {
+    "unitNumber": "2F-23",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-24",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "254",
+    "price": 21653500
+  },
+  {
+    "unitNumber": "2F-25",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "281",
+    "price": 23955250
+  },
+  {
+    "unitNumber": "2F-26",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-34",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "295",
+    "price": 25148750
+  },
+  {
+    "unitNumber": "2F-35",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-36",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-37",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-38",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-39",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "281",
+    "price": 23955250
+  },
+  {
+    "unitNumber": "2F-40",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "218",
+    "price": 18584500
+  },
+  {
+    "unitNumber": "2F-41",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-42",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "276",
+    "price": 23529000
+  },
+  {
+    "unitNumber": "2F-43",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-44",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-46",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "269",
+    "price": 22932250
+  },
+  {
+    "unitNumber": "2F-47",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-48",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-49",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-50",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-51",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-52",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-53",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-54",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "221",
+    "price": 18840250
+  },
+  {
+    "unitNumber": "2F-55",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "369",
+    "price": 31457250
+  },
+  {
+    "unitNumber": "2F-57",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-58",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-59",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "277",
+    "price": 23614250
+  },
+  {
+    "unitNumber": "2F-60",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-61",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-62",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-63",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-64",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "276",
+    "price": 23529000
+  },
+  {
+    "unitNumber": "2F-65",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-66",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-67",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-68",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-69",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-70",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-71",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-72",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-73",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-74",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-75",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-76",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-77",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-78",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-79",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-80",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-81",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-82",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-83",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-85",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "186",
+    "price": 15856500
+  },
+  {
+    "unitNumber": "2F-86",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-87",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "276",
+    "price": 23529000
+  },
+  {
+    "unitNumber": "2F-88",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-89",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-90",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-91",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-92",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-93",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-94",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-95",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-96",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-97",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-98",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-99",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-100",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-101",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-102",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-103",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-104",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-105",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-106",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-110",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-111",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "241",
+    "price": 20545250
+  },
+  {
+    "unitNumber": "2F-112",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "276",
+    "price": 23529000
+  },
+  {
+    "unitNumber": "2F-113",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-114",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "301",
+    "price": 25660250
+  },
+  {
+    "unitNumber": "2F-118",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "224",
+    "price": 19096000
+  },
+  {
+    "unitNumber": "2F-119",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "224",
+    "price": 19096000
+  },
+  {
+    "unitNumber": "2F-120",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "224",
+    "price": 19096000
+  },
+  {
+    "unitNumber": "2F-123",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "224",
+    "price": 19096000
+  },
+  {
+    "unitNumber": "2F-124",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "224",
+    "price": 19096000
+  },
+  {
+    "unitNumber": "2F-125",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Second",
+    "area": "272",
+    "price": 23188000
+  },
+  {
+    "unitNumber": "3F-4",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "389",
+    "price": 29097200
+  },
+  {
+    "unitNumber": "3F-5",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "389",
+    "price": 29097200
+  },
+  {
+    "unitNumber": "3F-6",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "393",
+    "price": 29396400
+  },
+  {
+    "unitNumber": "3F-42",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "393",
+    "price": 29396400
+  },
+  {
+    "unitNumber": "3F-43",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "389",
+    "price": 29097200
+  },
+  {
+    "unitNumber": "3F-44",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "389",
+    "price": 29097200
+  },
+  {
+    "unitNumber": "3F-49",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "394",
+    "price": 29471200
+  },
+  {
+    "unitNumber": "3F-50",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "389",
+    "price": 29097200
+  },
+  {
+    "unitNumber": "3F-51",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "389",
+    "price": 29097200
+  },
+  {
+    "unitNumber": "3F-111",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "391",
+    "price": 29246800
+  },
+  {
+    "unitNumber": "3F-112",
+    "project": "GRAND ORCHARD",
+    "propertyType": "SHOP",
+    "floor": "Third",
+    "area": "550",
+    "price": 41140000
+  },
+  {
+    "unitNumber": "518",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "557.7",
+    "price": 11042460
+  },
+  {
+    "unitNumber": "519",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "520",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "521",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "522",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "524",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "501.8",
+    "price": 9935640
+  },
+  {
+    "unitNumber": "525",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "526",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "534",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "535",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "501.8",
+    "price": 9935640
+  },
+  {
+    "unitNumber": "537",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "538",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "541",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "578.5",
+    "price": 11454300
+  },
+  {
+    "unitNumber": "543",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "578.5",
+    "price": 11454300
+  },
+  {
+    "unitNumber": "546",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifth",
+    "area": "578.5",
+    "price": 11454300
+  },
+  {
+    "unitNumber": "618",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "557.7",
+    "price": 11042460
+  },
+  {
+    "unitNumber": "619",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "620",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "621",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "622",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "625",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "626",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "633",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "634",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "636",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "503.1",
+    "price": 9961380
+  },
+  {
+    "unitNumber": "637",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "638",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "646",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Sixth",
+    "area": "578.5",
+    "price": 11454300
+  },
+  {
+    "unitNumber": "718",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "557.7",
+    "price": 11042460
+  },
+  {
+    "unitNumber": "719",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "720",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "721",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "722",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "723",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "503.1",
+    "price": 9961380
+  },
+  {
+    "unitNumber": "725",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "726",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "733",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "734",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "735",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "501.8",
+    "price": 9935640
+  },
+  {
+    "unitNumber": "736",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "503.1",
+    "price": 9961380
+  },
+  {
+    "unitNumber": "737",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "738",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "739",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventh",
+    "area": "2796.3",
+    "price": 54597757.5
+  },
+  {
+    "unitNumber": "819",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "820",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "821",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "822",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "833",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "834",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "835",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "501.8",
+    "price": 9935640
+  },
+  {
+    "unitNumber": "836",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "503.1",
+    "price": 9961380
+  },
+  {
+    "unitNumber": "837",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "838",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "839",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eighth",
+    "area": "2520.7",
+    "price": 49216667.5
+  },
+  {
+    "unitNumber": "914",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "915",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "916",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "917",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "921",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "933",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "934",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "937",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "938",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "939",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Nineth",
+    "area": "2528.5",
+    "price": 49368962.5
+  },
+  {
+    "unitNumber": "1014",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Tenth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1015",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Tenth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1016",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Tenth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1020",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Tenth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1033",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Tenth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1034",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Tenth",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1038",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Tenth",
+    "area": "517.4",
+    "price": 10244520
+  },
+  {
+    "unitNumber": "1115",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eleventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1116",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eleventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1120",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eleventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1133",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eleventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1134",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eleventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1137",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Eleventh",
+    "area": "523.9",
+    "price": 10373220
+  },
+  {
+    "unitNumber": "1218",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Twelveth",
+    "area": "5838.3",
+    "price": 113992807.5
+  },
+  {
+    "unitNumber": "1309",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Thirteenth",
+    "area": "4261.4",
+    "price": 83203835
+  },
+  {
+    "unitNumber": "1313",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Thirteenth",
+    "area": "2648.1",
+    "price": 51704152.5
+  },
+  {
+    "unitNumber": "1409",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fourteenth",
+    "area": "4287.4",
+    "price": 83711485
+  },
+  {
+    "unitNumber": "1413",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fourteenth",
+    "area": "2593.5",
+    "price": 50638087.5
+  },
+  {
+    "unitNumber": "1505",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifteenth",
+    "area": "1748.5",
+    "price": 34620300
+  },
+  {
+    "unitNumber": "1509",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifteenth",
+    "area": "3864.9",
+    "price": 75462172.5
+  },
+  {
+    "unitNumber": "1517",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Fifteenth",
+    "area": "1844.7",
+    "price": 36525060
+  },
+  {
+    "unitNumber": "1701",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventeenth",
+    "area": "5155.8",
+    "price": 100666995
+  },
+  {
+    "unitNumber": "1703",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventeenth",
+    "area": "5786.3",
+    "price": 112977507.5
+  },
+  {
+    "unitNumber": "1704",
+    "project": "GRAND ORCHARD",
+    "propertyType": "APARTMENT",
+    "floor": "Seventeenth",
+    "area": "1891.5",
+    "price": 36931537.5
+  },
+  {
+    "unitNumber": "SHOP 01",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "436",
+    "price": 26160000
+  },
+  {
+    "unitNumber": "SHOP 02",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "173.5",
+    "price": 10410000
+  },
+  {
+    "unitNumber": "SHOP 03",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "190",
+    "price": 11400000
+  },
+  {
+    "unitNumber": "SHOP 04",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "263",
+    "price": 15780000
+  },
+  {
+    "unitNumber": "SHOP 05",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "189",
+    "price": 11340000
+  },
+  {
+    "unitNumber": "SHOP 06",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "189",
+    "price": 11340000
+  },
+  {
+    "unitNumber": "SHOP 07",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "189",
+    "price": 11340000
+  },
+  {
+    "unitNumber": "SHOP 08",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "180",
+    "price": 10800000
+  },
+  {
+    "unitNumber": "SHOP 09",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "153.5",
+    "price": 9210000
+  },
+  {
+    "unitNumber": "SHOP 10",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "163.5",
+    "price": 9810000
+  },
+  {
+    "unitNumber": "SHOP 11",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "396.5",
+    "price": 23790000
+  },
+  {
+    "unitNumber": "SHOP 12",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "163.5",
+    "price": 9810000
+  },
+  {
+    "unitNumber": "SHOP 13",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "263",
+    "price": 15780000
+  },
+  {
+    "unitNumber": "SHOP 14",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "SHOP",
+    "floor": "GROUND",
+    "area": "252",
+    "price": 15120000
+  },
+  {
+    "unitNumber": "1F5-2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "FIRST",
+    "area": "1917",
+    "price": 35272800
+  },
+  {
+    "unitNumber": "2F5-2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "SECOND",
+    "area": "1917",
+    "price": 35272800
+  },
+  {
+    "unitNumber": "2F6- 2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "SECOND",
+    "area": "1823",
+    "price": 33543200
+  },
+  {
+    "unitNumber": "3F5-2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "THIRD",
+    "area": "1917",
+    "price": 35272800
+  },
+  {
+    "unitNumber": "3F6- 2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "THIRD",
+    "area": "1823",
+    "price": 33543200
+  },
+  {
+    "unitNumber": "4F5-2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "FOURTH",
+    "area": "1917",
+    "price": 35272800
+  },
+  {
+    "unitNumber": "5F6- 2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "FIFTH",
+    "area": "1823",
+    "price": 33543200
+  },
+  {
+    "unitNumber": "6F6- 2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "SIXTH",
+    "area": "1823",
+    "price": 33543200
+  },
+  {
+    "unitNumber": "7F6- 2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "SEVENTH",
+    "area": "1823",
+    "price": 33543200
+  },
+  {
+    "unitNumber": "10F6- 2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "TENTH",
+    "area": "1895",
+    "price": 34868000
+  },
+  {
+    "unitNumber": "11F6- 2 BED",
+    "project": "BURAQ HEIGHTS.",
+    "propertyType": "2BED",
+    "floor": "ELEVENTH",
+    "area": "1895",
+    "price": 34868000
+  },
+  {
+    "unitNumber": "G-01",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 29078225
+  },
+  {
+    "unitNumber": "G-02",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 25977600
+  },
+  {
+    "unitNumber": "G-03",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 10905641
+  },
+  {
+    "unitNumber": "G-04",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 10905641
+  },
+  {
+    "unitNumber": "G-05",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 10905641
+  },
+  {
+    "unitNumber": "G-06",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-07",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-08",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-09",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-10",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-11",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-12",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 17381438
+  },
+  {
+    "unitNumber": "G-13",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 17500901
+  },
+  {
+    "unitNumber": "G-14",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 15347274
+  },
+  {
+    "unitNumber": "G-15",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8956553
+  },
+  {
+    "unitNumber": "G-16",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8764724
+  },
+  {
+    "unitNumber": "G-17",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8764724
+  },
+  {
+    "unitNumber": "G-18",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8764724
+  },
+  {
+    "unitNumber": "G-19",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8764724
+  },
+  {
+    "unitNumber": "G-20",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 11532531
+  },
+  {
+    "unitNumber": "G-21",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 13541531
+  },
+  {
+    "unitNumber": "G-22",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 15284031
+  },
+  {
+    "unitNumber": "G-23",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 14729250
+  },
+  {
+    "unitNumber": "G-24",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 10907948
+  },
+  {
+    "unitNumber": "G-25",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12372570
+  },
+  {
+    "unitNumber": "G-26",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 26393955
+  },
+  {
+    "unitNumber": "G-27",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 40542338
+  },
+  {
+    "unitNumber": "G-28",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 27093620
+  },
+  {
+    "unitNumber": "G-29",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 14361839
+  },
+  {
+    "unitNumber": "G-30",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 19298188
+  },
+  {
+    "unitNumber": "G-31",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 11532531
+  },
+  {
+    "unitNumber": "G-32",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8764724
+  },
+  {
+    "unitNumber": "G-33",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8764724
+  },
+  {
+    "unitNumber": "G-34",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 8764724
+  },
+  {
+    "unitNumber": "G-37",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 9522301
+  },
+  {
+    "unitNumber": "G-40",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 11770844
+  },
+  {
+    "unitNumber": "G-41",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 18352266
+  },
+  {
+    "unitNumber": "G-42",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 13612000
+  },
+  {
+    "unitNumber": "G-44",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 33571466
+  },
+  {
+    "unitNumber": "G-47",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 27121500
+  },
+  {
+    "unitNumber": "G-48",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 27118938
+  },
+  {
+    "unitNumber": "G-50",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 17984138
+  },
+  {
+    "unitNumber": "G-54",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 16185724
+  },
+  {
+    "unitNumber": "G-58",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 11835521
+  },
+  {
+    "unitNumber": "G-59",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 14089906
+  },
+  {
+    "unitNumber": "G-60",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 24459934
+  },
+  {
+    "unitNumber": "G-61",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 18937695
+  },
+  {
+    "unitNumber": "G-62",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 19627571
+  },
+  {
+    "unitNumber": "G-63",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 16234155
+  },
+  {
+    "unitNumber": "G-64",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 27469129
+  },
+  {
+    "unitNumber": "G-65",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 17349150
+  },
+  {
+    "unitNumber": "G-66",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 10905641
+  },
+  {
+    "unitNumber": "G-67",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-68",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-69",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-70",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-71",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-72",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-73",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-74",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-75",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 12269250
+  },
+  {
+    "unitNumber": "G-76",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Window Facing",
+    "floor": "Ground Commercial",
+    "area": "118387.5",
+    "price": 29163146
+  },
+  {
+    "unitNumber": "G-77",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 13275134
+  },
+  {
+    "unitNumber": "G-78",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 14558536
+  },
+  {
+    "unitNumber": "G-79",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 12625438
+  },
+  {
+    "unitNumber": "G-80",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 9108458
+  },
+  {
+    "unitNumber": "G-81",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 11297550
+  },
+  {
+    "unitNumber": "G-82",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Standard",
+    "floor": "Ground Commercial",
+    "area": "107112.5",
+    "price": 11677210
+  },
+  {
+    "unitNumber": "G-88",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 8818844
+  },
+  {
+    "unitNumber": "G-91",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 9783625
+  },
+  {
+    "unitNumber": "G-92",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 13134094
+  },
+  {
+    "unitNumber": "G-93",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-94",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-95",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-96",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-97",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-98",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 13909250
+  },
+  {
+    "unitNumber": "G-99",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 13909250
+  },
+  {
+    "unitNumber": "G-100",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-101",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-102",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-103",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-104",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Premium",
+    "floor": "Ground Commercial",
+    "area": "124025",
+    "price": 10148628
+  },
+  {
+    "unitNumber": "G-105",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "Corner",
+    "floor": "Ground Commercial",
+    "area": "140937.5",
+    "price": 13134094
+  },
+  {
+    "unitNumber": "G-1-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 49138500
+  },
+  {
+    "unitNumber": "G-2-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 43220330
+  },
+  {
+    "unitNumber": "G-3-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 33190949
+  },
+  {
+    "unitNumber": "G-6-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 33190949
+  },
+  {
+    "unitNumber": "G-7-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 43220330
+  },
+  {
+    "unitNumber": "G-8 PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 49138500
+  },
+  {
+    "unitNumber": "G-9-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 33536706
+  },
+  {
+    "unitNumber": "G-10-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 39917623
+  },
+  {
+    "unitNumber": "G-11-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 33190603
+  },
+  {
+    "unitNumber": "G-14-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 33190949
+  },
+  {
+    "unitNumber": "G-15-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 39917623
+  },
+  {
+    "unitNumber": "G-16-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ground",
+    "area": "22550",
+    "price": 33714435
+  },
+  {
+    "unitNumber": "F-1-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 50550647
+  },
+  {
+    "unitNumber": "F-2-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 44911580
+  },
+  {
+    "unitNumber": "F-3-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 34882199
+  },
+  {
+    "unitNumber": "F-4-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 31912580
+  },
+  {
+    "unitNumber": "F-6-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 34882199
+  },
+  {
+    "unitNumber": "F-7-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 44911580
+  },
+  {
+    "unitNumber": "F-8-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 50550647
+  },
+  {
+    "unitNumber": "F-10-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 42034371
+  },
+  {
+    "unitNumber": "F-11-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 34882199
+  },
+  {
+    "unitNumber": "F-12-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 35027165
+  },
+  {
+    "unitNumber": "F-13-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 33503892
+  },
+  {
+    "unitNumber": "F-14-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "First",
+    "area": "22550",
+    "price": 34859137
+  },
+  {
+    "unitNumber": "2nd-3-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 34859137
+  },
+  {
+    "unitNumber": "2nd-6-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 34882199
+  },
+  {
+    "unitNumber": "2nd-7-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 45776500
+  },
+  {
+    "unitNumber": "2nd-9-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 65805000
+  },
+  {
+    "unitNumber": "2nd-10-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 34887324
+  },
+  {
+    "unitNumber": "2nd-11-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 35055353
+  },
+  {
+    "unitNumber": "2nd-12-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 31940421
+  },
+  {
+    "unitNumber": "2nd-13-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 34887324
+  },
+  {
+    "unitNumber": "2nd-16-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Second",
+    "area": "22550",
+    "price": 38866655
+  },
+  {
+    "unitNumber": "3rd-2-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 41926221
+  },
+  {
+    "unitNumber": "3rd-7-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 42374125
+  },
+  {
+    "unitNumber": "3rd-9-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 55534500
+  },
+  {
+    "unitNumber": "3rd-11-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 35027165
+  },
+  {
+    "unitNumber": "3rd-12-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 33503892
+  },
+  {
+    "unitNumber": "3rd-13-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 34859137
+  },
+  {
+    "unitNumber": "3rd-14-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 55534500
+  },
+  {
+    "unitNumber": "3rd-16-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Third",
+    "area": "22550",
+    "price": 38907061
+  },
+  {
+    "unitNumber": "4th-9-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Fourth",
+    "area": "22550",
+    "price": 35027165
+  },
+  {
+    "unitNumber": "4th-11-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Fourth",
+    "area": "22550",
+    "price": 36450449
+  },
+  {
+    "unitNumber": "4th-14-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Fourth",
+    "area": "22550",
+    "price": 40176093
+  },
+  {
+    "unitNumber": "5th-6-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Fifth",
+    "area": "22550",
+    "price": 57277000
+  },
+  {
+    "unitNumber": "5th-9-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Fifth",
+    "area": "22550",
+    "price": 35027165
+  },
+  {
+    "unitNumber": "5th-12-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Fifth",
+    "area": "22550",
+    "price": 38140492
+  },
+  {
+    "unitNumber": "7th-1-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Seventh Floor",
+    "area": "22550",
+    "price": 37964399
+  },
+  {
+    "unitNumber": "7th-8-SA",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "SERVICED APARTMENT",
+    "floor": "Seventh Floor",
+    "area": "26400",
+    "price": 44280000
+  },
+  {
+    "unitNumber": "8th-5A-SA",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "SERVICED APARTMENT",
+    "floor": "Eight Floor",
+    "area": "26400",
+    "price": 18884949
+  },
+  {
+    "unitNumber": "9th-1-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "TO BE SERVICED APARTMENT",
+    "floor": "Ninth Floor",
+    "area": "22550",
+    "price": 36977709
+  },
+  {
+    "unitNumber": "9th-6-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ninth Floor",
+    "area": "22550",
+    "price": 36367000
+  },
+  {
+    "unitNumber": "9th-7-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ninth Floor",
+    "area": "22550",
+    "price": 36804484
+  },
+  {
+    "unitNumber": "9th-12-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Ninth Floor",
+    "area": "22550",
+    "price": 33614164
+  },
+  {
+    "unitNumber": "10th-6-SA",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "SERVICED APARTMENT",
+    "floor": "Tenth Floor",
+    "area": "26400",
+    "price": 32825035
+  },
+  {
+    "unitNumber": "11th-7-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "TO BE SERVICED APARTMENT",
+    "floor": "Eleventh",
+    "area": "22550",
+    "price": 36654000
+  },
+  {
+    "unitNumber": "11th-10-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Eleventh",
+    "area": "22550",
+    "price": 34086375
+  },
+  {
+    "unitNumber": "13th-4-PR",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "PERMANENT RESIDENCY",
+    "floor": "Thirteenth",
+    "area": "22550",
+    "price": 35839968
+  },
+  {
+    "unitNumber": "13th-8-SA",
+    "project": "RIVER COURTYARD-I",
+    "propertyType": "SERVICED APARTMENT",
+    "floor": "Thirteenth",
+    "area": "26400",
+    "price": 27529632
+  },
+  {
+    "unitNumber": "BPLGK-001",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "LOWER GROUND",
+    "area": "170.3",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPLGK-007",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "LOWER GROUND",
+    "area": "152.1",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPLGK-008",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "LOWER GROUND",
+    "area": "152.1",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPLGK-014",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "LOWER GROUND",
+    "area": "170.3",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPLGS-15",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "LOWER GROUND",
+    "area": "364",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPLGS-19",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "LOWER GROUND",
+    "area": "171.6",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPLGS-20",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "LOWER GROUND",
+    "area": "171.6",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPGF-006",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "GROUND",
+    "area": "126.1",
+    "price": 63900
+  },
+  {
+    "unitNumber": "BPFF-007",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "FIRST FLOOR",
+    "area": "152.1",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPFF-008",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "FIRST FLOOR",
+    "area": "152.1",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPFF-015",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "FIRST FLOOR",
+    "area": "364",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPFF-017",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "FIRST FLOOR",
+    "area": "364",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPFF-018",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "FIRST FLOOR",
+    "area": "204.1",
+    "price": 59400
+  },
+  {
+    "unitNumber": "BPSF-003",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "SECOND FLOOR",
+    "area": "455",
+    "price": 24750
+  },
+  {
+    "unitNumber": "BPSF-005",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "SECOND FLOOR",
+    "area": "426.4",
+    "price": 24750
+  },
+  {
+    "unitNumber": "BPTF-001A",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "THIRD FLOOR",
+    "area": "170.3",
+    "price": 27900
+  },
+  {
+    "unitNumber": "BPTF-003A",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "THIRD FLOOR",
+    "area": "227.5",
+    "price": 22500
+  },
+  {
+    "unitNumber": "BPTF-013",
+    "project": "BOX PARK-II",
+    "propertyType": "Shop",
+    "floor": "THIRD FLOOR",
+    "area": "171.6",
+    "price": 27900
+  },
+  {
+    "unitNumber": "LGF-S-1",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "80",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-3",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-8",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 70000
+  },
+  {
+    "unitNumber": "LGF-S-16",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 70000
+  },
+  {
+    "unitNumber": "LGF-S-18",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-19",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-22",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-24",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-25",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-40",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "76",
+    "price": 70000
+  },
+  {
+    "unitNumber": "LGF-S-42",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "60",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-60",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 70000
+  },
+  {
+    "unitNumber": "LGF-S-82",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-83",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-84",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-85",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-86",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-88",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-93",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-94",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 77000
+  },
+  {
+    "unitNumber": "LGF-S-103",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "50",
+    "price": 70000
+  },
+  {
+    "unitNumber": "LGF-S-107",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground floor",
+    "area": "70",
+    "price": 77000
+  },
+  {
+    "unitNumber": "FGK-20",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "KIOSK",
+    "floor": "First floor",
+    "area": "30",
+    "price": 27000
+  },
+  {
+    "unitNumber": "FGK-112",
+    "project": "ROMAN GROVE-I",
+    "propertyType": "KIOSK",
+    "floor": "First floor",
+    "area": "30",
+    "price": 27000
+  },
+  {
+    "unitNumber": "LG-2",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "Lower Ground ",
+    "floor": "SHOP",
+    "area": "338.2",
+    "price": 32200
+  },
+  {
+    "unitNumber": "LG-3",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "Lower Ground ",
+    "floor": "SHOP",
+    "area": "407.2",
+    "price": 32200
+  },
+  {
+    "unitNumber": "LG-4",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "Lower Ground ",
+    "floor": "SHOP",
+    "area": "359.2",
+    "price": 32200
+  },
+  {
+    "unitNumber": "LG-5",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "Lower Ground ",
+    "floor": "SHOP",
+    "area": "348.2",
+    "price": 32200
+  },
+  {
+    "unitNumber": "LG-6",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "Lower Ground ",
+    "floor": "SHOP",
+    "area": "348.2",
+    "price": 32200
+  },
+  {
+    "unitNumber": "LG-7",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "Lower Ground ",
+    "floor": "SHOP",
+    "area": "418.2",
+    "price": 32200
+  },
+  {
+    "unitNumber": "G-8",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "Ground",
+    "floor": "SHOP",
+    "area": "335",
+    "price": 40250
+  },
+  {
+    "unitNumber": "F-1",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "255.8",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-2",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "269.3",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-3",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "269.3",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-4",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "279.4",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-5",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "194.8",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-6",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "191.3",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-7",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "198.3",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-8",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "300.8",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-9",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "289.9",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-10",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "289.9",
+    "price": 28750
+  },
+  {
+    "unitNumber": "F-11",
+    "project": "ROMAN GROVE EXT.",
+    "propertyType": "First Floor",
+    "floor": "SHOP",
+    "area": "300.8",
+    "price": 28750
+  },
+  {
+    "unitNumber": "68D-F",
+    "project": "BOX PARK-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground ",
+    "area": "1384 SQFT.",
+    "price": 30000000
+  },
+  {
+    "unitNumber": "68D-H",
+    "project": "BOX PARK-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground ",
+    "area": "1384 SQFT.",
+    "price": 30000000
+  },
+  {
+    "unitNumber": "68D-I",
+    "project": "BOX PARK-I",
+    "propertyType": "SHOP",
+    "floor": "Lower Ground ",
+    "area": "1384 SQFT.",
+    "price": 30000000
+  },
+  {
+    "unitNumber": "10F6- 2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "10TH FLOOR",
+    "area": "1,895",
+    "price": 0
+  },
+  {
+    "unitNumber": "10TH-13-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "10TH FLOOR",
+    "area": "693.7485",
+    "price": 0
+  },
+  {
+    "unitNumber": "10th-6-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "10TH FLOOR",
+    "area": "1,367.71",
+    "price": 0
+  },
+  {
+    "unitNumber": "10th-9-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "10TH FLOOR",
+    "area": "600.7647",
+    "price": 0
+  },
+  {
+    "unitNumber": "11F6- 2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "11TH FLOOR",
+    "area": "1,895",
+    "price": 0
+  },
+  {
+    "unitNumber": "11th-10-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "11TH FLOOR",
+    "area": "1,662.75",
+    "price": 0
+  },
+  {
+    "unitNumber": "11th-7-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "11TH FLOOR",
+    "area": "1,788",
+    "price": 0
+  },
+  {
+    "unitNumber": "13th-4-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "13TH FLOOR",
+    "area": "1,748.29",
+    "price": 0
+  },
+  {
+    "unitNumber": "13th-8-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "13TH FLOOR",
+    "area": "1,147.07",
+    "price": 0
+  },
+  {
+    "unitNumber": "1F6- 2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "1,823",
+    "price": 0
+  },
+  {
+    "unitNumber": "2F6- 2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,823",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-10-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,701.82",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-11-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,710.02",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-12-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,558.07",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-13-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,701.82",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-16-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,895.93",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-3-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,700.45",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-6-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "1,701.57",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-7-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "2,233",
+    "price": 0
+  },
+  {
+    "unitNumber": "2nd-9-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "2ND FLOOR",
+    "area": "3,210",
+    "price": 0
+  },
+  {
+    "unitNumber": "3F-6",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "1,441",
+    "price": 0
+  },
+  {
+    "unitNumber": "3F5-2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "1,917",
+    "price": 0
+  },
+  {
+    "unitNumber": "3F6- 2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "1,823",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-11-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "1,708.64",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-12-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "1,634.34",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-13-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "1,700.45",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-14-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "2,709",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-16-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "1,897.91",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-2-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "2,045.18",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-7-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "2,067.03",
+    "price": 0
+  },
+  {
+    "unitNumber": "3rd-9-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "2,709",
+    "price": 0
+  },
+  {
+    "unitNumber": "4F-6",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "4TH FLOOR",
+    "area": "1,441",
+    "price": 0
+  },
+  {
+    "unitNumber": "4th-11-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "4TH FLOOR",
+    "area": "1,778.07",
+    "price": 0
+  },
+  {
+    "unitNumber": "4th-14-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "4TH FLOOR",
+    "area": "1,959.81",
+    "price": 0
+  },
+  {
+    "unitNumber": "4th-9-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "4TH FLOOR",
+    "area": "1,708.64",
+    "price": 0
+  },
+  {
+    "unitNumber": "5F6- 2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "5TH FLOOR",
+    "area": "1,823",
+    "price": 0
+  },
+  {
+    "unitNumber": "5th-12-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "5TH FLOOR",
+    "area": "1,860.51",
+    "price": 0
+  },
+  {
+    "unitNumber": "5th-6-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "5TH FLOOR",
+    "area": "2,794",
+    "price": 0
+  },
+  {
+    "unitNumber": "5th-9-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "5TH FLOOR",
+    "area": "1,708.64",
+    "price": 0
+  },
+  {
+    "unitNumber": "6F-6",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "6TH FLOOR",
+    "area": "1,441",
+    "price": 0
+  },
+  {
+    "unitNumber": "6F6- 2 BED",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "6TH FLOOR",
+    "area": "1,823",
+    "price": 0
+  },
+  {
+    "unitNumber": "6TH-6-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "6TH FLOOR",
+    "area": "783.1833",
+    "price": 0
+  },
+  {
+    "unitNumber": "7th-1-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "7TH FLOOR",
+    "area": "1,851.92",
+    "price": 0
+  },
+  {
+    "unitNumber": "7TH-2",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "7TH FLOOR",
+    "area": "695",
+    "price": 0
+  },
+  {
+    "unitNumber": "7TH-7",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "7TH FLOOR",
+    "area": "731",
+    "price": 0
+  },
+  {
+    "unitNumber": "7th-8-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "7TH FLOOR",
+    "area": "1,845",
+    "price": 0
+  },
+  {
+    "unitNumber": "8th-16-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "8TH FLOOR",
+    "area": "1,344.861",
+    "price": 0
+  },
+  {
+    "unitNumber": "8TH-5A-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "8TH FLOOR",
+    "area": "786.8728931",
+    "price": 0
+  },
+  {
+    "unitNumber": "9th-1-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "9TH FLOOR",
+    "area": "1,803.79",
+    "price": 0
+  },
+  {
+    "unitNumber": "9th-7-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "9TH FLOOR",
+    "area": "1,795.34",
+    "price": 0
+  },
+  {
+    "unitNumber": "9TH-8-SA",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "9TH FLOOR",
+    "area": "960.998",
+    "price": 0
+  },
+  {
+    "unitNumber": "A2FK-12",
+    "project": "Grand Gallery",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "112.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "AGF1K-13",
+    "project": "Grand Gallery",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "98.7125",
+    "price": 0
+  },
+  {
+    "unitNumber": "AGF1K-18",
+    "project": "Grand Gallery",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "83.8125",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-04",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "201.875",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-05",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "221.365",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-09",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "229.054",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-10",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "207.375",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-11",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "150.205",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-12",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "150.327",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-13",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "217.089",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-14",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "210.236",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F1-15",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "271.897",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-01",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-02",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "208.17",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-03",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "210.87",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-04",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "201.87",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-05",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "221.36",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-06",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "208.17",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-07",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-08",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-09",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "229.05",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-10",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "207.38",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-11",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "150.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-12",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "150.33",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-13",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "217.09",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-14",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "210.24",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F2-15",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-01",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-02",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "208.17",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-03",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "210.87",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-04",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "201.87",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-05",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "221.36",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-06",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "208.17",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-07",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-08",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-09",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "229.05",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-10",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "207.38",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-11",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "150.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-12",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "150.33",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-13",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "217.09",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-14",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "210.24",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F3-15",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "2ND FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-01",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-02",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "208.17",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-03",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "210.87",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-04",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "201.87",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-05",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "221.36",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-06",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "208.17",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-07",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-08",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-09",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "229.05",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-10",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "207.38",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-11",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "150.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-12",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "150.33",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-13",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "217.09",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-14",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "210.24",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-F4-15",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "271.9",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-01",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "235.195",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-02",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "237.393",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-03",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "224.205",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-04",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "214.633",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-05",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "233.162",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-10",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "226.403",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-11",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "226.403",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-12",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "224.205",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G1-13",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 1",
+    "area": "235.195",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-01",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "260.319",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-02",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "199.303",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-03",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "201.894",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-04",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "193.279",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-05",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "213.709",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-06",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "199.303",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-07",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "260.319",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-09",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "201.283",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-10",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "274.204",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-11",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "274.204",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-G2-13",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND 2",
+    "area": "260.319",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-M-01",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "271.897",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-M-02",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "208.168",
+    "price": 0
+  },
+  {
+    "unitNumber": "BP3-M-03",
+    "project": "Box Park-3",
+    "propertyType": "COMMERCIAL",
+    "floor": "MEZZANINE FLOOR",
+    "area": "210.873",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPLGK-008",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "152.1",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPLGK-014",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "170.3",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPLGS-15",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "364",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPLGS-19",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "171.6",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPLGS-20",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "171.6",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPTF-001A",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "170.3",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPTF-003A",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "227.5",
+    "price": 0
+  },
+  {
+    "unitNumber": "BPTF-013",
+    "project": "Box Park-2",
+    "propertyType": "COMMERCIAL",
+    "floor": "3RD FLOOR",
+    "area": "171.6",
+    "price": 0
+  },
+  {
+    "unitNumber": "DUMMY-6090",
+    "project": "Box Park-3",
+    "propertyType": "",
+    "floor": "",
+    "area": "1000",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-10-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "2,050.46",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-11-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "1,701.57",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-12-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "1,708.64",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-13-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "1,634.34",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-14-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "1,700.45",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-2-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "2,190.81",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-6-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "1,701.57",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-7-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "2,190.81",
+    "price": 0
+  },
+  {
+    "unitNumber": "F-8-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "1ST FLOOR",
+    "area": "2,465.89",
+    "price": 0
+  },
+  {
+    "unitNumber": "FFS-5",
+    "project": "River Hills-4",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "252.4",
+    "price": 0
+  },
+  {
+    "unitNumber": "FFS-9",
+    "project": "River Hills-4",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "330",
+    "price": 0
+  },
+  {
+    "unitNumber": "FGK-107",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "52.9165",
+    "price": 0
+  },
+  {
+    "unitNumber": "FGK-108",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "52.9165",
+    "price": 0
+  },
+  {
+    "unitNumber": "FGK-112",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "30",
+    "price": 0
+  },
+  {
+    "unitNumber": "FGK-20",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "30",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-02",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "230.4",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-04",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "101.33",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-05",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "101.33",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-06",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-07",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-08",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-09",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-1-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "2,397",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-10 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-10-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "1,947.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-100 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-101 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-102 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-103 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-104 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-105 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "102.51",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-11 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-11-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "1,619.05",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-14 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "157.61",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-14-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "1,619.07",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-15 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "91.98",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-15-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "1,947.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-16 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-16-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "1,644.61",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-17 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-18 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-19 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-2-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "2,108.31",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-20 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-21 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "105.69",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-22 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "119.29",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-23 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114.96",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-24 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "112.02",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-25 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114.96",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-27 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "376.7",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-31 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-32 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-33 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-34 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-37 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "97.79",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-40 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "91.87",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-41 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "188.47",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-42 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "106.24",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-44 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "311.93",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-48 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "211.66",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-54 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "150.39",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-58 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "109.97",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-59 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "109.97",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-6-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "1,619.07",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-60 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "227.27",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-61 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "175.96",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-62 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "182.37",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-63 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "150.84",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-64 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "255.23",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-65 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "161.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-66 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "101.33",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-67 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-68 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-69 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-7-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "2,108.31",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-70 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-71 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-72 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-73 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-74 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-75 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "114",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-76 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "270.97",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-77 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "136.33",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-78 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "149.51",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-79 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "98.54",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-8 PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "2,397",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-80 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "93.54",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-81 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "100.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-82 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "119.92",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-88 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "68.83",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-9-PR",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "RESIDENTIAL",
+    "floor": "GROUND",
+    "area": "1,635.94",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-92 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "102.51",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-93 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-94 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-95 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-96 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-97 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "90.01",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-98 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "108.56",
+    "price": 0
+  },
+  {
+    "unitNumber": "G-99 RCY",
+    "project": "River Courtyard Tower-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "108.56",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-103",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-107",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "70",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-16",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-18",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-19",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-22",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-24",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-25",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-3",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-40",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "76",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-42",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "60",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-60",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-83",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-84",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-85",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-86",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-88",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-93",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGF-S-94",
+    "project": "Roman Grove-1",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "50",
+    "price": 0
+  },
+  {
+    "unitNumber": "LGS-4",
+    "project": "River Hills-4",
+    "propertyType": "COMMERCIAL",
+    "floor": "BASEMENT",
+    "area": "680",
+    "price": 0
+  },
+  {
+    "unitNumber": "PENT HOUSE-01",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "12TH FLOOR",
+    "area": "6,294.96",
+    "price": 0
+  },
+  {
+    "unitNumber": "PENT HOUSE-02",
+    "project": "Buraq Heights",
+    "propertyType": "RESIDENTIAL",
+    "floor": "12TH FLOOR",
+    "area": "7,068.88",
+    "price": 0
+  },
+  {
+    "unitNumber": "RH1201",
+    "project": "River Hills-5",
+    "propertyType": "RESIDENTIAL",
+    "floor": "12TH FLOOR",
+    "area": "2,098.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "RH301",
+    "project": "River Hills-5",
+    "propertyType": "RESIDENTIAL",
+    "floor": "3RD FLOOR",
+    "area": "2,098.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "RH501",
+    "project": "River Hills-5",
+    "propertyType": "RESIDENTIAL",
+    "floor": "5TH FLOOR",
+    "area": "2,098.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "RH601",
+    "project": "River Hills-5",
+    "propertyType": "RESIDENTIAL",
+    "floor": "6TH FLOOR",
+    "area": "2,098.2",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-7F2",
+    "project": "Spring Arch",
+    "propertyType": "RESIDENTIAL",
+    "floor": "7TH FLOOR",
+    "area": "431",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-7F6",
+    "project": "Spring Arch",
+    "propertyType": "RESIDENTIAL",
+    "floor": "7TH FLOOR",
+    "area": "362.5",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-8F2",
+    "project": "Spring Arch",
+    "propertyType": "RESIDENTIAL",
+    "floor": "8TH FLOOR",
+    "area": "431",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-F08",
+    "project": "Spring Arch",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "317.8",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-F16",
+    "project": "Spring Arch",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "221",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-F18",
+    "project": "Spring Arch",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "316.4",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-F19",
+    "project": "Spring Arch",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "154",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-F28",
+    "project": "Spring Arch",
+    "propertyType": "COMMERCIAL",
+    "floor": "1ST FLOOR",
+    "area": "107.8",
+    "price": 0
+  },
+  {
+    "unitNumber": "SA-LGF03",
+    "project": "Spring Arch",
+    "propertyType": "COMMERCIAL",
+    "floor": "LOWER GROUND",
+    "area": "236",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 01",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "436",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 02",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "173.5",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 03",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "190",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 04",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "263",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 05",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "189",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 06",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "189",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 07",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "189",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 08",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "180",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 09",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "153.5",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 10",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "163.5",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 11",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "396.5",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 12",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "163.5",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 13",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "263",
+    "price": 0
+  },
+  {
+    "unitNumber": "SHOP 14",
+    "project": "Buraq Heights",
+    "propertyType": "COMMERCIAL",
+    "floor": "GROUND",
+    "area": "252",
+    "price": 0
+  },
+  {
+    "unitNumber": "SL 1 - 101",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "360.59",
+    "price": 644998.15
+  },
+  {
+    "unitNumber": "SL 1 - 102",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "363.07",
+    "price": 645004.75
+  },
+  {
+    "unitNumber": "SL 1 - 103",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "350.04",
+    "price": 644994.21
+  },
+  {
+    "unitNumber": "SL 1 - 104",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "2ND FLOOR",
+    "area": "522.16",
+    "price": 899002.87
+  },
+  {
+    "unitNumber": "SL 1 - 105",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "2ND FLOOR",
+    "area": "861.54",
+    "price": 998998.71
+  },
+  {
+    "unitNumber": "SL 1 - 106",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "351.12",
+    "price": 645003.93
+  },
+  {
+    "unitNumber": "SL 1 - 107",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "353.81",
+    "price": 644999.17
+  },
+  {
+    "unitNumber": "SL 1 - 108",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "352.84",
+    "price": 644998.58
+  },
+  {
+    "unitNumber": "SL 1 - 109",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "2ND FLOOR",
+    "area": "504.72",
+    "price": 848999.61
+  },
+  {
+    "unitNumber": "SL 1 - 110",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "326.68",
+    "price": 619989.64
+  },
+  {
+    "unitNumber": "SL 1 - 111",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "325.72",
+    "price": 620008.02
+  },
+  {
+    "unitNumber": "SL 1 - 112",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "2ND FLOOR",
+    "area": "504.61",
+    "price": 848996.23
+  },
+  {
+    "unitNumber": "SL 1 - 113",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "346.71",
+    "price": 645008.88
+  },
+  {
+    "unitNumber": "SL 1 - 114",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "340.79",
+    "price": 645009.83
+  },
+  {
+    "unitNumber": "SL 1 - 115",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "350.47",
+    "price": 644994.47
+  },
+  {
+    "unitNumber": "SL 1 - 116",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "2ND FLOOR",
+    "area": "385.78",
+    "price": 699002.5
+  },
+  {
+    "unitNumber": "SL 1 - 117",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "354.99",
+    "price": 644991.98
+  },
+  {
+    "unitNumber": "SL 1 - 118",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "315.06",
+    "price": 620000.27
+  },
+  {
+    "unitNumber": "SL 1 - 119",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "319.9",
+    "price": 619991.79
+  },
+  {
+    "unitNumber": "SL 1 - 120",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "313.88",
+    "price": 620007.16
+  },
+  {
+    "unitNumber": "SL 1 - 121",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "318.83",
+    "price": 620006.38
+  },
+  {
+    "unitNumber": "SL 1 - 122",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "321.73",
+    "price": 619993.01
+  },
+  {
+    "unitNumber": "SL 1 - 123",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "2ND FLOOR",
+    "area": "326.68",
+    "price": 619989.64
+  },
+  {
+    "unitNumber": "SL 1 - 124",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "2ND FLOOR",
+    "area": "536.15",
+    "price": 874996.8
+  },
+  {
+    "unitNumber": "SL 1 - 401",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "360.59",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1 - 402",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "363.07",
+    "price": 595006.38
+  },
+  {
+    "unitNumber": "SL 1 - 403",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "349.93",
+    "price": 594992.98
+  },
+  {
+    "unitNumber": "SL 1 - 404",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "4TH FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1 - 405",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "4TH FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1 - 406",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "351.12",
+    "price": 595000.93
+  },
+  {
+    "unitNumber": "SL 1 - 407",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "353.81",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1 - 408",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "352.84",
+    "price": 594997.62
+  },
+  {
+    "unitNumber": "SL 1 - 409",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "4TH FLOOR",
+    "area": "504.83",
+    "price": 775004.92
+  },
+  {
+    "unitNumber": "SL 1 - 410",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "326.58",
+    "price": 560006.32
+  },
+  {
+    "unitNumber": "SL 1 - 411",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "325.93",
+    "price": 559996.63
+  },
+  {
+    "unitNumber": "SL 1 - 412",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "4TH FLOOR",
+    "area": "504.61",
+    "price": 774995.18
+  },
+  {
+    "unitNumber": "SL 1 - 413",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "346.71",
+    "price": 595006.37
+  },
+  {
+    "unitNumber": "SL 1 - 414",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "340.79",
+    "price": 595009.12
+  },
+  {
+    "unitNumber": "SL 1 - 415",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "350.47",
+    "price": 594996.42
+  },
+  {
+    "unitNumber": "SL 1 - 416",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "4TH FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1 - 417",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "4TH FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1 - 418",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "354.99",
+    "price": 594995.19
+  },
+  {
+    "unitNumber": "SL 1 - 419",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "314.95",
+    "price": 559996.85
+  },
+  {
+    "unitNumber": "SL 1 - 420",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "319.9",
+    "price": 559994.55
+  },
+  {
+    "unitNumber": "SL 1 - 421",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "313.88",
+    "price": 560009
+  },
+  {
+    "unitNumber": "SL 1 - 422",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "318.83",
+    "price": 560005.77
+  },
+  {
+    "unitNumber": "SL 1 - 423",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "321.73",
+    "price": 559993.59
+  },
+  {
+    "unitNumber": "SL 1 - 424",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "4TH FLOOR",
+    "area": "326.68",
+    "price": 559991.59
+  },
+  {
+    "unitNumber": "SL 1 - 425",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "4TH FLOOR",
+    "area": "536.15",
+    "price": 798997.54
+  },
+  {
+    "unitNumber": "SL 1 - 501",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "4TH FLOOR",
+    "area": "360.59",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1 - 502",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "363.07",
+    "price": 595006.38
+  },
+  {
+    "unitNumber": "SL 1 - 503",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "349.93",
+    "price": 594992.98
+  },
+  {
+    "unitNumber": "SL 1 - 504",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "5TH FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1 - 505",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "5TH FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1 - 506",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "351.12",
+    "price": 595000.93
+  },
+  {
+    "unitNumber": "SL 1 - 507",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "353.81",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1 - 508",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "352.84",
+    "price": 594997.62
+  },
+  {
+    "unitNumber": "SL 1 - 509",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "5TH FLOOR",
+    "area": "504.83",
+    "price": 775004.92
+  },
+  {
+    "unitNumber": "SL 1 - 510",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "326.58",
+    "price": 560006.32
+  },
+  {
+    "unitNumber": "SL 1 - 511",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "325.93",
+    "price": 559996.63
+  },
+  {
+    "unitNumber": "SL 1 - 512",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "5TH FLOOR",
+    "area": "504.61",
+    "price": 774995.18
+  },
+  {
+    "unitNumber": "SL 1 - 513",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "346.71",
+    "price": 595006.37
+  },
+  {
+    "unitNumber": "SL 1 - 514",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "340.79",
+    "price": 595009.12
+  },
+  {
+    "unitNumber": "SL 1 - 515",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "350.47",
+    "price": 594996.42
+  },
+  {
+    "unitNumber": "SL 1 - 516",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "5TH FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1 - 517",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "5TH FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1 - 518",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "354.99",
+    "price": 594995.19
+  },
+  {
+    "unitNumber": "SL 1 - 519",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "314.95",
+    "price": 559996.85
+  },
+  {
+    "unitNumber": "SL 1 - 520",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "319.9",
+    "price": 559994.55
+  },
+  {
+    "unitNumber": "SL 1 - 521",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "313.88",
+    "price": 560009
+  },
+  {
+    "unitNumber": "SL 1 - 522",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "318.83",
+    "price": 560005.77
+  },
+  {
+    "unitNumber": "SL 1 - 523",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "321.73",
+    "price": 559993.59
+  },
+  {
+    "unitNumber": "SL 1 - 524",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "5TH FLOOR",
+    "area": "326.68",
+    "price": 559991.59
+  },
+  {
+    "unitNumber": "SL 1 - 525",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "5TH FLOOR",
+    "area": "536.15",
+    "price": 798997.54
+  },
+  {
+    "unitNumber": "SL 1 - 601",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "5TH FLOOR",
+    "area": "360.59",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1 - 602",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "363.07",
+    "price": 595006.38
+  },
+  {
+    "unitNumber": "SL 1 - 603",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "349.93",
+    "price": 594992.98
+  },
+  {
+    "unitNumber": "SL 1 - 604",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "6TH FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1 - 605",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "6TH FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1 - 606",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "351.12",
+    "price": 595000.93
+  },
+  {
+    "unitNumber": "SL 1 - 607",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "353.81",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1 - 608",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "352.84",
+    "price": 594997.62
+  },
+  {
+    "unitNumber": "SL 1 - 609",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "6TH FLOOR",
+    "area": "504.83",
+    "price": 775004.92
+  },
+  {
+    "unitNumber": "SL 1 - 610",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "326.58",
+    "price": 560006.32
+  },
+  {
+    "unitNumber": "SL 1 - 611",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "325.93",
+    "price": 559996.63
+  },
+  {
+    "unitNumber": "SL 1 - 612",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "6TH FLOOR",
+    "area": "504.61",
+    "price": 774995.18
+  },
+  {
+    "unitNumber": "SL 1 - 613",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "346.71",
+    "price": 595006.37
+  },
+  {
+    "unitNumber": "SL 1 - 614",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "340.79",
+    "price": 595009.12
+  },
+  {
+    "unitNumber": "SL 1 - 615",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "350.47",
+    "price": 594996.42
+  },
+  {
+    "unitNumber": "SL 1 - 616",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "6TH FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1 - 617",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "6TH FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1 - 618",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "6TH FLOOR",
+    "area": "354.99",
+    "price": 594995.19
+  },
+  {
+    "unitNumber": "SL 1 - 619",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "314.95",
+    "price": 559996.85
+  },
+  {
+    "unitNumber": "SL 1 - 620",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "319.9",
+    "price": 559994.55
+  },
+  {
+    "unitNumber": "SL 1 - 621",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "313.88",
+    "price": 560009
+  },
+  {
+    "unitNumber": "SL 1 - 622",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "318.83",
+    "price": 560005.77
+  },
+  {
+    "unitNumber": "SL 1 - 623",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "321.73",
+    "price": 559993.59
+  },
+  {
+    "unitNumber": "SL 1 - 624",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "6TH FLOOR",
+    "area": "326.68",
+    "price": 559991.59
+  },
+  {
+    "unitNumber": "SL 1 - 625",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "6TH FLOOR",
+    "area": "536.15",
+    "price": 798997.54
+  },
+  {
+    "unitNumber": "SL 1- 201",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "2ND FLOOR",
+    "area": "360.59",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1- 202",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "363.07",
+    "price": 595006.38
+  },
+  {
+    "unitNumber": "SL 1- 203",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "349.93",
+    "price": 594992.98
+  },
+  {
+    "unitNumber": "SL 1- 204",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "3RD FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1- 205",
+    "project": "Southlofts 1",
+    "propertyType": "A (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "3RD FLOOR",
+    "area": "583.51",
+    "price": 815000.09
+  },
+  {
+    "unitNumber": "SL 1- 206",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "351.12",
+    "price": 595000.93
+  },
+  {
+    "unitNumber": "SL 1- 207",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "353.81",
+    "price": 594998.74
+  },
+  {
+    "unitNumber": "SL 1- 208",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "352.84",
+    "price": 594997.62
+  },
+  {
+    "unitNumber": "SL 1- 209",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "3RD FLOOR",
+    "area": "504.83",
+    "price": 775004.92
+  },
+  {
+    "unitNumber": "SL 1- 210",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "326.58",
+    "price": 560006.32
+  },
+  {
+    "unitNumber": "SL 1- 211",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "325.93",
+    "price": 559996.63
+  },
+  {
+    "unitNumber": "SL 1- 212",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "3RD FLOOR",
+    "area": "504.61",
+    "price": 774995.18
+  },
+  {
+    "unitNumber": "SL 1- 213",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "346.71",
+    "price": 595006.37
+  },
+  {
+    "unitNumber": "SL 1- 214",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "340.79",
+    "price": 595009.12
+  },
+  {
+    "unitNumber": "SL 1- 215",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "350.47",
+    "price": 594996.42
+  },
+  {
+    "unitNumber": "SL 1- 216",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "3RD FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1- 217",
+    "project": "Southlofts 1",
+    "propertyType": "B (Flex 1 BHK - Optional Pvt Pool)",
+    "floor": "3RD FLOOR",
+    "area": "383.84",
+    "price": 634998.03
+  },
+  {
+    "unitNumber": "SL 1- 218",
+    "project": "Southlofts 1",
+    "propertyType": "C",
+    "floor": "3RD FLOOR",
+    "area": "354.99",
+    "price": 594995.19
+  },
+  {
+    "unitNumber": "SL 1- 219",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "314.95",
+    "price": 559996.85
+  },
+  {
+    "unitNumber": "SL 1- 220",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "319.9",
+    "price": 559994.55
+  },
+  {
+    "unitNumber": "SL 1- 221",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "313.88",
+    "price": 560009
+  },
+  {
+    "unitNumber": "SL 1- 222",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "318.83",
+    "price": 560005.77
+  },
+  {
+    "unitNumber": "SL 1- 223",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "321.73",
+    "price": 559993.59
+  },
+  {
+    "unitNumber": "SL 1- 224",
+    "project": "Southlofts 1",
+    "propertyType": "D",
+    "floor": "3RD FLOOR",
+    "area": "326.68",
+    "price": 559991.59
+  },
+  {
+    "unitNumber": "SL 1- 225",
+    "project": "Southlofts 1",
+    "propertyType": "E (Flex 1 BHK)",
+    "floor": "3RD FLOOR",
+    "area": "536.15",
+    "price": 798997.54
+  }
+]
