@@ -100,9 +100,8 @@ async function callGeminiWithRetry(contents: Content[], systemPrompt: string): P
 /** What the orchestrator gets back after a turn. */
 export interface AgentResult {
   reply: string;
-  handoff?: ToolContext["handoff"];
-  proposal?: ToolContext["proposal"];
   media?: ToolContext["media"];
+  proposal?: ToolContext["proposal"];
 }
 
 /**
@@ -111,6 +110,9 @@ export interface AgentResult {
  */
 export async function runAgentTurn(session: Session, userText: string): Promise<AgentResult> {
   const ctx: ToolContext = { session };
+
+  // Always build fresh system prompt (to reflect chosen language and admin status).
+  const systemInstruction = buildSystemPrompt(session);
 
   // Build contents from stored history (TEXT-ONLY — we never persist tool turns,
   // and we defensively strip any non-text parts so the request can never violate
@@ -129,7 +131,7 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
   let finalText = "";
 
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
-    const systemPrompt = buildSystemPrompt(session.language);
+    const systemPrompt = buildSystemPrompt(session);
     const modelContent = await callGeminiWithRetry(contents, systemPrompt);
     contents.push(modelContent);
 
@@ -166,5 +168,5 @@ export async function runAgentTurn(session: Session, userText: string): Promise<
   session.greeted = true;
   sessions.save(session);
 
-  return { reply: finalText, handoff: ctx.handoff, proposal: ctx.proposal, media: ctx.media };
+  return { reply: finalText, media: ctx.media, proposal: ctx.proposal };
 }

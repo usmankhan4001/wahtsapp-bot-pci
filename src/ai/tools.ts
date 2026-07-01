@@ -1,179 +1,74 @@
-// Gemini function-calling tools. Each has a declaration (sent to Gemini) and an
-// executor (run when Gemini calls it). Tools wrap the Bitrix client + session.
-import { bitrix } from "../bitrix/client.js";
+import { searchUnits, getUnitByNumber } from "../inventory/loader.js";
+import { PROJECT_DOCUMENTS, getDriveDownloadUrl } from "../documents/registry.js";
 import type { Session } from "../session/store.js";
 import { sessions, type Language } from "../session/store.js";
-import { retrieve } from "../rag/retrieve.js";
-import { brochureUrl, paymentPlanUrl, floorPlanUrls, locationOf } from "../media/registry.js";
 import { logger } from "../logger.js";
+import type { ProposalRequest } from "../proposal/index.js";
 
-// Gemini Schema types are uppercase enums (STRING, OBJECT, ...).
 export const toolDeclarations = [
   {
     name: "set_language",
-    description:
-      "Record the customer's preferred language for the rest of the conversation.",
+    description: "Record the user's preferred language for the rest of the conversation.",
     parameters: {
       type: "OBJECT",
-      properties: {
-        language: {
-          type: "STRING",
-          enum: ["english", "urdu", "roman_urdu"],
-          description: "The chosen language.",
-        },
-      },
+      properties: { language: { type: "STRING", enum: ["english", "urdu", "roman_urdu"] } },
       required: ["language"],
     },
   },
   {
-    name: "update_lead_profile",
-    description: "Silently record or update the customer's qualification profile whenever they mention their budget, intent, property type, or preferred project. Call this whenever new information is revealed.",
+    name: "query_inventory_sheet",
+    description: "Search LIVE available units and pricing from the local inventory. Filter by project, type, maxPrice.",
     parameters: {
       type: "OBJECT",
       properties: {
-        budget: { type: "STRING", description: "Customer's budget range, e.g., '5 Crore', '10-20 million'" },
-        intent: { type: "STRING", enum: ["investment", "personal"], description: "Whether they are buying for investment or personal use." },
-        propertyType: { type: "STRING", enum: ["residential", "commercial"], description: "Residential vs Commercial." },
-        projectPreference: { type: "STRING", description: "Name of the project they are interested in." }
-      }
-    }
-  },
-  {
-    name: "list_projects",
-    description:
-      "List all Premier Choice International projects that have inventory. Use to know which projects exist before searching units.",
-    parameters: { type: "OBJECT", properties: {} },
-  },
-  {
-    name: "search_units",
-    description:
-      "Search LIVE available units. Filter by project name (or id), property type (e.g. RESIDENTIAL, COMMERCIAL), and/or floor. Returns matching available units. Prices are not included here — use get_unit_details for an exact price.",
-    parameters: {
-      type: "OBJECT",
-      properties: {
-        project: { type: "STRING", description: "Project name or id (optional)." },
-        type: {
-          type: "STRING",
-          description: "Property type name or id, e.g. RESIDENTIAL or COMMERCIAL (optional).",
-        },
-        floor: { type: "STRING", description: "Floor name or id (optional)." },
+        project: { type: "STRING", description: "Project name (e.g. 'Box Park')." },
+        type: { type: "STRING", description: "Property type (e.g. '1 Bed', 'Shop')." },
+        maxPrice: { type: "NUMBER", description: "Maximum price in PKR." }
       },
-    },
-  },
-  {
-    name: "get_unit_details",
-    description:
-      "Get full details for one unit by its id (from search_units): project, type, category, floor, area, base rate, and total price in PKR.",
-    parameters: {
-      type: "OBJECT",
-      properties: {
-        unitId: { type: "STRING", description: "The unit's product id." },
-      },
-      required: ["unitId"],
     },
   },
   {
     name: "generate_proposal",
-    description:
-      "Generate and send the payment-proposal PDF to the customer for a specific unit. Call ONLY after you have the EXACT numeric unit ID. You MUST call search_units first to get the correct unitId. Do not guess or use the unit name.",
+    description: "Generate a flexible PDF payment proposal for a specific unit and send it to the chat. ALWAYS ask for the client's name first.",
     parameters: {
       type: "OBJECT",
       properties: {
-        unitId: { type: "STRING", description: "The EXACT numeric unit product ID (e.g. '6781') from search_units. Do NOT use the unit name (e.g. 'BPTF-001A')." },
-        plan: { type: "STRING", enum: ["full", "installment"] },
-        downPaymentPercent: { type: "NUMBER", description: "e.g. 50 (installment only; min 30)." },
-        possessionPercent: { type: "NUMBER", description: "On-possession %, usually 10 or 20." },
-        installmentMonths: { type: "NUMBER", description: "6, 12, 24, or 36." },
+        unitId: { type: "STRING", description: "The EXACT Unit Number from query_inventory_sheet." },
+        clientName: { type: "STRING", description: "The name of the client to put on the PDF." },
+        plan: { type: "STRING", enum: ["full", "installment"], description: "Full payment or installment plan." },
+        downPaymentPercent: { type: "NUMBER", description: "Down payment percentage (e.g., 20, 30, 50)." },
+        possessionPercent: { type: "NUMBER", description: "Percentage to pay on possession (e.g., 10, 20)." },
+        installmentMonths: { type: "NUMBER", description: "Number of monthly installments (e.g., 12, 24, 36, 48)." },
         balloons: {
           type: "ARRAY",
-          description: "Optional lump-sum balloon payments.",
           items: {
             type: "OBJECT",
             properties: {
-              month: { type: "NUMBER" },
-              amount: { type: "NUMBER" },
+              month: { type: "NUMBER", description: "The month number (e.g., 6) to pay the balloon payment." },
+              amount: { type: "NUMBER", description: "The amount in PKR to pay." }
             },
+            required: ["month", "amount"]
           },
-        },
+          description: "Optional extra bulk payments (balloons) at specific months."
+        }
       },
-      required: ["unitId", "plan"],
+      required: ["unitId", "clientName", "plan"],
     },
   },
   {
-    name: "get_project_info",
-    description:
-      "Answer detailed questions about a project (amenities, specs, layout, location, payment terms, FAQs) using the company's official brochures. Use this for any factual/descriptive question that isn't live price/availability.",
+    name: "send_project_document",
+    description: "Send the official PDF brochure or layout plan for a project directly into the WhatsApp chat.",
     parameters: {
       type: "OBJECT",
-      properties: {
-        question: { type: "STRING", description: "The customer's question." },
-        project: { type: "STRING", description: "Project name to focus on (optional)." },
-      },
-      required: ["question"],
-    },
-  },
-  {
-    name: "send_brochure",
-    description: "Send the official PDF brochure for a project to the customer on WhatsApp.",
-    parameters: {
-      type: "OBJECT",
-      properties: { project: { type: "STRING" } },
-      required: ["project"],
-    },
-  },
-  {
-    name: "send_floor_plan",
-    description: "Send the floor/layout plan image(s) for a project to the customer. If a project has many layouts (like Grand Orchard), the customer should specify which floor they want.",
-    parameters: {
-      type: "OBJECT",
-      properties: {
+      properties: { 
         project: { type: "STRING" },
-        floor: { type: "STRING", description: "Optional. The specific floor requested (e.g. '3rd Floor', 'Lower Ground', 'Page 5')." }
+        documentType: { type: "STRING", enum: ["brochure", "layout"] }
       },
-      required: ["project"],
+      required: ["project", "documentType"],
     },
-  },
-  {
-    name: "send_location",
-    description: "Share a project's location (map link) with the customer.",
-    parameters: {
-      type: "OBJECT",
-      properties: { project: { type: "STRING" } },
-      required: ["project"],
-    },
-  },
-  {
-    name: "handoff_to_team",
-    description:
-      "Escalate this chat to a human team. Use for bulk/corporate (B2B), an individual ready to proceed or wanting a human agent (B2C), or complaints/after-sales (CARE).",
-    parameters: {
-      type: "OBJECT",
-      properties: {
-        team: { type: "STRING", enum: ["B2B", "B2C", "CARE"] },
-        reason: { type: "STRING", description: "Short reason for the handoff." },
-      },
-      required: ["team", "reason"],
-    },
-  },
+  }
 ];
 
-/** Result of a handoff so the orchestrator can notify + pause the chat. */
-export interface HandoffSignal {
-  team: "B2B" | "B2C" | "CARE";
-  reason: string;
-}
-
-/** Set by generate_proposal; the orchestrator builds + sends the PDF after the turn. */
-export interface ProposalSignal {
-  unitId: string;
-  plan: "full" | "installment";
-  downPaymentPercent?: number;
-  possessionPercent?: number;
-  installmentMonths?: number;
-  balloons?: { month: number; amount: number }[];
-}
-
-/** A file/location the orchestrator should send after the turn. */
 export interface MediaItem {
   kind: "document" | "image" | "text";
   url?: string;
@@ -183,31 +78,12 @@ export interface MediaItem {
 
 export interface ToolContext {
   session: Session;
-  /** Set by handoff_to_team for the orchestrator to act on after the turn. */
-  handoff?: HandoffSignal;
-  /** Set by generate_proposal for the orchestrator to act on after the turn. */
-  proposal?: ProposalSignal;
-  /** Queued media (brochures/floor plans/location) to send after the turn. */
   media?: MediaItem[];
+  proposal?: ProposalRequest;
 }
 
-const enumNamesToId = async (
-  list: { id: number; value: string }[],
-  nameOrId?: string,
-): Promise<string | undefined> => {
-  if (!nameOrId) return undefined;
-  if (/^\d+$/.test(nameOrId)) return nameOrId;
-  const q = nameOrId.trim().toLowerCase();
-  const hit =
-    list.find((e) => e.value.toLowerCase() === q) ??
-    list.find((e) => e.value.toLowerCase().includes(q));
-  return hit ? String(hit.id) : undefined;
-};
+const pkr = (n?: number) => n == null ? undefined : `PKR ${Math.round(n).toLocaleString("en-US")}`;
 
-const pkr = (n?: number) =>
-  n == null ? undefined : `PKR ${Math.round(n).toLocaleString("en-US")}`;
-
-/** Execute a tool call; returns a plain object Gemini will read as the result. */
 export async function executeTool(
   name: string,
   args: Record<string, unknown>,
@@ -221,172 +97,86 @@ export async function executeTool(
       return { ok: true, language };
     }
 
-    case "update_lead_profile": {
-      ctx.session.leadProfile = {
-        ...ctx.session.leadProfile,
-        ...(args.budget ? { budget: String(args.budget) } : {}),
-        ...(args.intent ? { intent: String(args.intent) as "investment" | "personal" } : {}),
-        ...(args.propertyType ? { propertyType: String(args.propertyType) as "residential" | "commercial" } : {}),
-        ...(args.projectPreference ? { projectPreference: String(args.projectPreference) } : {})
-      };
-      sessions.save(ctx.session);
-      return { ok: true, message: "Profile updated silently." };
-    }
-
-    case "list_projects": {
-      const projects = await bitrix.listProjects();
-      return { projects: projects.map((p) => ({ id: p.id, name: p.value })) };
-    }
-
-    case "search_units": {
-      const [types, floors] = await Promise.all([
-        bitrix.listTypes(),
-        bitrix.listFloors(),
-      ]);
+    case "query_inventory_sheet": {
       const filter = {
-        projectId: await bitrix.resolveProjectId(String(args.project ?? "")) ?? undefined,
+        project: args.project as string | undefined,
         type: args.type as string | undefined,
-        floor: args.floor as string | undefined,
+        maxPrice: args.maxPrice as number | undefined
       };
-      const units = await bitrix.searchCached(filter);
       
-      const top = units.slice(0, 8);
+      const units = searchUnits(filter);
+      const top = units.slice(0, 10);
       const enriched = top.map((d) => ({
-        id: d.id,
-        name: d.name,
-        project: d.projectName,
-        type: d.typeName,
-        floor: d.floorName,
-        area: d.grossArea ? `${d.grossArea} sq.ft` : undefined,
-        price: pkr(d.totalPrice),
+        unitId: d.unitNumber,
+        project: d.project,
+        type: d.propertyType,
+        floor: d.floor,
+        area: d.area,
+        price: pkr(d.price),
       }));
       
       return { count: units.length, showing: enriched.length, units: enriched };
     }
 
-    case "get_unit_details": {
-      const u = await bitrix.getNormalizedUnit(String(args.unitId));
-      if (!u) return { error: "Unit not found." };
-      return {
-        id: u.id,
-        name: u.name,
-        project: u.projectName,
-        type: u.typeName,
-        category: u.categoryName,
-        floor: u.floorName,
-        grossArea: u.grossArea,
-        baseRate: pkr(u.baseRate),
-        totalPrice: pkr(u.totalPrice),
-        available: u.available,
-      };
-    }
-
     case "generate_proposal": {
+      const u = getUnitByNumber(String(args.unitId));
+      if (!u) return { error: "Unit not found in inventory." };
+
+      const plan = args.plan as "full" | "installment";
+      let dp = args.downPaymentPercent as number | undefined;
+      let pos = args.possessionPercent as number | undefined;
+      let months = args.installmentMonths as number | undefined;
+      const balloons = args.balloons as any;
+
+      // Enforcement for standard reps
+      if (!ctx.session.isAdmin) {
+        if (dp !== undefined && dp > 30) {
+          return { error: "Authorization Error: Standard sales reps can only offer up to 30% down payment." };
+        }
+        if (pos !== undefined && pos !== 10 && pos !== 20) {
+          return { error: "Authorization Error: Standard sales reps can only offer 10% or 20% on possession." };
+        }
+        if (plan === "installment") {
+          const allowedMonths = [12, 24, 36, 48];
+          if (months !== undefined && !allowedMonths.includes(months)) {
+            return { error: `Authorization Error: Standard sales reps can only offer installments of 1, 2, 3, or 4 years (12, 24, 36, 48 months). You requested ${months}.` };
+          }
+        }
+      }
+
       ctx.proposal = {
         unitId: String(args.unitId),
-        plan: (args.plan as "full" | "installment") ?? "installment",
-        downPaymentPercent: args.downPaymentPercent as number | undefined,
-        possessionPercent: args.possessionPercent as number | undefined,
-        installmentMonths: args.installmentMonths as number | undefined,
-        balloons: args.balloons as { month: number; amount: number }[] | undefined,
+        clientName: String(args.clientName),
+        plan,
+        downPaymentPercent: dp,
+        possessionPercent: pos,
+        installmentMonths: months,
+        balloons
       };
-      return { ok: true, message: "Proposal PDF is being prepared and will be sent now." };
+      
+      return { ok: true, message: "Proposal generation queued. It will be sent shortly." };
     }
 
-    case "get_project_info": {
-      const chunks = await retrieve(
-        String(args.question ?? ""),
-        args.project as string | undefined,
-      );
-      if (chunks.length === 0) {
-        return {
-          info: null,
-          note: "No brochure info indexed yet. Answer from general knowledge base or offer to connect the team.",
-        };
-      }
-      return {
-        sources: [...new Set(chunks.map((c) => c.project))],
-        info: chunks.map((c) => c.text).join("\n---\n"),
-      };
-    }
-
-    case "send_brochure": {
+    case "send_project_document": {
       const project = String(args.project ?? "");
-      logger.info(`send_brochure called for project: ${project}`);
-      const url = brochureUrl(project);
-      if (!url) {
-        logger.warn(`send_brochure: No brochure URL found for project ${project}`);
-        return { ok: false, message: `No brochure available yet for ${project}.` };
+      const docType = String(args.documentType ?? "") as "brochure" | "layout";
+      
+      const docs = PROJECT_DOCUMENTS[project];
+      if (!docs || !docs[docType]) {
+        return { ok: false, message: `No ${docType} available yet for ${project}.` };
       }
-      logger.info(`send_brochure: Found brochure URL: ${url}`);
+      
+      const fileId = docs[docType] as string;
+      const downloadUrl = getDriveDownloadUrl(fileId);
+      
       (ctx.media ??= []).push({
         kind: "document",
-        url,
-        filename: `${project} Brochure.pdf`,
-        caption: `${project} — Brochure 📄`,
+        url: downloadUrl,
+        filename: `${project} ${docType === 'brochure' ? 'Brochure' : 'Layout'}.pdf`,
+        caption: `${project} — ${docType === 'brochure' ? 'Brochure' : 'Layout Plan'} 📄`,
       });
-      // Also send the payment plan if we have one.
-      const pp = paymentPlanUrl(project);
-      if (pp) {
-        logger.info(`send_brochure: Found payment plan URL: ${pp}`);
-        ctx.media.push({
-          kind: "document",
-          url: pp,
-          filename: `${project} Payment Plan.pdf`,
-          caption: `${project} — Payment Plan 💳`,
-        });
-      } else {
-        logger.info(`send_brochure: No payment plan URL found for project ${project}`);
-      }
-      return { ok: true, message: "Brochure (and payment plan) is being sent." };
-    }
-
-    case "send_floor_plan": {
-      const project = String(args.project ?? "");
-      const floor = args.floor ? String(args.floor).toLowerCase() : undefined;
-      const plans = floorPlanUrls(project);
-      if (plans.length === 0) return { ok: false, message: `No floor plans available yet for ${project}.` };
       
-      let toSend = plans;
-      if (plans.length > 5) {
-        if (!floor) {
-          return { ok: true, message: `There are ${plans.length} floor plans available for ${project}. Please ask the customer which specific floor they are interested in (e.g. Ground Floor, 1st Floor, etc.) so we don't spam them.` };
-        }
-        // Filter by fuzzy floor match
-        const matched = plans.filter(p => p.label.toLowerCase().includes(floor) || floor.includes(p.label.toLowerCase()));
-        if (matched.length > 0) {
-          toSend = matched;
-        } else {
-          return { ok: true, message: `Could not find a floor plan matching '${floor}'. Available plans: ${plans.map(p => p.label).join(", ")}.` };
-        }
-      }
-
-      for (const p of toSend) {
-        const isPdf = /\.pdf(\?|$)/i.test(p.url);
-        (ctx.media ??= []).push({
-          kind: isPdf ? "document" : "image",
-          url: p.url,
-          filename: isPdf ? `${project} - ${p.label}.pdf` : undefined,
-          caption: `${project} — ${p.label}`,
-        });
-      }
-      return { ok: true, message: "Floor plan(s) being sent." };
-    }
-
-    case "send_location": {
-      const project = String(args.project ?? "");
-      const loc = locationOf(project);
-      if (!loc) return { ok: false, message: `No location saved yet for ${project}.` };
-      (ctx.media ??= []).push({ kind: "text", caption: `${project} location 📍\n${loc}` });
-      return { ok: true, message: "Location shared." };
-    }
-
-    case "handoff_to_team": {
-      ctx.handoff = {
-        team: String(args.team) as HandoffSignal["team"],
-        reason: String(args.reason ?? ""),
-      };
-      return { ok: true, message: "A specialist will be notified." };
+      return { ok: true, message: "Document is being fetched and sent." };
     }
 
     default:

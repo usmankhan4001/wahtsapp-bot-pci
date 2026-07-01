@@ -28,6 +28,7 @@ export interface Session {
   status: ChatStatus;
   /** Set true once we've greeted + asked language, so we don't repeat it. */
   greeted: boolean;
+  isAdmin?: boolean;
   leadProfile?: LeadProfile;
   history: Turn[];
   createdAt: number;

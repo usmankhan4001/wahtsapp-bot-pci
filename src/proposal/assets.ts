@@ -1,59 +1,48 @@
-// Per-project branding assets (logos + hero image), mirroring the calculator's
-// generatePDF.js. Keys are matched loosely against the Bitrix project name.
-import { config } from "../config.js";
+import * as fs from "fs";
+import * as path from "path";
 
 export interface ProjectAsset {
-  logoUrl: string;
-  imageUrl: string;
+  logoPath: string;
+  imagePath: string;
 }
 
-const base = config.mediaBaseUrl + "/assets";
+const INVENTORY_DIR = path.resolve("E:/Apps/PCI Whatsapp Bot/Inventory");
+const LOGO_DIR = path.join(INVENTORY_DIR, "logos");
+const PROJECT_DIR = path.join(INVENTORY_DIR, "projects");
 
-export const COMPANY_LOGO = `${base}/pci-logo.png`;
-export const COMPANY_LOGO_WHITE = `${base}/pci-logo-white.png`;
-
-/** Full-page sales-offer cover used only for Box Park-3. */
-export const BOXPARK3_COVER = `${base}/boxpark3-sales-offer.jpg`;
-
-/** True if a project should use the special Box Park-3 layout. */
-export function isBoxPark3(projectName?: string): boolean {
-  return /box\s*park[-\s]*3|box\s*park[-\s]*iii/i.test(projectName ?? "");
-}
+export const COMPANY_LOGO = path.join(LOGO_DIR, "pci-logo.png");
+export const COMPANY_LOGO_WHITE = path.join(LOGO_DIR, "pci-logo-white.png");
 
 const ASSETS: Record<string, ProjectAsset> = {
   "river courtyard": {
-    logoUrl: `${base}/river-courtyard-logo.png`,
-    imageUrl: `${base}/river-courtyard-small.png`,
+    logoPath: path.join(LOGO_DIR, "river-courtyard-logo.png"),
+    imagePath: path.join(PROJECT_DIR, "river.png"),
   },
   "grand gallery": {
-    logoUrl: `${base}/grand-gallery-logo.png`,
-    imageUrl: `${base}/grand-gallery-small.png`,
+    logoPath: path.join(LOGO_DIR, "grand-gallery-logo.png"),
+    imagePath: path.join(PROJECT_DIR, "grand gallery.png"),
   },
   "box park": {
-    logoUrl: `${base}/box-park-logo.png`,
-    imageUrl: `${base}/box-park-small.jpg`,
+    logoPath: path.join(LOGO_DIR, "box-park-logo.png"),
+    imagePath: path.join(PROJECT_DIR, "box park II.jpg"),
   },
   "roman grove": {
-    logoUrl: `${base}/roman-grove-logo.png`,
-    imageUrl: `${base}/roman-grove-small.jpg`,
+    logoPath: path.join(LOGO_DIR, "roman-grove-logo.png"),
+    imagePath: path.join(PROJECT_DIR, "roman grove 1.jpg"),
   },
-  "buraq heights": {
-    logoUrl: `${base}/buraq-heights-logo.png`,
-    imageUrl: `${base}/buraq-heights-small.png`,
+  "buraq height": {
+    logoPath: path.join(LOGO_DIR, "buraq-heights-logo.png"),
+    imagePath: path.join(PROJECT_DIR, "buraq height.png"),
   },
   "grand orchard": {
-    logoUrl: `${base}/grand-orchard-logo.png`,
-    imageUrl: `${base}/grand-orchard-small.jpg`,
-  },
-  "box park-3": {
-    logoUrl: `${base}/box-park-3-logo.png`,
-    imageUrl: `${base}/box-park-3-front.jpg`,
+    logoPath: path.join(LOGO_DIR, "grand-orchard-logo.png"),
+    imagePath: path.join(PROJECT_DIR, "DHA_Orchard_Night_Shot_01.jpg"),
   },
 };
 
 const DEFAULT: ProjectAsset = {
-  logoUrl: `${base}/grand-orchard-logo.png`,
-  imageUrl: `${base}/grand-orchard-small.jpg`,
+  logoPath: path.join(LOGO_DIR, "pci-logo.png"),
+  imagePath: path.join(PROJECT_DIR, "box park II.jpg"),
 };
 
 export function assetsFor(projectName?: string): ProjectAsset {

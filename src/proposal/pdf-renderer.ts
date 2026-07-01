@@ -1,7 +1,9 @@
 import PDFDocument from "pdfkit";
-import type { NormalizedUnit } from "../bitrix/types.js";
+// Using any for unit parameter to avoid tight coupling
 import type { PlanResult } from "./calc.js";
 import { assetsFor, COMPANY_LOGO } from "./assets.js";
+
+import * as fs from "fs";
 
 export interface TemplateMeta {
   clientName?: string;
@@ -14,28 +16,25 @@ const GREY = "#666666";
 const LIGHT_GREY = "#F4F6F9";
 const pkr = (n: number) => `PKR ${Math.round(n).toLocaleString("en-US")}`;
 
-async function fetchImage(url: string): Promise<Buffer | null> {
-  if (!url) return null;
+async function loadAsset(filePath: string): Promise<Buffer | null> {
+  if (!filePath) return null;
   try {
-    const res = await fetch(url);
-    if (!res.ok) return null;
-    const arrayBuffer = await res.arrayBuffer();
-    return Buffer.from(arrayBuffer);
+    return await fs.promises.readFile(filePath);
   } catch (err) {
     return null;
   }
 }
 
 export async function buildProposalPdf(
-  unit: NormalizedUnit,
+  unit: any, // using any temporarily since NormalizedUnit was from Bitrix
   plan: PlanResult,
   meta: TemplateMeta = {},
 ): Promise<Buffer> {
-  const assets = assetsFor(unit.projectName);
+  const assets = assetsFor(unit.project); // Was unit.projectName, our loader uses project
   const [projectLogoBuf, companyLogoBuf, heroImageBuf] = await Promise.all([
-    fetchImage(assets.logoUrl),
-    fetchImage(COMPANY_LOGO),
-    fetchImage(assets.imageUrl)
+    loadAsset(assets.logoPath),
+    loadAsset(COMPANY_LOGO),
+    loadAsset(assets.imagePath)
   ]);
 
   return new Promise((resolve, reject) => {
@@ -72,14 +71,14 @@ export async function buildProposalPdf(
       try {
         doc.image(projectLogoBuf, right - 100, 25, { height: 40, align: "right" });
       } catch (e) {
-        if (unit.projectName) {
+        if (unit.project) {
           doc.fillColor(GOLD).fontSize(14).font("Helvetica-Bold")
-            .text(unit.projectName, right - 150, 35, { width: 150, align: "right" });
+            .text(unit.project, right - 150, 35, { width: 150, align: "right" });
         }
       }
-    } else if (unit.projectName) {
+    } else if (unit.project) {
       doc.fillColor(GOLD).fontSize(14).font("Helvetica-Bold")
-        .text(unit.projectName, right - 150, 35, { width: 150, align: "right" });
+        .text(unit.project, right - 150, 35, { width: 150, align: "right" });
     }
 
     // Header Text
@@ -134,17 +133,16 @@ export async function buildProposalPdf(
       doc.moveDown(0.4);
     };
 
-    if (unit.projectName) kvDetails("Project", unit.projectName);
-    kvDetails("Unit", unit.name);
-    if (unit.typeName) kvDetails("Type", unit.typeName);
-    if (unit.categoryName) kvDetails("Category", unit.categoryName);
-    if (unit.floorName) kvDetails("Floor", unit.floorName);
-    if (unit.grossArea) kvDetails("Area", `${unit.grossArea} sq.ft`);
+    if (unit.project) kvDetails("Project", unit.project);
+    kvDetails("Unit", unit.unitNumber);
+    if (unit.propertyType) kvDetails("Type", unit.propertyType);
+    if (unit.floor) kvDetails("Floor", unit.floor);
+    if (unit.area) kvDetails("Area", `${unit.area} sq.ft`);
     
     doc.moveDown(0.5);
     const totalPriceY = doc.y;
     doc.fillColor(NAVY).font("Helvetica-Bold").fontSize(11).text("Total Price:", left, totalPriceY, { width: detailsWidth * 0.45 });
-    doc.fillColor(GOLD).font("Helvetica-Bold").fontSize(12).text(pkr(unit.totalPrice ?? 0), left + detailsWidth * 0.45, totalPriceY, { width: detailsWidth * 0.55, align: "left" });
+    doc.fillColor(GOLD).font("Helvetica-Bold").fontSize(12).text(pkr(unit.price ?? 0), left + detailsWidth * 0.45, totalPriceY, { width: detailsWidth * 0.55, align: "left" });
 
     doc.y = Math.max(doc.y, detailsStartY + 140);
 

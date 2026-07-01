@@ -1,5 +1,5 @@
 // Build a full proposal (fetch unit -> calc plan -> render PDF).
-import { bitrix } from "../bitrix/client.js";
+import { getUnitByNumber } from "../inventory/loader.js";
 import { calculatePlan, type Balloon } from "./calc.js";
 import { buildProposalPdf } from "./pdf.js";
 
@@ -24,11 +24,11 @@ export interface ProposalOutput {
 }
 
 export async function generateProposal(req: ProposalRequest): Promise<ProposalOutput | null> {
-  const unit = await bitrix.getNormalizedUnit(req.unitId);
+  const unit = getUnitByNumber(req.unitId);
   if (!unit) return null;
 
   const plan = calculatePlan({
-    totalPrice: unit.totalPrice ?? 0,
+    totalPrice: unit.price ?? 0,
     plan: req.plan,
     downPaymentPercent: req.downPaymentPercent,
     possessionPercent: req.possessionPercent,
@@ -39,13 +39,13 @@ export async function generateProposal(req: ProposalRequest): Promise<ProposalOu
   const pdf = await buildProposalPdf(unit, plan, { clientName: req.clientName });
 
   const safe = (s: string) => s.replace(/[^\w-]+/g, "_");
-  const filename = `PCI_Proposal_${safe(unit.projectName ?? "Unit")}_${safe(unit.name)}.pdf`;
+  const filename = `PCI_Proposal_${safe(unit.project ?? "Unit")}_${safe(unit.unitNumber)}.pdf`;
 
   const pkr = (n: number) => `PKR ${Math.round(n).toLocaleString("en-US")}`;
   const summary =
     plan.plan === "full"
-      ? `${unit.projectName ?? ""} ${unit.name} — Full payment ${pkr(plan.totalPrice)}`
-      : `${unit.projectName ?? ""} ${unit.name} — ${pkr(plan.totalPrice)}; ` +
+      ? `${unit.project ?? ""} ${unit.unitNumber} — Full payment ${pkr(plan.totalPrice)}`
+      : `${unit.project ?? ""} ${unit.unitNumber} — ${pkr(plan.totalPrice)}; ` +
         `DP ${plan.downPaymentPercent}% (${pkr(plan.downPaymentAmount)}), ` +
         `${plan.installmentMonths}m @ ~${pkr(plan.averageInstallment)}/mo`;
 
@@ -53,8 +53,8 @@ export async function generateProposal(req: ProposalRequest): Promise<ProposalOu
     pdf,
     filename,
     summary,
-    unitName: unit.name,
-    projectName: unit.projectName,
-    totalPrice: unit.totalPrice ?? 0,
+    unitName: unit.unitNumber,
+    projectName: unit.project,
+    totalPrice: unit.price ?? 0,
   };
 }
