@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && node -e \"require('fs').copyFileSync('src/inventory/data.json', 'dist/inventory/data.json')\"",
+    "build": "tsc && node -e \"require('fs').copyFileSync('src/inventory/data.json', 'dist/inventory/data.json'); require('fs').cpSync('src/assets', 'dist/assets', {recursive: true});\"",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
     "compile-inventory": "tsx scripts/compile-inventory.ts",
@@ -19,6 +19,7 @@
     "csv-parse": "^7.0.0",
     "express": "^5.1.0",
     "multer": "^2.2.0",
+    "pdf-lib": "^1.17.1",
     "pdfkit": "^0.19.1",
     "xlsx": "^0.18.5"
   },
