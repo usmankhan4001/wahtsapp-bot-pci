@@ -1,4 +1,4 @@
-import { searchUnits, getUnitByNumber } from "../inventory/loader.js";
+import { searchUnits, getUnitByNumber, getProjectNames, getProjectSummary } from "../inventory/loader.js";
 import { PROJECT_DOCUMENTS, getDriveDownloadUrl } from "../documents/registry.js";
 import type { Session } from "../session/store.js";
 import { sessions, type Language } from "../session/store.js";
@@ -17,15 +17,23 @@ export const toolDeclarations = [
   },
   {
     name: "query_inventory_sheet",
-    description: "Search LIVE available units and pricing from the local inventory. Filter by project, type, maxPrice.",
+    description: "Search available units from the PCI inventory database. Filter by project name, unit type, category (like '1 BED', '2 BED', 'SHOP'), floor, maximum price, or minimum area. Returns up to 15 results at a time.",
     parameters: {
       type: "OBJECT",
       properties: {
-        project: { type: "STRING", description: "Project name (e.g. 'Box Park')." },
-        type: { type: "STRING", description: "Property type (e.g. '1 Bed', 'Shop')." },
-        maxPrice: { type: "NUMBER", description: "Maximum price in PKR." }
+        project: { type: "STRING", description: "Project name or partial match (e.g. 'Box Park', 'Grand Orchard', 'Buraq Heights')." },
+        type: { type: "STRING", description: "Unit type (e.g. 'Shop', 'Residential', 'Commercial')." },
+        category: { type: "STRING", description: "Specific category (e.g. '1 BED', '2 BED', 'SHOP', 'KIOSK', 'Premium')." },
+        floor: { type: "STRING", description: "Floor filter (e.g. 'Ground', '1st Floor', 'Lower Ground')." },
+        maxPrice: { type: "NUMBER", description: "Maximum price in PKR." },
+        minArea: { type: "NUMBER", description: "Minimum gross area in SqFt." },
       },
     },
+  },
+  {
+    name: "list_projects",
+    description: "List all PCI projects with their total and available unit counts. Use this when a sales rep asks 'What projects do you have?' or 'Show me all projects'.",
+    parameters: { type: "OBJECT", properties: {} },
   },
   {
     name: "generate_proposal",
@@ -33,7 +41,7 @@ export const toolDeclarations = [
     parameters: {
       type: "OBJECT",
       properties: {
-        unitId: { type: "STRING", description: "The EXACT Unit Number from query_inventory_sheet." },
+        unitId: { type: "STRING", description: "The EXACT Unit Number from query_inventory_sheet (e.g. 'G-1', 'BPLGK-001')." },
         clientName: { type: "STRING", description: "The name of the client to put on the PDF." },
         plan: { type: "STRING", enum: ["full", "installment"], description: "Full payment or installment plan." },
         downPaymentPercent: { type: "NUMBER", description: "Down payment percentage (e.g., 20, 30, 50)." },
@@ -82,7 +90,8 @@ export interface ToolContext {
   proposal?: ProposalRequest;
 }
 
-const pkr = (n?: number) => n == null ? undefined : `PKR ${Math.round(n).toLocaleString("en-US")}`;
+const pkr = (n?: number) => n == null ? "—" : `Rs. ${Math.round(n).toLocaleString("en-PK")}`;
+const sqft = (n?: number | null) => n == null ? "—" : `${n.toLocaleString("en-PK")} sqft`;
 
 export async function executeTool(
   name: string,
@@ -97,30 +106,47 @@ export async function executeTool(
       return { ok: true, language };
     }
 
+    case "list_projects": {
+      const summary = getProjectSummary();
+      return {
+        projects: summary.map(s => ({
+          name: s.project,
+          totalUnits: s.total,
+          availableUnits: s.available
+        }))
+      };
+    }
+
     case "query_inventory_sheet": {
       const filter = {
         project: args.project as string | undefined,
         type: args.type as string | undefined,
-        maxPrice: args.maxPrice as number | undefined
+        category: args.category as string | undefined,
+        floor: args.floor as string | undefined,
+        maxPrice: args.maxPrice as number | undefined,
+        minArea: args.minArea as number | undefined,
       };
       
       const units = searchUnits(filter);
-      const top = units.slice(0, 10);
+      const top = units.slice(0, 15);
       const enriched = top.map((d) => ({
-        unitId: d.unitNumber,
+        unitNumber: d.unit_number,
         project: d.project,
-        type: d.propertyType,
+        type: d.unit_type,
+        category: d.category,
         floor: d.floor,
-        area: d.area,
+        grossArea: sqft(d.area_sqft.gross),
+        netArea: sqft(d.area_sqft.net),
+        ratePerSqft: pkr(d.base_rate_per_sqft),
         price: pkr(d.price),
       }));
       
-      return { count: units.length, showing: enriched.length, units: enriched };
+      return { totalMatches: units.length, showing: enriched.length, units: enriched };
     }
 
     case "generate_proposal": {
       const u = getUnitByNumber(String(args.unitId));
-      if (!u) return { error: "Unit not found in inventory." };
+      if (!u) return { error: "Unit not found in inventory. Please check the exact unit number." };
 
       const plan = args.plan as "full" | "installment";
       let dp = args.downPaymentPercent as number | undefined;

@@ -134,10 +134,10 @@ export async function buildProposalPdf(
     };
 
     if (unit.project) kvDetails("Project", unit.project);
-    kvDetails("Unit", unit.unitNumber);
-    if (unit.propertyType) kvDetails("Type", unit.propertyType);
+    kvDetails("Unit", unit.unit_number);
+    if (unit.unit_type) kvDetails("Type", unit.unit_type);
     if (unit.floor) kvDetails("Floor", unit.floor);
-    if (unit.area) kvDetails("Area", `${unit.area} sq.ft`);
+    if (unit.area_sqft.gross) kvDetails("Area", `${unit.area_sqft.gross.toLocaleString()} sq.ft`);
     
     doc.moveDown(0.5);
     const totalPriceY = doc.y;
