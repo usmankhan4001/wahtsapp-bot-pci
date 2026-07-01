@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node -e \"require('fs').copyFileSync('src/inventory/data.json', 'dist/inventory/data.json')\"",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
     "compile-inventory": "tsx scripts/compile-inventory.ts",

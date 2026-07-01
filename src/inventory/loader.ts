@@ -24,7 +24,7 @@ export async function fetchInventory(): Promise<UnitData[]> {
       return inventoryCache;
     }
 
-    const dataPath = path.join(process.cwd(), "src/inventory/data.json");
+    const dataPath = path.join(__dirname, "data.json");
     if (!fs.existsSync(dataPath)) {
       logger.warn("No data.json found. Please run 'npm run compile-inventory'");
       return [];
