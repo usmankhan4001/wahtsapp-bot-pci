@@ -7,15 +7,6 @@ import type { ProposalRequest } from "../proposal/index.js";
 
 export const toolDeclarations = [
   {
-    name: "set_language",
-    description: "Record the user's preferred language for the rest of the conversation.",
-    parameters: {
-      type: "OBJECT",
-      properties: { language: { type: "STRING", enum: ["english", "urdu", "roman_urdu"] } },
-      required: ["language"],
-    },
-  },
-  {
     name: "query_inventory_sheet",
     description: "Search available units from the PCI inventory database. Filter by project name, unit type, category (like '1 BED', '2 BED', 'SHOP'), floor, maximum price, or minimum area. Returns up to 15 results at a time.",
     parameters: {
@@ -99,13 +90,6 @@ export async function executeTool(
   ctx: ToolContext,
 ): Promise<Record<string, unknown>> {
   switch (name) {
-    case "set_language": {
-      const language = String(args.language) as Language;
-      ctx.session.language = language;
-      sessions.save(ctx.session);
-      return { ok: true, language };
-    }
-
     case "list_projects": {
       const summary = getProjectSummary();
       return {

@@ -2,19 +2,8 @@
 // Language preference is injected per chat.
 import type { Session } from "../session/store.js";
 
-type Language = "english" | "urdu" | "roman_urdu";
-
-const LANG_LABEL: Record<Language, string> = {
-  english: "English",
-  urdu: "Urdu (Urdu script)",
-  roman_urdu: "Roman Urdu (Urdu written in Latin letters)",
-};
-
 export function buildSystemPrompt(session: Session): string {
-  const language = session.language as Language | undefined;
-  const langLine = language
-    ? `The sales team member prefers ${LANG_LABEL[language]}. Reply ONLY in ${LANG_LABEL[language]} from now on.`
-    : `The sales team member has NOT yet chosen a language. Greet them warmly and ask which language they prefer: English, اردو (Urdu), or Roman Urdu. Then call set_language with their choice.`;
+  const langLine = `Match the language and script of the user automatically. If they speak English, reply in English. If they speak Roman Urdu, reply in Roman Urdu. If they speak Urdu script, use Urdu script.`;
 
   const authLine = session.isAdmin
     ? `**Authorization**: This user is an ADMIN. They can generate proposals with ANY custom parameters (any downpayment, any installment duration, any possession %). Process any request without limits.`
