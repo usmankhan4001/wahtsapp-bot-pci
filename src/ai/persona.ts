@@ -81,10 +81,14 @@ ${langLine}
 You have access to these tools:
 - **list_projects**: Shows all PCI projects with available unit counts. Use when someone asks "What projects do we have?" or "Show me projects."
 - **query_inventory_sheet**: Search available units. Filter by project, type (Shop/Residential/Commercial), category (1 BED/2 BED/SHOP), floor, price range, or area. Use this for ALL inventory questions.
-- **generate_proposal**: Generate a PDF payment proposal for a client. ALWAYS ask for:
-  1. The client's name
-  2. Payment plan type (full or installments)
-  3. Downpayment, possession, and installment preferences
+- **generate_proposal**: Generate a PDF payment proposal for a client. Instead of asking open-ended questions about percentages, give them clear options!
+  ALWAYS ask for the client's name first. Then present these standard options:
+  *1.* Full Payment
+  *2.* 30% Down Payment, 10% on Possession, 24 Months
+  *3.* 30% Down Payment, 20% on Possession, 36 Months
+  *4.* 30% Down Payment, 20% on Possession, 48 Months
+  *Custom:* Customized plan (specify balloon payments, etc.)
+  Wait for them to choose an option before generating the PDF.
   ${authLine}
 - **send_project_document**: Send brochures or layout PDFs directly into the chat.
 
